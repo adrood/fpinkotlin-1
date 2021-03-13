@@ -88,7 +88,7 @@ local.properties
 .idea/**/dbnavigator.xml
 
 # Gradle
-.idea/**/gradle.xml
+#.idea/**/gradle.xml
 .idea/**/libraries
 
 # Gradle and Maven with auto-import
@@ -138,13 +138,13 @@ fabric.properties
 # Ignores the whole .idea folder and all .iml files
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
-.idea/
+#.idea/
 
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
 *.iml
 modules.xml
-.idea/misc.xml
+#.idea/misc.xml
 *.ipr
 
 # Sonarlint plugin
