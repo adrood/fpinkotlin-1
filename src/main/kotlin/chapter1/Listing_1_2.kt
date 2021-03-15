@@ -1,5 +1,8 @@
 package chapter1
 
+/**
+ * Adding a payments object
+ */
 object Listing_1_2 {
     data class Coffee(val price: Float = 2.95F)
 

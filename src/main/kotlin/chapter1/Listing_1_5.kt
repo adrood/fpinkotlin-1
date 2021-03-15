@@ -1,5 +1,8 @@
 package chapter1
 
+/**
+ * Buying multiple cups with buyCoffee
+ */
 object Listing_1_5 {
 
     class CreditCard
@@ -21,10 +24,14 @@ object Listing_1_5 {
         ): Pair<List<Coffee>, Charge> {
 
             val purchases: List<Pair<Coffee, Charge>> =
+                // Create a self-initialized List.
                 List(n) { buyCoffee(cc) } // <1>
 
+            // Split the list of Pairs into two separate lists.
             val (coffees, charges) = purchases.unzip() // <2>
 
+            // Produce the output pairing coffees to a combined single
+            // charge
             return Pair(
                 coffees,
                 charges.reduce { c1, c2 -> c1.combine(c2) }

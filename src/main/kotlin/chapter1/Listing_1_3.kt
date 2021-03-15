@@ -1,5 +1,8 @@
 package chapter1
 
+/**
+ * A more functional approach to buying coffee
+ */
 object Listing_1_3 {
 
     class CreditCard
