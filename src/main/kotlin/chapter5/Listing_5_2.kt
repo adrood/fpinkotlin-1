@@ -9,8 +9,8 @@ sealed class Stream<out A> {
         //smart constructors
         //tag::cons[]
         fun <A> cons(hd: () -> A, tl: () -> Stream<A>): Stream<A> {
-            val head: A by lazy { hd() }
-            val tail: Stream<A> by lazy { tl() }
+            val head: A by lazy(hd)
+            val tail: Stream<A> by lazy(tl)
             return Cons({ head }, { tail })
         }
         //end::cons[]
@@ -25,13 +25,16 @@ sealed class Stream<out A> {
 
         fun <A> empty(): Stream<A> = Empty
         //end::empty[]
+
+        fun <A> continually(a: A): Stream<A> =
+            cons({ a }, { continually(a) })
     }
     //end::companion[]
 }
 
 data class Cons<out A>(
-    val h: () -> A,
-    val t: () -> Stream<A>
+    val head: () -> A,
+    val tail: () -> Stream<A>
 ) : Stream<A>()
 
 object Empty : Stream<Nothing>()

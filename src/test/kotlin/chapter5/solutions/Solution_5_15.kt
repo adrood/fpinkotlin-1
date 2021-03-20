@@ -17,10 +17,10 @@ class Solution_5_15 : WordSpec({
         unfold(this) { s: Stream<A> ->
             when (s) {
                 is Cons ->
-                    Some(Pair(s, s.t()))
+                    Some(Pair(s, s.tail()))
                 else -> None
             }
-        }
+        }.append({ Stream.empty() })
     //end::tails[]
 
     fun <A, B> List<A>.map(f: (A) -> B): List<B> = when (this) {
@@ -35,7 +35,8 @@ class Solution_5_15 : WordSpec({
                 List.of(
                     ConsL(1, ConsL(2, ConsL(3, NilL))),
                     ConsL(2, ConsL(3, NilL)),
-                    ConsL(3, NilL)
+                    ConsL(3, NilL),
+                    NilL
                 )
         }
     }
