@@ -3,15 +3,18 @@ package chapter3
 //Singly Linked List data structure
 
 //tag::example[]
+// Sealed definition of data type
 sealed class List<out A> { // <1>
     //tag::comment[]
     // helper functions
     //end::comment[]
     //tag::companion[]
 
+    // Companion object containing functions
     companion object { // <2>
 
         //tag::of[]
+        // Factory helper function
         fun <A> of(vararg aa: A): List<A> { // <3>
             val tail = aa.sliceArray(1 until aa.size)
             return if (aa.isEmpty()) Nil else Cons(aa[0], of(*tail))
@@ -44,6 +47,7 @@ sealed class List<out A> { // <1>
 }
 
 //tag::impls[]
+// The Nil implementation of List
 object Nil : List<Nothing>() {
     override fun toString(): String = "Nil"
 } // <2>
@@ -51,6 +55,7 @@ object Nil : List<Nothing>() {
 data class Cons<out A>(
     val head: A,
     val tail: List<A>
+    // The Cons implementation of List
 ) : List<A>() // <3>
 //end::impls[]
 //end::example[]
