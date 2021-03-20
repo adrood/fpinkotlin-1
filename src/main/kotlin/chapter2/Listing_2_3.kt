@@ -11,7 +11,7 @@ object Listing_2_3 {
 
         // Add the factorial function, making it private
         private fun factorial(i: Int): Int { //<1>
-            fun go(n: Int, acc: Int): Int =
+            tailrec fun go(n: Int, acc: Int): Int =
                 if (n <= 0) acc
                 else go(n - 1, n * acc)
             return go(i, 1)
