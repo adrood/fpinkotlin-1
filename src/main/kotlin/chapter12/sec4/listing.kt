@@ -34,8 +34,8 @@ sealed class Stream<out A> : StreamOf<A> {
 }
 
 data class Cons<out A>(
-    val h: () -> A,
-    val t: () -> Stream<A>
+    val head: () -> A,
+    val tail: () -> Stream<A>
 ) : Stream<A>()
 
 object Empty : Stream<Nothing>()
@@ -46,12 +46,12 @@ val streamApplicative = object : Applicative<ForStream> {
     override fun <A> unit(a: A): StreamOf<A> =
         Stream.continually(a) // <1>
 
-    fun <A, B, C> map2(
-        sa: Stream<A>,
-        sb: Stream<B>,
+    override fun <A, B, C> map2(
+        sa: StreamOf<A>,
+        sb: StreamOf<B>,
         f: (A, B) -> C
-    ): Stream<C> =
-        sa.zip(sb).map { (a, b) -> f(a, b) } // <2>
+    ): StreamOf<C> =
+        sa.fix().zip(sb.fix()).map { (a, b) -> f(a, b) } // <2>
 }
 //end::init1[]
 
@@ -73,8 +73,8 @@ val listing1 = {
     //tag::init2[]
     val F = eitherMonad<String>()
     F.flatMap(validName(name)) { f1: String ->
-        F.flatMap(validDateOfBirth(dob)) { f2 ->
-            F.map(validPhone(phone)) { f3 ->
+        F.flatMap(validDateOfBirth(dob)) { f2: Date ->
+            F.map(validPhone(phone)) { f3: String ->
                 WebForm(f1, f2, f3)
             }
         }
@@ -86,8 +86,8 @@ fun <E> eitherApplicative(): EitherApplicative<E> = TODO()
 
 val listing2 = {
     //tag::init3[]
-    val F = eitherApplicative<String>()
-    F.map3(
+    val A = eitherApplicative<String>()
+    A.map3(
         validName(name),
         validDateOfBirth(dob),
         validPhone(phone)
@@ -160,7 +160,7 @@ val listing3 = {
         try {
             Success(SimpleDateFormat("yyyy-MM-dd").parse(dob))
         } catch (e: Exception) {
-            Failure("Data of birth must be in format yyyy-MM-dd")
+            Failure("Date of birth must be in format yyyy-MM-dd")
         }
 
     fun validPhone(phone: String): Validation<String, String> =

@@ -6,7 +6,9 @@ import arrow.higherkind
 sealed class Option<out A> : OptionOf<A> {
     companion object {
         fun <A> empty(): Option<A> = None
+        fun <A> of(a: A?): Option<A> = if (a == null) None else Some(a)
     }
+
     fun <B> flatMap(f: (A) -> Option<B>): Option<B> =
         when (this) {
             is None -> None

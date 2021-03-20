@@ -12,6 +12,7 @@ interface Applicative<F> : Functor<F> {
     ): Kind<F, B>
 
     fun <A> unit(a: A): Kind<F, A>
+
     //tag::init1[]
     fun <A, B, C, D> map3(
         fa: Kind<F, A>,
