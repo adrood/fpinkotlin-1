@@ -5,8 +5,10 @@ import kotlin.random.Random
 object Section_6_1 {
 
     //tag::init[]
+    // Method should return a random number from 1 to 6
     fun rollDie(): Int { // <1>
         val rng = kotlin.random.Random
+        // Generator returns a random number from 0 to 5
         return rng.nextInt(6) // <2>
     }
     //end::init[]
