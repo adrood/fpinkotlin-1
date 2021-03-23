@@ -8,7 +8,7 @@ import io.kotlintest.shouldThrow
 import io.kotlintest.specs.WordSpec
 
 // tag::init[]
-fun <A> init(l: List<A>): List<A> =
+tailrec fun <A> init(l: List<A>): List<A> =
     when (l) {
         is Cons ->
             if (l.tail == Nil) Nil
