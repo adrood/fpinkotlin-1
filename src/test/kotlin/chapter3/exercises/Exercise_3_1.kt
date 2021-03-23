@@ -12,7 +12,7 @@ fun <A> tail(xs: List<A>): List<A> = TODO()
 
 class Exercise_3_1 : WordSpec({
     "list tail" should {
-        "!return the the tail when present" {
+        "!return the tail when present" {
             tail(List.of(1, 2, 3, 4, 5)) shouldBe
                 List.of(2, 3, 4, 5)
         }
