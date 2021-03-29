@@ -9,9 +9,9 @@ import io.kotlintest.specs.WordSpec
 //tag::init[]
 fun <A, B> Option<A>.map(f: (A) -> B): Option<B> = TODO() // <1>
 
-fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> = TODO()// <2>
-
 fun <A> Option<A>.getOrElse(default: () -> A): A = TODO() // <3>
+
+fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> = TODO()// <2>
 
 fun <A> Option<A>.orElse(ob: () -> Option<A>): Option<A> = TODO() // <4>
 
