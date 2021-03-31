@@ -33,9 +33,15 @@ val sum2 = {
     //tag::init3[]
     fun sum(ints: List<Int>): Int =
         if (ints.size <= 1)
+        // Deal with cases of 1 or 0 ints, using Arrow
+        // extension method firstOption, like headOption
+        // in Chapter 3
             ints.firstOption().getOrElse { 0 } // <1>
         else {
+            // Split and destructure the list into two, using
+            // helper extension method splitAt
             val (l, r) = ints.splitAt(ints.size / 2) // <2>
+            // Recursive call to sum for both l and r and sum them up
             sum(l) + sum(r) // <3>
         }
     //end::init3[]
