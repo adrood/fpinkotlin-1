@@ -19,7 +19,11 @@ interface Applicative<F> : Functor<F> {
     override fun <A, B> map(
         fa: Kind<F, A>,
         f: (A) -> B
-    ): Kind<F, B> = //<1>
+    ): Kind<F, B> = // <1>
+        // The map combinator from Functor
+        // is implemented in terms of unit and map2
+        //
+        // The unit primitive is invoked with dummy value Unit
         map2(fa, unit(Unit)) { a, _ -> f(a) } // <2>
 
     fun <A, B> traverse(
