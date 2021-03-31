@@ -32,6 +32,8 @@ interface Applicative<F> : Functor<F> {
 interface Monad<F> : Applicative<F> {
 
     fun <A, B> flatMap(fa: Kind<F, A>, f: (A) -> Kind<F, B>): Kind<F, B> =
+        // A minimal implementation of Monad must implement unit and
+        // provide either flatMap, or join and map.
         join(map(fa, f)) // <1>
 
     fun <A> join(ffa: Kind<F, Kind<F, A>>): Kind<F, A> =
@@ -43,12 +45,14 @@ interface Monad<F> : Applicative<F> {
     ): (A) -> Kind<F, C> =
         { a -> flatMap(f(a), g) }
 
+    // The map combinator overriden from Functor
     override fun <A, B> map( //<2>
         fa: Kind<F, A>,
         f: (A) -> B
     ): Kind<F, B> =
         flatMap(fa) { a -> unit(f(a)) }
 
+    // The map2 combinator overridden from Applicative
     override fun <A, B, C> map2( // <3>
         fa: Kind<F, A>,
         fb: Kind<F, B>,
