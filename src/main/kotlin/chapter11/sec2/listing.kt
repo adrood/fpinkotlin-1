@@ -53,6 +53,7 @@ fun <A, B, C> map2(
 //end::init3[]
 
 //tag::init4[]
+// The Mon interface is parameterized with higher-kinded type of F
 interface Mon<F> { // <1>
     //tag::init5[]
 
@@ -62,7 +63,10 @@ interface Mon<F> { // <1>
     //end::init5[]
 
     fun <A, B, C> map2(
+        // Use Kind<F,A> to represent F<A>
         fa: Kind<F, A>, // <2>
+        // Will not compile since map and flatMap are not defined
+        // in context of F
         fb: Kind<F, B>, // <3>
         f: (A, B) -> C
     ): Kind<F, C> =

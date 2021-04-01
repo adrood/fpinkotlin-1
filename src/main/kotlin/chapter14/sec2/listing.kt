@@ -18,9 +18,11 @@ typealias STPartialOf<S> = arrow.Kind<ForST, S>
 inline fun <S, A> STOf<S, A>.fix(): ST<S, A> = this as ST<S, A>
 
 //tag::init1[]
+// Limit access of constructor to this module
 abstract class ST<S, A> internal constructor() : STOf<S, A> { // <1>
     companion object {
         operator fun <S, A> invoke(a: () -> A): ST<S, A> {
+            // Cache the value in case run is called more than once
             val memo by lazy(a) // <2>
             return object : ST<S, A>() {
                 override fun run(s: S) = Pair(memo, s)
@@ -44,6 +46,7 @@ abstract class ST<S, A> internal constructor() : STOf<S, A> { // <1>
 
     fun <B> flatMap(f: (A) -> ST<S, B>): ST<S, B> = object : ST<S, B>() {
         override fun run(s: S): Pair<B, S> {
+            // Delegate to the protected run function of the instance
             val (a, s1) = this@ST.run(s) // <3>
             return f(a).run(s1)
         }

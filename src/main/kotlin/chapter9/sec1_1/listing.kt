@@ -4,8 +4,11 @@ import arrow.core.Either
 import arrow.core.Right
 
 //tag::init3[]
+// Interface parameterized with parse error PE, where all
+// future parser combinators may be declared
 interface Parsers<PE> { // <1>
 
+    // A simple representation of the parser
     interface Parser<A> // <2>
 
     //tag::init1[]

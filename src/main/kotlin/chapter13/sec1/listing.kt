@@ -24,6 +24,7 @@ data class Player(val name: String, val score: Int)
 
 val listing2 = {
     //tag::init2[]
+    // Contains the logic for computihg a winner if there is one
     fun winner(p1: Player, p2: Player): Option<Player> = // <1>
         when {
             p1.score > p2.score -> Some(p1)
@@ -31,6 +32,7 @@ val listing2 = {
             else -> None
         }
 
+    // Responsible for declaring the winner on console standard out
     fun contest(p1: Player, p2: Player): Unit = // <2>
         when(val player = winner(p1, p2)) {
             is Some ->
@@ -51,12 +53,14 @@ val listing3 = {
 
     //tag::init3[]
 
+    // Responsible for determining most appropriate message
     fun winnerMsg(op: Option<Player>): String = // <1>
         when(op) {
             is Some -> "${op.get.name} is the winner"
             is None -> "It's a draw"
         }
 
+    // Responsible for printing message to standard out
     fun contest(p1: Player, p2: Player): Unit = // <2>
         println(winnerMsg(winner(p1, p2))) // <3>
     //end::init3[]
