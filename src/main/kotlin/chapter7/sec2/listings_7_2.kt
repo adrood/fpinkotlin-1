@@ -4,11 +4,14 @@ import java.util.concurrent.TimeUnit
 
 val api = {
     //tag::init1a[]
+    // Create a computation that immediately results in the value a
     fun <A> unit(a: A): Par<A> // <1>
     //end::init1a[]
         = TODO()
 
     //tag::init1b[]
+    // Combine the results of two parallel computations with a
+    // bunary function
     fun <A, B, C> map2(
         a: Par<A>,
         b: Par<B>,
@@ -18,16 +21,20 @@ val api = {
         = TODO()
 
     //tag::init1c[]
+    // Mark a computation for concurrent evaluation by run
     fun <A> fork(a: () -> Par<A>): Par<A> // <3>
     //end::init1c[]
         = TODO()
 
     //tag::init1d[]
+    // Wrap expression a for concurrent evaluation by run
     fun <A> lazyUnit(a: () -> A): Par<A> // <4>
     //end::init1d[]
         = TODO()
 
     //tag::init1e[]
+    // Fully evaluate a given Par, spawning computations and
+    // extracting value
     fun <A> run(a: Par<A>): A // <5>
     //end::init1e[]
         = TODO()
@@ -35,6 +42,7 @@ val api = {
 }
 
 //tag::executor[]
+// Listing 7.7. Executor API represented in Kotlin
 interface Callable<A> {
     fun call(): A
 }
