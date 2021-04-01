@@ -31,6 +31,7 @@ fun <A> List<A>.splitAt(idx: Int): Pair<List<A>, List<A>> = // <1>
 
 val sum2 = {
     //tag::init3[]
+    // Using our new data type to assimilate parallellism
     fun sum(ints: List<Int>): Int =
         if (ints.size <= 1)
         // Deal with cases of 1 or 0 ints, using Arrow
@@ -48,10 +49,13 @@ val sum2 = {
 }
 
 //tag::init4[]
+// A new data type to contain a result
 class Par<A>(val get: A) // <1>
 
+// Create a unit of parallellism from unevaluated A
 fun <A> unit(a: () -> A): Par<A> = Par(a()) // <2>
 
+// Extract the evaluated result of A
 fun <A> get(a: Par<A>): A = a.get // <3>
 
 //end::init4[]
@@ -67,6 +71,8 @@ fun map2(
 fun <A> fork(a: () -> Par<A>): Par<A> = TODO()
 
 //end::fork[]
+// Listing 7.6. A strict unit and fork can be combined to form a lazy
+// variant of unit.
 val listing = {
     //tag::lazyunit[]
     fun <A> unit(a: A): Par<A> = Par(a)
@@ -87,8 +93,11 @@ val sum3 = {
             ints.firstOption().getOrElse { 0 }
         else {
             val (l, r) = ints.splitAt(ints.size / 2)
+            // Compute left side of list in context of Par
             val sumL: Par<Int> = unit { sum(l) } // <1>
+            // Compute right side of list in context of Par
             val sumR: Par<Int> = unit { sum(r) } // <2>
+            // Extract Int results from either Par and sum them
             sumL.get + sumR.get // <3>
         }
     //end::init5[]
@@ -112,15 +121,19 @@ val sum4 = {
             map2(sum(l), sum(r)) { lx: Int, rx: Int -> lx + rx }
         }
     //end::init7[]
+
     val trace = {
         //tag::init8[]
+        // Unevaluated expression
         sum(listOf(1, 2, 3, 4)) // <1>
 
+        // Substitute sum with its definition of map2
         map2(
             sum(listOf(1, 2)),
             sum(listOf(3, 4))
         ) { i: Int, j: Int -> i + j } // <2>
 
+        // Substitute left argument with its definition map2
         map2(
             map2(
                 sum(listOf(1)),
@@ -129,6 +142,7 @@ val sum4 = {
             sum(listOf(3, 4))
         ) { i: Int, j: Int -> i + j }
 
+        // Substitute left sum expressions with their results
         map2(
             map2(
                 unit { 1 },
@@ -137,6 +151,7 @@ val sum4 = {
             sum(listOf(3, 4))
         ) { i: Int, j: Int -> i + j }
 
+        // Substitution of right-hand side with its definition
         map2(
             map2(
                 unit { 1 },
@@ -150,6 +165,8 @@ val sum4 = {
         //end::init8[]
     }
 
+    // Listing 7.5 Strict construction of the description results in
+    // a full tree of operations
     val trace2 = {
         //tag::init9[]
         map2(
