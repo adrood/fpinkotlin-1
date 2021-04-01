@@ -63,25 +63,34 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
 
     companion object {
 
+        // The entry point that is used in tests
         fun <A> forAll(g: SGen<A>, f: (A) -> Boolean): Prop =
             forAll({ i -> g(i) }, f) // <1>
 
         fun <A> forAll(g: (Int) -> Gen<A>, f: (A) -> Boolean): Prop =
             Prop { max, n, rng ->
 
+                // Generate this many random cases for each size
                 val casePerSize: Int = (n + (max - 1)) / max // <2>
 
                 val props: Sequence<Prop> =
+                    // Generates an incrementing sequence<Int>
+                    // starting at 0
                     generateSequence(0) { it + 1 } // <3>
                         .take(min(n, max) + 1)
+                        // Make one property per size, but never
+                        // more than n properties (uses previously
+                        // defined forAll)
                         .map { i -> forAll(g(i), f) } // <4>
 
                 val prop: Prop = props.map { p ->
                     Prop { max, _, rng ->
                         p.check(max, casePerSize, rng)
                     }
+                    // Combine them all into one property using Prop.and
                 }.reduce { p1, p2 -> p1.and(p2) } // <5>
 
+                // Check the combined property
                 prop.check(max, n, rng) // <6>
             }
 
@@ -124,6 +133,7 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
     }
 
     fun and(p: Prop): Prop =
+        // Retrofit and to handle new max parameter
         Prop { max, n, rng -> // <7>
             when (val prop = check(max, n, rng)) {
                 is Passed -> p.check(max, n, rng)
