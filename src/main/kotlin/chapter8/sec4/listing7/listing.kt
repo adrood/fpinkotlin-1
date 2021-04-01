@@ -10,6 +10,8 @@ sealed class Result
 object Passed : Result()
 
 //tag::init1[]
+// Listing 8.10. Introduce Proved to represent result that has proof
+// after a single test
 object Proved : Result()
 //end::init1[]
 
@@ -22,6 +24,7 @@ data class Falsified(
 ) : Result()
 
 //tag::init2[]
+// Listing 8.11. Update run to handle new Proved result type
 fun run(
     p: Prop,
     maxSize: Int = 100,
@@ -43,10 +46,13 @@ fun run(
 
 data class Prop(val run: (MaxSize, TestCases, RNG) -> Result) {
     //tag::init3[]
+    // Listing 8.12. Update Prop to handle both Passed and Proved passes
     fun and(p: Prop) =
         Prop { max, n, rng ->
             when (val prop = run(max, n, rng)) {
                 is Falsified -> prop
+                // The else fallback handles both Passed and
+                // Proved success types
                 else -> p.run(max, n, rng) // <1>
             }
         }
