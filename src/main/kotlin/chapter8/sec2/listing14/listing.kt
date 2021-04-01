@@ -19,19 +19,28 @@ data class Prop(val check: (TestCases, RNG) -> Result) {
         //tag::init[]
         fun <A> forAll(ga: Gen<A>, f: (A) -> Boolean): Prop =
             Prop { n: TestCases, rng: RNG ->
+                // Prepare a Sequence of indexes i mapped to
+                // generated values a
                 randomSequence(ga, rng).mapIndexed { i, a -> // <1>
-                        try {
-                            if (f(a)) Passed
-                            else Falsified(a.toString(), i) // <2>
-                        } catch (e: Exception) {
-                            Falsified(buildMessage(a, e), i) // <3>
-                        }
-                    }.take(n)
+                    try {
+                        if (f(a)) Passed
+                        // On test faliure, record failed case
+                        // and index, exposing how many tests
+                        // succeeded before failure
+                        else Falsified(a.toString(), i) // <2>
+                    } catch (e: Exception) {
+                        // In the case of an exception, record as
+                        // a result with pretty message
+                        Falsified(buildMessage(a, e), i) // <3>
+                    }
+                }.take(n)
                     .find { it.isFalsified() }
                     .toOption()
                     .getOrElse { Passed }
             }
 
+        // Generates infinite sequence of A recursively, sampling
+        // a generator
         private fun <A> randomSequence(
             ga: Gen<A>,
             rng: RNG
@@ -42,6 +51,8 @@ data class Prop(val check: (TestCases, RNG) -> Result) {
                 yieldAll(randomSequence(ga, rng2))
             }
 
+        // Use string interpolation and margin trim to build a
+        // pretty message
         private fun <A> buildMessage(a: A, e: Exception) = // <5>
             """
             |test case: $a
