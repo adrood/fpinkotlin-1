@@ -12,10 +12,13 @@ val listing1 = {
 
         fun buyCoffee(cc: CreditCard): Coffee {
 
+            // instantiate a new cup of Coffee
             val cup = Coffee() // <1>
 
+            // Charge credit card with the coffee's price. A side-effect
             cc.charge(cup.price) // <2>
 
+            // Return the Coffee
             return cup // <3>
         }
     }
@@ -66,8 +69,12 @@ val listing4 = {
     //tag::init4[]
     data class Charge(val cc: CreditCard, val amount: Float) { // <1>
 
+        // A combine method combining charges for the same credit card
         fun combine(other: Charge): Charge = // <2>
+            // Ensure it's the same card, otherwise throw an exception
             if (cc == other.cc) // <3>
+                // A new Charge is returned, combining the amount of this
+                //    and the other
                 Charge(cc, amount + other.amount) // <4>
             else throw Exception(
                 "Cannot combine charges to different cards"
@@ -97,10 +104,14 @@ val listing5 = {
         ): Pair<List<Coffee>, Charge> {
 
             val purchases: List<Pair<Coffee, Charge>> =
+                // Create a self-initialized List.
                 List(n) { buyCoffee(cc) } // <1>
 
+            // Split the list of Pairs into two separate lists.
             val (coffees, charges) = purchases.unzip() // <2>
 
+            // Produce the output pairing coffees to a combined single
+            // charge
             return Pair(
                 coffees,
                 charges.reduce { c1, c2 -> c1.combine(c2) }
