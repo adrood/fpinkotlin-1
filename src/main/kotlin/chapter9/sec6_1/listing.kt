@@ -21,11 +21,13 @@ object MyParser : Parsers {
         { input: String ->
             if (input.startsWith(s))
                 Right(s)
+            // Uses toError to construct a ParseError
             else Left(Location(input).toError("Expected: $s")) // <1>
         }
     //end::init2[]
 
     //tag::init3[]
+    // Extension that converts Location to a ParseErrror
     private fun Location.toError(msg: String) = // <2>
         ParseError(listOf(Pair(this, msg)))
     //end::init3[]
