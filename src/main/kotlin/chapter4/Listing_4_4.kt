@@ -55,9 +55,15 @@ object Listing_4_4 {
     }
 
     //tag::catches[]
+    // We accept the A argument nonstrictly, so we can
+    // catch any exceptions that occur while evaluating
+    // a and convert them to None.
     fun <A> catches(a: () -> A): Option<A> = // <2>
         try {
+            // Invoke non-strict parameter a with () inside of Some
             Some(a()) // <3>
+            // Note: This discards information about the error e.
+            // We'll improve on this in section 4.4. with Either
         } catch (e: Throwable) { // <4>
             None
         }

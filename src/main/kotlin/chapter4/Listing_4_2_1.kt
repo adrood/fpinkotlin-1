@@ -15,7 +15,9 @@ object Listing_4_2_1 {
     //tag::init[]
     fun mean(xs: List<Double>): Double =
         if (xs.isEmpty())
+            // An Arithmetic exception is thrown on xs being empty
             throw ArithmeticException("mean of emtpy list!") // <1>
+        // Otherwise return the valid result
         else xs.sum() / length(xs) // <2>
     //end::init[]
 }

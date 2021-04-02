@@ -14,7 +14,9 @@ object Listing_4_2_2 {
 
     //tag::init[]
     fun mean(xs: List<Double>, onEmpty: Double) =
+        // A default value is provided on xs being empty
         if (xs.isEmpty()) onEmpty // <1>
+        // Otherwise return the valid result
         else xs.sum() / xs.size() // <2>
     //end::init[]
 }

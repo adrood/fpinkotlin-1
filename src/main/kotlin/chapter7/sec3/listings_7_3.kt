@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit
 typealias Par<A> = (ExecutorService) -> Future<A>
 
 //tag::init1[]
+// Listing 7.8. Primitive operations for Par can be found in
+// the Pars object
 object Pars {
     fun <A> unit(a: A): Par<A> =
         { es: ExecutorService -> UnitFuture(a) } // <1>

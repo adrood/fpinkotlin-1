@@ -14,7 +14,9 @@ object Listing_4_2_3 {
 
     //tag::init[]
     fun mean(xs: List<Double>): Option<Double> =
+        // None value is returned on xs being empty
         if (xs.isEmpty()) None // <1>
+        // Some value is returned wrapping a valid result
         else Some(xs.sum() / xs.size()) //<2>
     //end::init[]
 }
