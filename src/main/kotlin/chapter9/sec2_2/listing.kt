@@ -47,9 +47,13 @@ interface Parsers<PE> {
 }
 
 //tag::init3[]
+// Concrete implementation ParseError for type parameter PE in Parsers
 object ParseError // <1>
 
+// Implement Parsers interface allowing access to all
+// combinators and help methods
 abstract class Laws : Parsers<ParseError> { // <2>
+    // A helper function for asserting parser equality
     private fun <A> equal( // <3>
         p1: Parser<A>,
         p2: Parser<A>,
@@ -57,6 +61,7 @@ abstract class Laws : Parsers<ParseError> { // <2>
     ): Prop =
         forAll(i) { s -> run(p1, s) == run(p2, s) }
 
+    // A property that tests if our map function obeys the law
     fun <A> mapLaw(p: Parser<A>, i: Gen<String>): Prop = // <4>
         equal(p, p.map { a -> a }, i)
 }
