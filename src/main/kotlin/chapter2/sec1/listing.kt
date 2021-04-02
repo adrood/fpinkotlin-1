@@ -3,9 +3,11 @@ package chapter2.sec1
 val listing1 = {
     //tag::init1[]
     fun factorial(i: Int): Int {
+        // An inner or local function definition
         fun go(n: Int, acc: Int): Int = // <1>
             if (n <= 0) acc
             else go(n - 1, n * acc)
+        // Calling the local function.
         return go(i, 1) // <2>
     }
     //end::init1[]
@@ -14,9 +16,12 @@ val listing1 = {
 val listing2 = {
     //tag::init2[]
     fun factorial(i: Int): Int {
+        // The tailrec modifier instructs the compiler to
+        // eliminate tail calls
         tailrec fun go(n: Int, acc: Int): Int = // <1>
             if (n <= 0) acc
             else go(n - 1, n * acc) // <2>
+        // The function's final declaration(?) is in tail position
         return go(i, 1)
     }
     //end::init2[]
@@ -29,23 +34,25 @@ object Example {
         if (n < 0) -n
         else n
 
-    private fun factorial(i: Int): Int { //<1>
-        fun go(n: Int, acc: Int): Int =
-            if (n <= 0) acc
-            else go(n - 1, n * acc)
-        return go(i, 1)
-    }
+        // Add the factorial function, making it private
+        private fun factorial(i: Int): Int { //<1>
+            tailrec fun go(n: Int, acc: Int): Int =
+                if (n <= 0) acc
+                else go(n - 1, n * acc)
+            return go(i, 1)
+        }
 
     fun formatAbs(x: Int): String {
         val msg = "The absolute value of %d is %d"
         return msg.format(x, abs(x))
     }
 
-    fun formatFactorial(x: Int): String { //<2>
-        val msg = "The factorial of %d is %d"
-        return msg.format(x, factorial(x))
+        // Add the formatFactorial function, public by default
+        fun formatFactorial(x: Int): String { //<2>
+            val msg = "The factorial of %d is %d"
+            return msg.format(x, factorial(x))
+        }
     }
-}
 
 fun main() {
     println(Example.formatAbs(-42))
