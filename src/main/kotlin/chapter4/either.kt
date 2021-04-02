@@ -1,6 +1,8 @@
 package chapter4
 
 //tag::init[]
+// Listing 4.5.
+// The Either data type
 sealed class Either<out E, out A>
 
 data class Left<out E>(val value: E) : Either<E, Nothing>()
