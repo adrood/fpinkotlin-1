@@ -3,10 +3,13 @@ package sec2
 import kotlin.random.Random
 
 //tag::init1[]
+// Definition of List data structure
 sealed class List<out A> { // <1>
 
+    // Companion object containing functions
     companion object { // <2>
 
+        // Factory helper function
         fun <A> of(vararg aa: A): List<A> { // <3>
             val tail = aa.sliceArray(1 until aa.size)
             return if (aa.isEmpty()) Nil else Cons(aa[0], of(*tail))
