@@ -1,5 +1,7 @@
 package chapter4.sec3
 
+import kotlin.math.abs
+
 sealed class List<out A>
 
 private fun <A> length(xs: List<A>): Int = TODO()
@@ -18,10 +20,13 @@ data class Some<out A>(val get: A) : Option<A>()
 object None : Option<Nothing>()
 //end::init1[]
 
+// Listing 4.2
 val listing1 = {
     //tag::init2[]
     fun mean(xs: List<Double>): Option<Double> =
+        // None value is returned on xs being empty
         if (xs.isEmpty()) None // <1>
+        // Some value returned wrapping a valid result
         else Some(xs.sum() / xs.size()) //<2>
     //end::init2[]
 }
@@ -76,7 +81,7 @@ fun <A, B> lift(f: (A) -> B): (Option<A>) -> Option<B> =
 
 //tag::init8[]
 val absO: (Option<Double>) -> Option<Double> =
-    lift { kotlin.math.abs(it) }
+    lift { abs(it) }
 //end::init8[]
 
 //tag::init9[]
@@ -113,14 +118,20 @@ fun parseInsuranceQuote(
     }
     //end::secondsolution[]
     //tag::firstsolution[]
-    //return insuranceRateQuote(optAge, optTickets) <1>
+    // This does not type=check due to incompatibilites
+    // return insuranceRateQuote(optAge, optTickets) //<1>
     //end::firstsolution[]
 }
 
 //tag::catches[]
+// We accept the A argument non-strictly, so we can catch any
+// exceptions that occur while evaluating a and convert them to None.
 fun <A> catches(a: () -> A): Option<A> = // <2>
     try {
+        // Invoke non-strict parameter with () inside of Some
         Some(a()) // <3>
+        // Note: This discards information about the error e.
+        // We'll improve on this in Section 4.4. with Either
     } catch (e: Throwable) { // <4>
         None
     }
