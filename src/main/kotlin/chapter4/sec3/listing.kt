@@ -28,11 +28,15 @@ val listing1 = {
 
 fun <A, B> Option<A>.map(f: (A) -> B): Option<B> = TODO()
 
-fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> = TODO()
+    // Apply f, which may fail, to the Option if the Option is
+    // not None
+    fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> = TODO()
 
-fun <A> Option<A>.getOrElse(default: () -> A): A = TODO()
+    // Return a default value if the Option is None
+    fun <A> Option<A>.getOrElse(default: () -> A): A = TODO()
 
-fun <A> Option<A>.filter(f: (A) -> Boolean): Option<A> = TODO()
+    // Convert Some to None if the predicate f is not met
+    fun <A> Option<A>.filter(f: (A) -> Boolean): Option<A> = TODO()
 
 //tag::init3[]
 data class Employee(
