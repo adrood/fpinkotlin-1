@@ -53,11 +53,15 @@ fun <A> of(vararg aa: A): List<A> {
 //end::init2[]
 
 //tag::init3[]
+// Listing 3.4.
+// A statement declaring an abstract list
 val ints = List.of(1, 2, 3, 4) // <1>
 
 fun sum(xs: List<Int>): Int =
     when (xs) {
+        // Match a Nil implementation
         is Nil -> 0 // <2>
+        // Smartcast a Cons implementation
         is Cons -> xs.head + sum(xs.tail) // <3>
     }
 
@@ -68,10 +72,13 @@ val listing35 = {
     //tag::init4[]
     val x = Random.nextInt(-10, 10)
     val y: String =
+        // Check if x is 0
         if (x == 0) { // <1>
             "x is zero"
+            // Check if x is negative
         } else if (x < 0) { // <2>
             "is negative"
+            // Otherwise, x can only be positive
         } else { // <3>
             "x is positive"
         }
@@ -82,11 +89,14 @@ val listing36 = {
     //tag::init5[]
     val x = Random.nextInt(-10, 10)
     val y: String =
+        // No parameter supplied to when
         when { // <1>
+            // Logic branches replacing if/else statements
             x == 0 -> // <2>
                 "x is zero"
             x < 0 -> // <2>
                 "x is negative"
+            // Catch-all else statement
             else -> // <3>
                 "x is positive"
         }
@@ -98,6 +108,8 @@ val listing37 = {
     fun sum(xs: List<Int>): Int =
         when (xs) {
             is Nil -> 0
+            // After matching Cons, xs is smart-cast so head and
+            // tail become visible
             is Cons -> xs.head + sum(xs.tail) // <1>
         }
     //end::init6[]
