@@ -1,16 +1,18 @@
 package chapter6.sec1
 
-    //tag::init[]
-    // Method should return a random number from 1 to 6
-    fun rollDie(): Int { // <1>
-        val rng = kotlin.random.Random
-        // Generator returns a random number from 0 to 5
-        return rng.nextInt(6) // <2>
-    }
-    //end::init[]
+import kotlin.random.Random
+
+//tag::init[]
+// Method should return a random number from 1 to 6
+fun rollDie(): Int { // <1>
+    val rng = Random
+    // Generator returns a random number from 0 to 5
+    return rng.nextInt(6) // <2>
+}
+//end::init[]
 
 //tag::init2[]
-fun rollDie2(rng: kotlin.random.Random): Int = rng.nextInt(6)
+fun rollDie2(rng: Random): Int = rng.nextInt(6)
 //end::init2[]
 
 //tag::init3[]
