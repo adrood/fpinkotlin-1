@@ -25,6 +25,7 @@ dependencies {
     // need this at compile level for chapter 8
     compile("io.kotlintest:kotlintest-runner-junit5:3.3.2")
     kapt("io.arrow-kt:arrow-meta:$arrowVersion")
+    implementation(kotlin("script-runtime"))
 }
 
 repositories {
