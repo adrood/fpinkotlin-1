@@ -12,18 +12,30 @@ import chapter3.List
 import chapter5.Stream
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
+import utils.SOLUTION_HERE
 
-//tag::init[]
-fun <I> exists(f: (I) -> Boolean): Process<I, Boolean> = TODO()
-//end::init[]
+//tag::init1[]
+fun <I> exists(f: (I) -> Boolean): Process<I, Boolean> =
 
+    SOLUTION_HERE()
+//end::init1[]
+
+fun <I> existsAndHalt(f: (I) -> Boolean): Process<I, Boolean> = TODO()
+
+//TODO: Enable tests by removing `!` prefix
 class Exercise8 : WordSpec({
     "exists" should {
+        val stream = Stream.of(1, 3, 5, 6, 7)
+
         "!not halt and yield all intermediate results" {
-            val stream = Stream.of(1, 3, 5, 6, 7)
             val p = exists<Int> { i -> i % 2 == 0 }
             p(stream).toList() shouldBe
                 List.of(false, false, false, true, true)
+        }
+        "!halt and yield all intermediate results" {
+            val p = existsAndHalt<Int> { i -> i % 2 == 0 }
+            p(stream).toList() shouldBe
+                List.of(false, false, false, true)
         }
     }
 })

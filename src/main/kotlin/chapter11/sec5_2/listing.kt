@@ -1,20 +1,15 @@
 package chapter11.sec5_2
 
-import arrow.Kind
-import arrow.Kind2
 import arrow.core.extensions.list.foldable.foldLeft
 import arrow.higherkind
 import chapter11.sec2.Monad
 
 @higherkind
-//tag::init1[]
-data class State<S, out A>(val run: (S) -> Pair<A, S>) : StateOf<S, A>
-//end::init1[]
-{
+data class State<S, out A>(val run: (S) -> Pair<A, S>) : StateOf<S, A> {
 
     companion object {
         fun <S, A> unit(a: A): State<S, A> =
-            State { s: S -> Pair(a, s) }
+            State { s: S -> a to s }
     }
 
     fun <B> map(f: (A) -> B): State<S, B> =
@@ -27,9 +22,9 @@ data class State<S, out A>(val run: (S) -> Pair<A, S>) : StateOf<S, A>
         }
 
     //tag::init5[]
-    fun <S> getState(): State<S, S> = State { s -> Pair(s, s) }
+    fun <S> getState(): State<S, S> = State { s -> s to s }
 
-    fun <S> setState(s: S): State<S, Unit> = State { Pair(Unit, s) }
+    fun <S> setState(s: S): State<S, Unit> = State { Unit to s }
     //end::init5[]
 }
 
@@ -48,7 +43,7 @@ interface StateMonad<S> : Monad<StatePartialOf<S>> { // <1>
 //tag::init4[]
 val intStateMonad: StateMonad<Int> = object : StateMonad<Int> {
     override fun <A> unit(a: A): StateOf<Int, A> =
-        State { s -> Pair(a, s) }
+        State { s -> a to s }
 
     override fun <A, B> flatMap(
         fa: StateOf<Int, A>,
@@ -66,7 +61,7 @@ fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
         acc.fix().flatMap { xs ->
             acc.fix().getState<Int>().flatMap { n ->
                 acc.fix().setState(n + 1).map { _ ->
-                    listOf(Pair(n, a)) + xs
+                    listOf(n to a) + xs
                 }
             }
         }
@@ -81,7 +76,7 @@ fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
         val xs = acc.bind()
         val n = acc.getState().bind()
         acc.setState(n + 1).bind()
-        listOf(Pair(n, a)) + xs
+        listOf(n to a) + xs
     }
 }
 ...

@@ -10,7 +10,9 @@ class ForST private constructor() {
     companion object
 }
 
+//tag::typealias[]
 typealias STOf<S, A> = arrow.Kind2<ForST, S, A>
+//end::typealias[]
 
 typealias STPartialOf<S> = arrow.Kind<ForST, S>
 
@@ -25,7 +27,7 @@ abstract class ST<S, A> internal constructor() : STOf<S, A> { // <1>
             // Cache the value in case run is called more than once
             val memo by lazy(a) // <2>
             return object : ST<S, A>() {
-                override fun run(s: S) = Pair(memo, s)
+                override fun run(s: S) = memo to s
             }
         }
 
@@ -40,7 +42,7 @@ abstract class ST<S, A> internal constructor() : STOf<S, A> { // <1>
     fun <B> map(f: (A) -> B): ST<S, B> = object : ST<S, B>() {
         override fun run(s: S): Pair<B, S> {
             val (a, s1) = this@ST.run(s) // <3>
-            return Pair(f(a), s1)
+            return f(a) to s1
         }
     }
 
@@ -73,7 +75,7 @@ abstract class STRef<S, A> private constructor() {
     fun write(a: A): ST<S, Unit> = object : ST<S, Unit>() {
         override fun run(s: S): Pair<Unit, S> {
             cell = a
-            return Pair(Unit, s)
+            return Unit to s
         }
     }
 }
@@ -89,7 +91,7 @@ val p1 =
                         r2.write(x + 1).flatMap {
                             r1.read().flatMap { a ->
                                 r2.read().map { b ->
-                                    Pair(a, b)
+                                    a to b
                                 }
                             }
                         }
@@ -173,7 +175,9 @@ abstract class STArray<S, A> @PublishedApi internal constructor() { // <1>
         }
 
         //tag::init8[]
-        inline fun <S, reified A> fromList(xs: List<A>): ST<S, STArray<S, A>> =
+        inline fun <S, reified A> fromList(
+            xs: List<A>
+        ): ST<S, STArray<S, A>> =
             ST {
                 object : STArray<S, A>() {
                     override val value: Array<A> = xs.toTypedArray()
@@ -189,7 +193,7 @@ abstract class STArray<S, A> @PublishedApi internal constructor() { // <1>
     fun write(i: Int, a: A): ST<S, Unit> = object : ST<S, Unit>() { // <4>
         override fun run(s: S): Pair<Unit, S> {
             value[i] = a
-            return Pair(Unit, s)
+            return Unit to s
         }
     }
 

@@ -48,7 +48,7 @@ interface IO<A> : IOOf<A> {
     infix fun <B> product(io: IO<B>): IO<Pair<A, B>> =
         object : IO<Pair<A, B>> {
             override fun run(): Pair<A, B> =
-                Pair(this@IO.run(), io.run())
+                this@IO.run() to io.run()
         }
 }
 
@@ -116,5 +116,4 @@ interface IOMonad : Monad<ForIO> {
         f: () -> IOOf<A>
     ): IOOf<Boolean> =
         if (ok) f().fix().map { true } else unit(false)
-
 }

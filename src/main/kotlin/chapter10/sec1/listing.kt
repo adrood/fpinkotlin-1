@@ -28,4 +28,3 @@ fun <A> listMonoid(): Monoid<List<A>> = object : Monoid<List<A>> {
     override val nil: List<A> = emptyList()
 }
 //end::init3[]
-

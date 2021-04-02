@@ -6,21 +6,24 @@ import arrow.core.lastOrNone
 import chapter9.solutions.final.Location
 
 //tag::init[]
-data class ParseError(val stack: List<Pair<Location, String>> = emptyList()) {
+data class ParseError(
+    val stack: List<Pair<Location, String>> = emptyList()
+) {
 
     fun push(loc: Location, msg: String): ParseError =
-        this.copy(stack = listOf(Pair(loc, msg)) + stack)
+        this.copy(stack = listOf(loc to msg) + stack)
 
     fun label(s: String): ParseError =
         ParseError(latestLoc()
-            .map { Pair(it, s) }
+            .map { it to s }
             .toList())
 
-    private fun latest(): Option<Pair<Location, String>> = stack.lastOrNone()
+    private fun latest(): Option<Pair<Location, String>> =
+        stack.lastOrNone()
 
     private fun latestLoc(): Option<Location> = latest().map { it.first }
 
-    /**
+    /*
      * Display collapsed error stack - any adjacent stack elements with the
      * same location are combined on one line. For the bottommost error, we
      * display the full line, with a caret pointing to the column of the

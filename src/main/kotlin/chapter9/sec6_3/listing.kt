@@ -14,7 +14,7 @@ infix fun <T> T.cons(la: List<T>): List<T> = listOf(this) + la
 // Listing 9.13
 // Extension function to push an error onto the ParseError stack head
 fun ParseError.push(loc: Location, msg: String): ParseError =
-    this.copy(stack = Pair(loc, msg) cons this.stack)
+    this.copy(stack = (loc to msg) cons this.stack)
 //end::init1[]
 
 //tag::init2[]
@@ -57,6 +57,7 @@ fun ParseError.tag(msg: String): ParseError {
     // Use its location of present
     val latestLocation = latest.map { it.first } // <2>
 
+    return ParseError(latestLocation.map { it to msg }.toList()) // <3>
     // Assemble a new ParseError with only this location and
     // the tag message
     return ParseError(latestLocation.map { Pair(it, msg) }.toList()) // <3>

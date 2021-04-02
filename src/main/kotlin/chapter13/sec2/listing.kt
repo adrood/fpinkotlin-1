@@ -51,8 +51,7 @@ object Listing12B {
         fun run(): Unit
 
         fun assoc(io: IO): IO = object : IO {
-            override fun run(): Unit {
-                // The this@IO.run() invokes run on the current IO object.
+            override fun run() {
                 this@IO.run() // <1>
                 // The io.run() invokes run on the IO thas was passed
                 // in as io
@@ -67,7 +66,7 @@ object Listing12C {
     //tag::init3[]
     fun fahrenheitToCelsius(f: Double): Double = (f - 32) * 5.0 / 9.0
 
-    fun converter(): Unit {
+    fun converter() {
         println("Enter a temperature in Degrees Fahrenheit:")
         val d = readLine().orEmpty().toDouble()
         println(fahrenheitToCelsius(d))
@@ -117,7 +116,7 @@ object Listing12E {
         infix fun <B> assoc(io: IO<B>): IO<Pair<A, B>> =
             object : IO<Pair<A, B>> {
                 override fun run(): Pair<A, B> =
-                    Pair(this@IO.run(), io.run())
+                    this@IO.run() to io.run()
             }
     }
     //end::init5[]

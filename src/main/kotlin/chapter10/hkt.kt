@@ -27,10 +27,7 @@ class ForList private constructor() {
 typealias ListOf<A> = Kind<ForList, A>
 //end::init3[]
 
-//tag::init4[]
-sealed class List<out A> : ListOf<A>
-//end::init4[]
-{
+sealed class List<out A> : ListOf<A> {
     companion object {
 
         fun <A> of(vararg aa: A): List<A> {
@@ -156,7 +153,7 @@ typealias StatePartialOf<S> = Kind<ForState, S>
 interface StateMonad<S> : Monad<StatePartialOf<S>> { // <1>
 
     override fun <A> unit(a: A): StateOf<S, A> = // <2>
-        State { s -> Pair(a, s) }
+        State { s -> a to s }
 
     override fun <A, B> flatMap(
         fa: StateOf<S, A>, // <2>

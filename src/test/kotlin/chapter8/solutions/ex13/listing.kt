@@ -1,10 +1,10 @@
 package chapter8.solutions.ex13
 
 import arrow.core.extensions.list.foldable.exists
-import chapter8.sec3.listing3.Gen
-import chapter8.sec3.listing3.Prop
-import chapter8.sec3.listing3.SGen
-import chapter8.sec4.listing1.run
+import chapter8.Gen
+import chapter8.Prop
+import chapter8.SGen
+import chapter8.sec4_1.run
 import kotlin.math.max
 
 fun main() {
@@ -16,12 +16,12 @@ fun main() {
     val smallInt = Gen.choose(-10, 10)
 
     //tag::init2[]
-    val maxProp =
+    fun maxProp() =
         Prop.forAll(nonEmptyListOf(smallInt)) { ns: List<Int> ->
             val mx = ns.max()
                 ?: throw IllegalStateException("max on empty list")
             !ns.exists { it > mx }
         }
     //end::init2[]
-    run(maxProp)
+    run(maxProp())
 }

@@ -8,6 +8,7 @@ import chapter12.Product
 import chapter12.ProductOf
 import chapter12.ProductPartialOf
 import chapter12.fix
+import utils.SOLUTION_HERE
 
 infix fun <F, G> Applicative<F>.product(
     ag: Applicative<G>
@@ -20,15 +21,12 @@ infix fun <F, G> Applicative<F>.product(
             val (fab, gab) = fgab.fix().value
             val (fa, ga) = fga.fix().value
             return Product(
-                Pair(
-                    this@product.apply(fab, fa),
-                    ag.apply(gab, ga)
-                )
+                this@product.apply(fab, fa) to ag.apply(gab, ga)
             )
         }
 
         override fun <A> unit(a: A): ProductOf<F, G, A> =
-            Product(Pair(this@product.unit(a), ag.unit(a)))
+            Product(this@product.unit(a) to ag.unit(a))
     }
 
 interface Traversable<F> : Functor<F>, Foldable<F> {
@@ -53,6 +51,8 @@ interface Traversable<F> : Functor<F>, Foldable<F> {
         AH: Applicative<H>,
         f: (A) -> Kind<G, B>,
         g: (A) -> Kind<H, B>
-    ): Pair<Kind<G, Kind<F, B>>, Kind<H, Kind<F, B>>> = TODO()
+    ): Pair<Kind<G, Kind<F, B>>, Kind<H, Kind<F, B>>> =
+
+        SOLUTION_HERE()
     //end::init[]
 }

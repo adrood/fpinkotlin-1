@@ -13,6 +13,7 @@ import chapter12.ListOf
 import chapter12.fix
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
+import utils.SOLUTION_HERE
 
 interface Applicative<F> : Functor<F> {
 
@@ -42,17 +43,24 @@ interface Applicative<F> : Functor<F> {
         )
 
     //tag::init1[]
-    fun <A> sequence(lfa: List<Kind<F, A>>): Kind<F, List<A>> = TODO()
+    fun <A> sequence(lfa: List<Kind<F, A>>): Kind<F, List<A>> =
 
-    fun <A> replicateM(n: Int, ma: Kind<F, A>): Kind<F, List<A>> = TODO()
+        SOLUTION_HERE()
+
+    fun <A> replicateM(n: Int, ma: Kind<F, A>): Kind<F, List<A>> =
+
+        SOLUTION_HERE()
 
     fun <A, B> product(
         ma: Kind<F, A>,
         mb: Kind<F, B>
-    ): Kind<F, Pair<A, B>> = TODO()
+    ): Kind<F, Pair<A, B>> =
+
+        SOLUTION_HERE()
     //end::init1[]
 }
 
+//TODO: Enable tests by removing `!` prefix
 class Exercise1 : WordSpec({
     "product" should {
         "!return all product permutations of lists" {
@@ -75,10 +83,10 @@ class Exercise1 : WordSpec({
                 List.of(1, 2, 3, 4),
                 List.of("5", "6", "7", "8")
             ).fix() shouldBe List.of(
-                Pair(1, "5"), Pair(1, "6"), Pair(1, "7"), Pair(1, "8"),
-                Pair(2, "5"), Pair(2, "6"), Pair(2, "7"), Pair(2, "8"),
-                Pair(3, "5"), Pair(3, "6"), Pair(3, "7"), Pair(3, "8"),
-                Pair(4, "5"), Pair(4, "6"), Pair(4, "7"), Pair(4, "8")
+                1 to "5", 1 to "6", 1 to "7", 1 to "8",
+                2 to "5", 2 to "6", 2 to "7", 2 to "8",
+                3 to "5", 3 to "6", 3 to "7", 3 to "8",
+                4 to "5", 4 to "6", 4 to "7", 4 to "8"
             )
         }
 
@@ -102,7 +110,7 @@ class Exercise1 : WordSpec({
             AF.product(None, Some("1")).fix() shouldBe None
             AF.product(Some(1), None).fix() shouldBe None
             AF.product(Some(1), Some("1")).fix() shouldBe
-                Some(Pair(1, "1"))
+                Some(1 to "1")
         }
     }
 })

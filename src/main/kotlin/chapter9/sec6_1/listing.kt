@@ -29,6 +29,6 @@ object MyParser : Parsers {
     //tag::init3[]
     // Extension that converts Location to a ParseErrror
     private fun Location.toError(msg: String) = // <2>
-        ParseError(listOf(Pair(this, msg)))
+        ParseError(listOf(this to msg))
     //end::init3[]
 }

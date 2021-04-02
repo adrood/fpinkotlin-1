@@ -20,6 +20,7 @@ import chapter12.sec7_2.stateMonad
 import chapter12.sec7_2.stateMonadApplicative
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
+import utils.SOLUTION_HERE
 
 val idApplicative: Applicative<ForId> =
     object : Applicative<ForId> {
@@ -85,11 +86,13 @@ interface Traversable<F> : Functor<F>, Foldable<F> {
 
     fun <A> toList(ta: Kind<F, A>): List<A> =
         mapAccum(ta, emptyList()) { a: A, la: List<A> ->
-            Pair(Unit, listOf(a) + la)
+            Unit to (listOf(a) + la)
         }.second.reversed()
 
     //tag::init[]
-    fun <A> reverse(ta: Kind<F, A>): Kind<F, A> = TODO()
+    fun <A> reverse(ta: Kind<F, A>): Kind<F, A> =
+
+        SOLUTION_HERE()
     //end::init[]
 }
 
@@ -104,6 +107,7 @@ val T = object : Traversable<ForListK> {
         }
 }
 
+//TODO: Enable tests by removing `!` prefix
 class Exercise15 : WordSpec({
 
     val x = listOf(1, 2, 3, 4, 5).k()

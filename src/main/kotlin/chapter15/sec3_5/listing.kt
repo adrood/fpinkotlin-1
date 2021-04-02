@@ -44,7 +44,12 @@ fun fileW(file: String, append: Boolean = false): Sink<ForIO, String> =
     resource(
         acquire = IO { FileWriter(file, append) }, // <1>
         use = { fw: FileWriter ->
-            constant { s: String -> eval(IO { fw.write(s) }) } // <2>
+            constant { s: String ->
+                eval(IO {
+                    fw.write(s)
+                    fw.flush()
+                })
+            } // <2>
         },
         release = { fw: FileWriter ->
             evalDrain(IO { fw.close() }) // <3>
@@ -115,12 +120,12 @@ fun <I> intersperse(sep: I): Process1<I, I> =
     })
 
 //tag::init4[]
-val converter: Process<ForIO, Unit> =
-    lines("fahrenheit.txt")
+fun converter(inputFile: String, outputFile: String): Process<ForIO, Unit> =
+    lines(inputFile)
         .filter { !it.startsWith("#") }
         .map { line -> fahrenheitToCelsius(line.toDouble()).toString() }
         .pipe(intersperse("\n"))
-        .to(fileW("celsius.txt"))
+        .to(fileW(outputFile))
         .drain()
 //end::init4[]
 
@@ -162,5 +167,7 @@ fun <O> runLog(src: Process<ForIO, O>): IO<Sequence<O>> = IO {
 }
 
 fun main() {
-    runLog(converter).run()
+    val fahrenheitFilename = "src/main/resources/fahrenheit.txt"
+    val celsiusFilename = "build/celsius.txt"
+    runLog(converter(fahrenheitFilename, celsiusFilename)).run()
 }
