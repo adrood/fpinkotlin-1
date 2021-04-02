@@ -1,4 +1,4 @@
-package chapter3.exercises
+package chapter3.exercises.ex9
 
 import chapter3.List
 import io.kotlintest.shouldBe

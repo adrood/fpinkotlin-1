@@ -1,4 +1,4 @@
-package chapter4.exercises
+package chapter4.exercises.ex6
 
 import chapter4.Either
 import chapter4.Left

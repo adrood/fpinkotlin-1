@@ -1,4 +1,4 @@
-package chapter3.exercises
+package chapter3.exercises.ex11
 
 import chapter3.List
 import io.kotlintest.shouldBe
@@ -12,7 +12,7 @@ fun <A> reverse(xs: List<A>): List<A> =
 // end::init[]
 
 //TODO: Enable tests by removing `!` prefix
-class Exercise_3_11 : WordSpec({
+class Exercise11 : WordSpec({
     "list reverse" should {
         "!reverse list elements" {
             reverse(List.of(1, 2, 3, 4, 5)) shouldBe

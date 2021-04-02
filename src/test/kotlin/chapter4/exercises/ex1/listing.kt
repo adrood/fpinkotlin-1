@@ -1,4 +1,4 @@
-package chapter4.exercises
+package chapter4.exercises.ex1
 
 import chapter4.None
 import chapter4.Option

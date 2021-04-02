@@ -1,4 +1,4 @@
-package chapter3.exercises
+package chapter3.exercises.ex4
 
 import chapter3.List
 import chapter3.Nil
@@ -13,7 +13,7 @@ tailrec fun <A> dropWhile(l: List<A>, f: (A) -> Boolean): List<A> =
 // end::init[]
 
 //TODO: Enable tests by removing `!` prefix
-class Exercise_3_4 : WordSpec({
+class Exercise4 : WordSpec({
 
     "list dropWhile" should {
         "!drop elements until predicate is no longer satisfied" {

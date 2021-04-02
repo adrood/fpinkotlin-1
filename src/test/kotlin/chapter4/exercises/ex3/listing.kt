@@ -1,4 +1,4 @@
-package chapter4.exercises
+package chapter4.exercises.ex3
 
 import chapter4.None
 import chapter4.Option
@@ -14,7 +14,7 @@ fun <A, B, C> map2(oa: Option<A>, ob: Option<B>, f: (A, B) -> C): Option<C> =
 //end::init[]
 
 //TODO: Enable tests by removing `!` prefix
-class Exercise_4_3 : WordSpec({
+class Exercise3 : WordSpec({
 
     "map2" should {
 

@@ -1,4 +1,4 @@
-package chapter3.exercises
+package chapter3.exercises.ex8
 
 import chapter3.List
 import chapter3.Nil
@@ -13,8 +13,8 @@ fun <A> length(xs: List<A>): Int =
 // end::init[]
 
 //TODO: Enable tests by removing `!` prefix
-class Exercise_3_8 : WordSpec({
-    "list length (using foldRight)" should {
+class Exercise8 : WordSpec({
+    "list length" should {
         "!calculate the length" {
             length(List.of(1, 2, 3, 4, 5)) shouldBe 5
         }
