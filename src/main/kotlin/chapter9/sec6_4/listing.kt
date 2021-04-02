@@ -16,6 +16,8 @@ data class Failure(
 //end::init1[]
 
 //tag::init2[]
+// Listing 9.18
+// An implementation of attempt that cancels commitment of any failures
 fun <A> attempt(p: Parser<A>): Parser<A> = { s -> p(s).uncommit() }
 
 fun <A> Result<A>.uncommit(): Result<A> =
@@ -29,12 +31,17 @@ fun <A> Result<A>.uncommit(): Result<A> =
 //end::init2[]
 
 //tag::init3[]
+// Listing 9.19. An implementation of or that honors committed state
 fun <A> or(pa: Parser<A>, pb: () -> Parser<A>): Parser<A> =
     { state ->
         when (val r: Result<A> = pa(state)) {
             is Failure ->
+                // An uncommitted failure will invoke lazy pb and run
+                // it with original state passed to or
                 if (!r.isCommitted) pb()(state) // <1>
+                // A committed failure will pass through
                 else r // <2>
+            // Success will pass through
             is Success -> r // <3>
         }
     }
