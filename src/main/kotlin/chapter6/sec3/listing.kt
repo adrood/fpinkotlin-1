@@ -32,7 +32,10 @@ fun randomPair(rng: RNG): Pair<Int, Int> {
 //tag::init4[]
 fun randomPair2(rng: RNG): Pair<Pair<Int, Int>, RNG> {
     val (i1, rng2) = rng.nextInt()
+    // Use rng2 instead of rng here
     val (i2, rng3) = rng2.nextInt() //<1>
+    // Return final state rng3 after generating random numbers, allows
+    // caller to continue generating random values.
     return (i1 to i2) to rng3 // <2>
 }
 //end::init4[]

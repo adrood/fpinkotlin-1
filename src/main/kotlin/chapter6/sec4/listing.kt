@@ -13,10 +13,14 @@ val intR: Rand<Int> = { rng -> rng.nextInt() }
 //end::init2[]
 
 //tag::init3[]
+// Listing 6.8.
+// The unit combinator passes state while setting a constant
 fun <A> unit(a: A): Rand<A> = { rng -> a to rng }
 //end::init3[]
 
 //tag::init4[]
+// Listing 6.9.
+// The map combinator modifies output without modifying the state
 fun <A, B> map(s: Rand<A>, f: (A) -> B): Rand<B> =
     { rng ->
         val (a, rng2) = s(rng)
