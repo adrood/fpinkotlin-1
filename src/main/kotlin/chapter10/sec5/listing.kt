@@ -11,8 +11,10 @@ val listing = {
 }
 
 //tag::init1[]
+// The interface declares type F that represents any container
 interface Foldable<F> { // <1>
 
+    // The Kind <F,A> represents  the kind of F<A>
     fun <A, B> foldRight(fa: Kind<F, A>, z: B, f: (A, B) -> B): B // <2>
 
     fun <A, B> foldLeft(fa: Kind<F, A>, z: B, f: (B, A) -> B): B
