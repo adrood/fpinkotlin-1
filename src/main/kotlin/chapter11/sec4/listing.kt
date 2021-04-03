@@ -7,12 +7,19 @@ import arrow.core.Some
 import chapter11.Gen
 
 //tag::init1[]
+
+// Listing 11.9.
+// Declaration for an Item and Order text fixture
+
 data class Order(val item: Item, val quantity: Int)
 data class Item(val name: String, val price: Double)
 
 val genOrder: Gen<Order> =
+    // Generate a random string name
     Gen.string().flatMap { name: String -> // <1>
+        // Generate a double price between 0 and 10
         Gen.double(0..10).flatMap { price: Double -> // <2>
+            // Generate an integer quantity between 1 and 100
             Gen.choose(1, 100).map { quantity: Int -> // <3>
                 Order(Item(name, price), quantity)
             }
@@ -55,6 +62,9 @@ val listing1 = {
     val g: (Int) -> Gen<Int> = { i -> Gen.unit(i) }
 
     //tag::init5[]
+
+    // Listing 11.10.
+    // Expressing the law of associativity in terms of flatMap
     x.flatMap(f).flatMap(g) ==
         x.flatMap { a -> f(a).flatMap(g) }
     //end::init5[]
@@ -82,13 +92,22 @@ val listing4 = {
     val x = Some(v)
 
     //tag::init8[]
+
+    // Listing 11.11.
+    // Verifying the associative law by substitution of x by Some(v)
+
+    // Original law of associativity for flatMap
     x.flatMap(f).flatMap(g) == x.flatMap { a -> f(a).flatMap(g) } // <1>
 
+    // Substitute x with Some(v) on both sides
     Some(v).flatMap(f).flatMap(g) ==
         Some(v).flatMap { a -> f(a).flatMap(g) } // <2>
 
+    // Collapse Some(v).flatMap on both sides by applying f to v
+    // directly
     f(v).flatMap(g) == { a: Int -> f(a).flatMap(g) }(v) // <3>
 
+    // Apply v to g directly on the right side, proving equality
     f(v).flatMap(g) == f(v).flatMap(g) // <4>
     //end::init8[]
 }
@@ -118,53 +137,74 @@ interface Listing<F, A> : Monad<F> {
 
     fun listing() {
         //tag::init10[]
+        // Listing 11.12.
+        // Expressing the law of associativity in terms of compose
         compose(compose(f, g), h) == compose(f, compose(g, h))
         //end::init10[]
+
+        // Listing 11.13.
+        // Apply the substitution model to left side of associative
+        // law in terms of compose
 
         //left side
         val left1 =
             //tag::init11[]
+            // Left side of law of associativity expressed in
+            // terms of compose
             compose(compose(f, g), h) // <1>
         //end::init11[]
 
         val left2: (A) -> Kind<F, A> =
             //tag::init12[]
+            // Substitute outer compose with flatMap, propagating a
             { a -> flatMap(compose(f, g)(a), h) } // <2>
         //end::init12[]
 
         val left3: (A) -> Kind<F, A> =
             //tag::init13[]
+            // Substitute inner compose with flatMap, propagating b
             { a -> flatMap({ b: A -> flatMap(f(b), g) }(a), h) } // <3>
         //end::init13[]
 
         val left4: (A) -> Kind<F, A> =
             //tag::init14[]
+            // Apply a through b to f
             { a -> flatMap(flatMap(f(a), g), h) } // <4>
         //end::init14[]
 
         val left5 =
             //tag::init15[]
+            // Simplify by introducing alias x for any f with a applied
             flatMap(flatMap(x, g), h) // <5>
         //end::init15[]
+
+        // Listing 11.14.
+        // Apply substitution model to right side of associative law in
+        // terms of compose
 
         //right side
         val right1 =
             //tag::init16[]
+            // Right side of law of associativity expressed in
+            // terms of compose.
             compose(f, compose(g, h)) // <1>
         //end::init16[]
 
         val right2: (A) -> Kind<F, A> =
             //tag::init17[]
+            // Substitute outer compose with flatMap, propagating a
             { a -> flatMap(f(a), compose(g, h)) } // <2>
         //end::init17[]
 
         val right3: (A) -> Kind<F, A> =
             //tag::init18[]
+            // Substitute inner compose with flatMap, propagating b
             { a -> flatMap(f(a)) { b -> flatMap(g(b), h) } } // <3>
         //end::init18[]
 
         val right4: Kind<F, A> =
             //tag::init19[]
+            // Simplify by introducing alias x for any f with a applied
             flatMap(x) { b -> flatMap(g(b), h) } // <4>
         //end::init19[]
 
