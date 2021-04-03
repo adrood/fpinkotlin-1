@@ -30,6 +30,8 @@ fun randomPair(rng: RNG): Pair<Int, Int> {
 //end::init3[]
 
 //tag::init4[]
+// Listing 6.6.
+// Using different RNG instances to generate subsequent random numbers.
 fun randomPair2(rng: RNG): Pair<Pair<Int, Int>, RNG> {
     val (i1, rng2) = rng.nextInt()
     // Use rng2 instead of rng here
