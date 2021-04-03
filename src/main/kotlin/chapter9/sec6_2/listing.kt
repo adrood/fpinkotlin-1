@@ -4,7 +4,7 @@ import chapter9.sec5_1.Listing.Location
 import chapter9.sec5_2.ParseError
 
 //tag::init1[]
-// The function definitionof Parser now returns a Result<A>
+// The function definition of Parser now returns a Result<A>
 typealias Parser<A> = (Location) -> Result<A> // <1>
 
 sealed class Result<out A>
