@@ -4,6 +4,8 @@ import arrow.core.extensions.set.foldable.foldLeft
 import chapter10.sec1.Monoid
 
 //tag::init1[]
+// Listing 10.3.
+// A monoid that merges key-value maps through the use of another monoid
 fun <K, V> mapMergeMonoid(v: Monoid<V>): Monoid<Map<K, V>> =
     object : Monoid<Map<K, V>> {
         override fun combine(a1: Map<K, V>, a2: Map<K, V>): Map<K, V> =
