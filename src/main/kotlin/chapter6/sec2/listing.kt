@@ -20,6 +20,8 @@ data class SimpleRNG(val seed: Long) : RNG {
         // The value n is the new pseudo-random integer.
         // 'ushr' is a right binary shift with zero fill.
         val n = (newSeed ushr 16).toInt() // <3>
+        // The return value is a Pair<Int, RNG>, containing
+        // both a pseudo-random integer and the next RNG state.
         return n to nextRNG // <4>
     }
 }
