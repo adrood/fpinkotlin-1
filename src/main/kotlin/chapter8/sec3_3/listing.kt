@@ -62,6 +62,10 @@ data class SGen<A>(val forSize: (Int) -> Gen<A>) {
 }
 
 //tag::init[]
+
+// Listing 8.7.
+// Generating test cases up to a given maximum size
+
 typealias MaxSize = Int
 
 data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
