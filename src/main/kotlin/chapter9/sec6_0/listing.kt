@@ -5,6 +5,8 @@ interface Location
 //tag::init1[]
 interface Parser<A> // <1>
 
+// Listing 9.9.
+// Representing stacked errors using the ParseError data type
 data class ParseError(val stack: List<Pair<Location, String>>)
 
 abstract class Parsers<PE> { // <2>
