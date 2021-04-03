@@ -5,6 +5,9 @@ import chapter8.SuccessCount
 
 //tag::init[]
 // Sealed type of Result
+// Listing 8.3.
+// Model the possible results of a test run as an ADT
+// Sealed type of Result
 sealed class Result { // <1>
     abstract fun isFalsified(): Boolean
 }
