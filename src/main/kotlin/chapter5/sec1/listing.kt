@@ -33,11 +33,14 @@ val a = 10
 //tag::init4[]
 fun <A> lazyIf(
     cond: Boolean,
+
+    // The function parameter type for a lazy value type A is '() -> A'
     onTrue: () -> A, //<1>
     onFalse: () -> A
 ): A = if (cond) onTrue() else onFalse()
 
 val y = lazyIf((a < 22),
+    // The function literal syntax for creating a '() -> A'
     { println("a") }, // <2>
     { println("b") }
 )
@@ -58,10 +61,15 @@ fun maybeTwice2(b: Boolean, i: () -> Int) {
 fun expensiveOp(): Int = TODO()
 
 //tag::init7[]
+// The 'by' keyword is used to bind the Lazy<Int> returned by lazy to x
 val x: Int by lazy { expensiveOp() } // <1>
 
 fun useit() =
+    // When x is evaluated in the conditional statement, the call to
+    // expensiveOp will be made and the result cached
     if (x > 10) "hi" // <2>
+    // Cached value is used instead of making another call to
+    // expensiveOp
     else if (x == 0) "zero" // <3>
     else ("lo")
 //end::init7[]
