@@ -19,6 +19,8 @@ interface Monad<F> : Functor<F> {
         flatMap(fa) { a -> map(fb) { b -> f(a, b) } }
 
     //tag::init[]
+    // Listing 11.8.
+    // Generic implementation of product using the map2 combinator.
     fun <A, B> product(
         ma: Kind<F, A>,
         mb: Kind<F, B>
