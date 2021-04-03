@@ -3,9 +3,13 @@ package chapter10.sec4
 import chapter10.sec1.stringMonoid
 
 //tag::init1[]
+// Listing 10.2
+// ADT representation of partial results of a word count
 sealed class WC
 
+// A Stub is an accumulation of characters that form a partial word
 data class Stub(val chars: String) : WC() //<1>
+// A Part contains a left stub, a word count, and a right stub
 data class Part(val ls: String, val words: Int, val rs: String) : WC()//<2>
 //end::init1[]
 
