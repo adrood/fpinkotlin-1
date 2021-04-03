@@ -15,6 +15,7 @@ typealias Par<A> = (ExecutorService) -> Future<A>
 // the Pars object
 object Pars {
     fun <A> unit(a: A): Par<A> =
+        // unit represented as a function that returns a UnitFuture
         { es: ExecutorService -> UnitFuture(a) } // <1>
 
     data class UnitFuture<A>(val a: A) : Future<A> {
@@ -30,6 +31,8 @@ object Pars {
         override fun isCancelled(): Boolean = false
     }
 
+    // map2 only responsible for combinatorial logic, no implicit
+    // threading
     fun <A, B, C> map2(
         a: Par<A>,
         b: Par<B>,
@@ -38,9 +41,11 @@ object Pars {
         { es: ExecutorService ->
             val af: Future<A> = a(es)
             val bf: Future<B> = b(es)
+            // Timeouts are not respeced due to the calls to get()
             UnitFuture(f(af.get(), bf.get())) // <3>
         }
 
+    // fork is not truly running in parallel due to blocking call a()
     fun <A> fork(
         a: () -> Par<A>
     ): Par<A> = // <4>
