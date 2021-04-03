@@ -8,6 +8,9 @@ data class Id<A>(val a: A)
 //end::init1[]
 
 //tag::init2[]
+// Listing 11.15.
+// The State data type as previously established for representing
+// state transitions
 data class State<S, out A>(val run: (S) -> Pair<A, S>) : IntStateOf<A> {
 
     companion object {
@@ -39,7 +42,13 @@ typealias IntStateOf<A> = Kind<ForIntState, A>
 fun <A> IntStateOf<A>.fix() = this as IntState<A>
 
 //tag::init4[]
+
+// Listing 11.16.
+// A state monad instance partially applied for Int types
+
+// A surrogate type in substitution of Kind<Int,A> to appease the compiler
 val intState = object : Monad<ForIntState> { // <1>
+    // A type alias for Kind<ForIntState,A>
     override fun <A> unit(a: A): IntStateOf<A> = // <2>
         IntState { s: Int -> a to s }
 
