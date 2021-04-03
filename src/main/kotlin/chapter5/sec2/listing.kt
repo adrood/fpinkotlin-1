@@ -19,6 +19,7 @@ object Empty : Stream<Nothing>()
 fun <A> Stream<A>.headOption(): Option<A> =
     when (this) {
         is Empty -> None
+        // Explicit forcing of the head thunk using 'head()'
         is Cons -> Some(head()) // <1>
     }
 //end::init2[]
