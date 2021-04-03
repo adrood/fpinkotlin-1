@@ -18,6 +18,7 @@ val listing2 = {
     //tag::init2[]
     fun <A> choice(cond: Par<Boolean>, t: Par<A>, f: Par<A>): Par<A> =
         { es: ExecutorService ->
+            // Block on the predicate Par<Boolean> before proceeding
             when (run(es, cond).get()) { // <1>
                 true -> run(es, t)
                 false -> run(es, f)
