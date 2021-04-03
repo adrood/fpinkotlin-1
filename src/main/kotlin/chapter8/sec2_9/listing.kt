@@ -1,6 +1,9 @@
 package chapter8.sec2_9
 
 //tag::init[]
+// Listing 8.2.
+// Define Gen by wrapping a state transition over a random number
+// generator
 interface RNG {
     fun nextInt(): Pair<Int, RNG>
 }
