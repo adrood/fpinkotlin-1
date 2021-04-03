@@ -5,6 +5,8 @@ interface RNG {
 }
 
 //tag::init1[]
+// Listing 6.7.
+// Type alias representing a state transition
 typealias Rand<A> = (RNG) -> Pair<A, RNG>
 //end::init1[]
 
@@ -74,6 +76,8 @@ fun nonNegativeLessThan(n: Int): Rand<Int> =
  */
 
 //tag::init10[]
+// Listing 6.11.
+// Successive recursive retry passing derived state explicitly
 fun nonNegativeIntLessThan(n: Int): Rand<Int> =
     { rng ->
         val (i, rng2) = nonNegativeInt(rng)
