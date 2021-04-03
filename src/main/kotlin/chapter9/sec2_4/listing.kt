@@ -28,7 +28,10 @@ abstract class Listing : Parsers<ParseError> {
     //end::init1[]
 
     //tag::init2[]
+    // Listing 9.3. Implementation of many that relies on lazy
+    // evaluation
     fun <A> many(pa: Parser<A>): Parser<List<A>> =
+        // Second parameter to map2 becomes a thunk
         map2(pa, many(pa).defer()) { a, la -> // <1>
             a cons la
         } or succeed(emptyList())
