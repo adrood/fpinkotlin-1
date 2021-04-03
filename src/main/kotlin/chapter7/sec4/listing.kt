@@ -31,16 +31,23 @@ val step3 = {
     //end::init3[]
 }
 
+// Listing 7.9.
+// Using the substitution model to simplify both sides of an equation
 val step4 = {
     //tag::init4[]
+    //
     val x = 1
     val y = unit(x)
     val f = { a: Int -> a + 1 }
     val id = { a: Int -> a }
 
+    // initial law declared
     map(unit(x), f) == unit(f(x)) // <1>
+    // substitute x with identity function id
     map(unit(x), id) == unit(id(x)) // <2>
+    // simplify id(x) to x
     map(unit(x), id) == unit(x) // <3>
+    // substitute unit(x) with its equivalent y
     map(y, id) == y // <4>
     //end::init4[]
 }
