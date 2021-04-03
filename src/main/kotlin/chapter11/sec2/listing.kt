@@ -21,6 +21,10 @@ fun <A, B> flatMap(fa: Option<A>, f: (A) -> Option<B>): Option<B> = TODO()
 fun <A, B> map(fa: Option<A>, f: (A) -> B): Option<B> = TODO()
 
 //tag::init6[]
+
+// Listing 11.3.
+// Implementations of map2 for Gen, Parser and Option
+
 fun <A, B> map(fa: Gen<A>, f: (A) -> B): Gen<B> =
     flatMap(fa) { a -> unit(f(a)) }
 //end::init6[]
@@ -31,6 +35,8 @@ fun <A, B, C> map2(
     fb: Gen<B>,
     f: (A, B) -> C
 ): Gen<C> = //<1>
+    // Make a generator of a random C that runs random generators
+    // fa and fb, combining their results with the function f
     flatMap(fa) { a -> map(fb) { b -> f(a, b) } }
 //end::init1[]
 
@@ -40,6 +46,8 @@ fun <A, B, C> map2(
     fb: Parser<B>,
     f: (A, B) -> C
 ): Parser<C> = //<2>
+    // Make a parser that produces C by combining the results of
+    // parsers fa and fb with the function f
     flatMap(fa) { a -> map(fb) { b -> f(a, b) } }
 //end::init2[]
 
@@ -49,6 +57,8 @@ fun <A, B, C> map2(
     fb: Option<B>,
     f: (A, B) -> C
 ): Option<C> = //<3>
+    // Combines two Options with the function f if both have a value,
+    // otherwise returns None
     flatMap(fa) { a -> map(fb) { b -> f(a, b) } }
 //end::init3[]
 
@@ -56,6 +66,9 @@ fun <A, B, C> map2(
 // The Mon interface is parameterized with higher-kinded type of F
 interface Mon<F> { // <1>
     //tag::init5[]
+
+    // Listing 11.5.
+    // Introducing flatMap and map declarations to the Mon interface
 
     fun <A, B> map(fa: Kind<F, A>, f: (A) -> B): Kind<F, B>
 
@@ -75,12 +88,21 @@ interface Mon<F> { // <1>
 //end::init4[]
 
 //tag::init7[]
+
+// Listing 11.6.
+// Declaration of the Monad with primitives defined for flatMap and unit.
+
+// Monad provides a default implementation of map and can so
+// implement Functor
+
 interface Monad<F> : Functor<F> { // <1>
 
     fun <A> unit(a: A): Kind<F, A>
 
     fun <A, B> flatMap(fa: Kind<F, A>, f: (A) -> Kind<F, B>): Kind<F, B>
 
+    // The override of map in Functor needs to be made explicit
+    // for succesful compilation
     override fun <A, B> map(
         fa: Kind<F, A>,
         f: (A) -> B
@@ -97,16 +119,27 @@ interface Monad<F> : Functor<F> { // <1>
 //end::init7[]
 
 //tag::init8[]
+
+// Listing 11.7.
+// Declaring a Monad instance for Gen using concrete types
+
 object Monads {
 
+    // The type ForGen is a surrogate type we provide to get around
+    // Kotlin's limitations in expressing higher-kinded types
     val genMonad = object : Monad<ForGen> { // <1>
 
+        // The type alias GenOf<A> is syntactic sugar for
+        // Kind<ForGen, A>
         override fun <A> unit(a: A): GenOf<A> = Gen.unit(a) // <2>
 
         override fun <A, B> flatMap(
             fa: GenOf<A>,
             f: (A) -> GenOf<B>
         ): GenOf<B> =
+            // Down-cast all GenOf<A> to Gen<A> using provided
+            // extension method fix() for compatibility
+            // with Gen.flatMap
             fa.fix().flatMap { a: A -> f(a).fix() } // <3>
     }
 }

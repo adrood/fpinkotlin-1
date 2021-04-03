@@ -34,6 +34,8 @@ fun <A, B> map(ga: Parser<A>, f: (A) -> B): Parser<B>
 fun <A, B> map(pa: Par<A>, f: (A) -> B): Par<B> = TODO()
 
 //tag::init4[]
+// Listing 11.1.
+// The functor interface for kind of F defines map functionality
 interface Functor<F> {
     //tag::map[]
     fun <A, B> map(fa: Kind<F, A>, f: (A) -> B): Kind<F, B>
@@ -70,6 +72,9 @@ val listFunctor = object : Functor<ForList> {
 val listing = {
     val x = Pars.unit("a")
     //tag::init6[]
+    // Listing 11.2.
+    // The functor law showing the relation between map and
+    // identity function
     map(x) { a -> a } == x
     //end::init6[]
 }
