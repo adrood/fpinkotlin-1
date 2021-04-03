@@ -8,12 +8,22 @@ interface Parsers<PE>
 
 abstract class ParsersImpl<PE> : Parsers<PE>
 //tag::init1[]
+
+// Listing 9.4.
+// Top level constructs to be developed for JSON parsing
+
+// Give access to algebra implementations
 object JSONParser : ParsersImpl<ParseError>() { // <1>
+    // top level declaration for Parser<JSON>, with JSON to
+    // be defined shortly
     val jsonParser: Parser<JSON> = TODO() // <2>
 }
 //end::init1[]
 
 //tag::init2[]
+
+// Listing 9.6
+// A data type representing a JSON object to be used for parsing
 sealed class JSON {
     object JNull : JSON()
     data class JNumber(val get: Double) : JSON()
