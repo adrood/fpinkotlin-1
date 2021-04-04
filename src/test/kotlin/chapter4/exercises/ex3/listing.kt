@@ -8,7 +8,11 @@ import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
 
 //tag::init[]
-fun <A, B, C> map2(oa: Option<A>, ob: Option<B>, f: (A, B) -> C): Option<C> =
+fun <A, B, C> map2(
+    oa: Option<A>,
+    ob: Option<B>,
+    f: (A, B) -> C
+): Option<C> =
 
     SOLUTION_HERE()
 //end::init[]
