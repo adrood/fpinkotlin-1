@@ -12,13 +12,13 @@ fun <A, B> Option<A>.map(f: (A) -> B): Option<B> =
 
     SOLUTION_HERE() // <1>
 
-fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> =
-
-    SOLUTION_HERE()// <2>
-
 fun <A> Option<A>.getOrElse(default: () -> A): A =
 
-    SOLUTION_HERE() // <3>
+    SOLUTION_HERE() // <2>
+
+fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> =
+
+    SOLUTION_HERE()// <3>
 
 fun <A> Option<A>.orElse(ob: () -> Option<A>): Option<A> =
 
