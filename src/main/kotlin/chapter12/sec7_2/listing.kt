@@ -22,6 +22,10 @@ interface Applicative<F> : Functor<F> {
 }
 
 //tag::init1[]
+
+// Listing 12.16.
+// A monad for a partially applied state
+
 typealias StateMonad<S> = Monad<StatePartialOf<S>>
 
 fun <S> stateMonad() = object : StateMonad<S> {
@@ -44,10 +48,16 @@ fun <S> stateMonad() = object : StateMonad<S> {
 //end::init1[]
 
 //tag::init2[]
+
+// Listing 12.17.
+// An applicative that cloaks the state monad for use in a traverse
+// function.
+
 fun <S> stateMonadApplicative(m: StateMonad<S>) =
     object : Applicative<StatePartialOf<S>> {
 
         override fun <A> unit(a: A): Kind<StatePartialOf<S>, A> =
+            // Delegate the applicative unit call to monad m
             m.unit(a) // <1>
 
         override fun <A, B, C> map2(
@@ -55,12 +65,14 @@ fun <S> stateMonadApplicative(m: StateMonad<S>) =
             fb: Kind<StatePartialOf<S>, B>,
             f: (A, B) -> C
         ): Kind<StatePartialOf<S>, C> =
+            // Delegate the applicative map2 call to monad m
             m.map2(fa, fb, f) // <2>
 
         override fun <A, B> map(
             fa: Kind<StatePartialOf<S>, A>,
             f: (A) -> B
         ): Kind<StatePartialOf<S>, B> =
+            // Delegate the functor map call to monad m
             m.map(fa, f) // <3>
     }
 //end::init2[]
@@ -85,24 +97,40 @@ interface Traversable<F> : Functor<F>, Foldable<F> {
     //end::init3[]
 
     //tag::init4[]
+
+    // Listing 12.18.
+    // Zip a list with its index using a state action
+
     fun <A> zipWithIndex(ta: Kind<F, A>): Kind<F, Pair<A, Int>> =
         traverseS(ta) { a: A ->
+            // Get the current state, a counter
             State.get<Int>().flatMap { s: Int -> // <1>
+                // Set the current state as the incremented counter value
                 State.set(s + 1).map { _ -> // <2>
                     a to s
                 }
             }
+            // Run the state action starting with index 0
         }.run(0).first // <3>
     //end::init4[]
 
     //tag::init5[]
+
+    // Listing 12.19.
+    // Convert any traversable to a list using a state action
+
     fun <A> toList(ta: Kind<F, A>): List<A> =
         traverseS(ta) { a: A ->
+            // Get the current state, an accumulated list
             State.get<List<A>>().flatMap { la -> // <1>
+                // Add the current element as the new head of the
+                // Cons and set as new state
                 State.set<List<A>>(Cons(a, la)).map { _ -> // <2>
                     Unit
                 }
             }
+            // Run the state action starting with Nil, then
+            // reverse the list
         }.run(Nil).second.reverse() // <3>
     //end::init5[]
 }
@@ -115,6 +143,10 @@ interface Traversable2<F> : Functor<F>, Foldable<F> {
     ): State<S, Kind<F, B>> = TODO()
 
     //tag::init6[]
+
+    // Listing 12.20.
+    // Generalise a state traversal in the mapAccum function
+
     fun <S, A, B> mapAccum(
         fa: Kind<F, A>,
         s: S,

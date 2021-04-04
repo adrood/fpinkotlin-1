@@ -32,6 +32,10 @@ interface Traverse<F> : Functor<F>, Foldable<F> {
     //end::init0[]
 
     //tag::init1[]
+
+    // Listing 12.21.
+    // Flexible implementation of zip drawing on traversable functionality
+
     fun <A, B> zipL(
         ta: Kind<F, A>,
         tb: Kind<F, B>

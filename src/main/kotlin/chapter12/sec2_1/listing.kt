@@ -6,6 +6,11 @@ import chapter12.Functor
 import chapter12.List
 
 //tag::init1[]
+
+// Listing 12.1.
+// The Applicative interface is defined by having map2 and unit as
+// primitives
+
 interface Applicative<F> : Functor<F> {
 
     fun <A, B, C> map2(

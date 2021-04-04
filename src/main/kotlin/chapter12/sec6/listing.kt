@@ -18,10 +18,13 @@ interface Applicative<F> : Functor<F> {
 }
 
 //tag::init3[]
+// The Traversable interface is a Functor
 interface Traversable<F> : Functor<F> { // <1>
 
     fun <G, A, B> traverse(
         fa: Kind<F, A>,
+        // Inject an Applicative<G> instance, to be used during
+        // implementation of traversable instances
         AG: Applicative<G>, // <2>
         f: (A) -> Kind<G, B>
     ): Kind<G, Kind<F, B>> =
@@ -30,6 +33,7 @@ interface Traversable<F> : Functor<F> { // <1>
     fun <G, A> sequence(
         fga: Kind<F, Kind<G, A>>,
         AG: Applicative<G> // <2>
+    // Flips a Kind<F,Kind<G,A>> into a Kind<G, Kind<F, A>>
     ): Kind<G, Kind<F, A>> = // <3>
         traverse(fga, AG) { it }
 }

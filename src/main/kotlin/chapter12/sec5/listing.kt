@@ -18,6 +18,10 @@ interface Listing<F, A> : Applicative<F> {
 
     fun listing() {
         //tag::init1[]
+
+        // Listing 12.10.
+        // The Applicative is a functor so functor law apply
+
         map(v, id) == v
 
         map(map(v, g), f) == map(v, (f compose g))
@@ -38,6 +42,11 @@ interface Listing<F, A> : Applicative<F> {
 
     fun listing2() {
         //tag::init4[]
+
+        // Listing 12.11.
+        // Left and right identity laws for Applicative expressed
+        // in terms of map2
+
         map2(unit(Unit), fa) { _, a -> a }
 
         map2(fa, unit(Unit)) { a, _ -> a }
@@ -64,6 +73,10 @@ interface Listing<F, A> : Applicative<F> {
         //end::init9[]
 
         //tag::init14[]
+
+        // Listing 12.12.
+        // The law of associativity expressed in terms of the applicative
+
         product(product(fa, fb), fc) == product(fa, product(fb, fc))
         //end::init14[]
     }

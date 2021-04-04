@@ -29,6 +29,12 @@ interface Applicative<F> : Functor<F> {
 }
 
 //tag::init1[]
+
+
+// Listing 12.2.
+// Monad as a subtype of Applicative shows that monads are applicative
+// functors
+
 interface Monad<F> : Applicative<F> {
 
     fun <A, B> flatMap(fa: Kind<F, A>, f: (A) -> Kind<F, B>): Kind<F, B> =

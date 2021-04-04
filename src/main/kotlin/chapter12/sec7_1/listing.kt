@@ -50,11 +50,21 @@ interface Applicative<F> : Functor<F> {
 }
 
 //tag::init6[]
+
+// Listing 12.13
+// A shim can be used to bridge the inability to generalize a type
+// constructor
+
 @higherkind
 data class Const<M, out A>(val value: M) : ConstOf<M, A>
 //end::init6[]
 
 //tag::init7[]
+
+// Listing 12.14.
+// Turn a Monoid into an Applicative using a partially applied type
+// constructor shim
+
 fun <M> monoidApplicative(m: Monoid<M>): Applicative<ConstPartialOf<M>> =
     object : Applicative<ConstPartialOf<M>> {
         //tag::ignore[]
@@ -76,6 +86,12 @@ fun <M> monoidApplicative(m: Monoid<M>): Applicative<ConstPartialOf<M>> =
 //end::init7[]
 
 //tag::init8[]
+
+// Listing 12.15.
+// Traversable extends Functor and Foldable to implement foldMap
+// in terms of traverse
+
+// Traversable now implements both Functor and Foldable
 interface Traversable<F> : Functor<F>, Foldable<F> { // <1>
 
     fun <G, A, B> traverse(
@@ -90,7 +106,9 @@ interface Traversable<F> : Functor<F>, Foldable<F> { // <1>
         f: (A) -> M
     ): M =
         traverse(fa, monoidApplicative(m)) { a ->
+            // Wrap the transformed result in a Const shim
             Const<M, A>(f(a)) // <2>
+            // Downcast the kind to Const and extract its value
         }.fix().value // <3>
 }
 //end::init8[]

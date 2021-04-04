@@ -76,10 +76,17 @@ interface Monad<F> : Applicative<F> {
 
 fun listing3() {
     //tag::init2[]
+
+    // Listing 12.3.
+    // Combining results with the Option applicative results in
+    // independent lookup
+
     val F: Applicative<ForOption> = TODO()
 
     val employee = "Alice"
+    // Department, indexed by employee name
     val departments: Map<String, String> = mapOf("Alice" to "Tech") // <1>
+    // Salaries, indexed by employee name
     val salaries: Map<String, Double> = mapOf("Alice" to 100_000.00) // <2>
 
     val o: Option<String> =
@@ -87,7 +94,10 @@ fun listing3() {
             departments[employee].toOption(),
             salaries[employee].toOption()
         ) { dept, salary ->
+            // Return human readable string if both department and
+            // salary are found
             "$employee in $dept makes $salary per year." // <3>
+            // Downcast from OptionOf<String> to Option<String>
         }.fix() // <4>
     //end::init2[]
 }
@@ -95,13 +105,21 @@ fun listing3() {
 fun listing4() {
     val F: Applicative<ForOption> = TODO()
 
+    // Listing 12.4.
+    // Combining results with the Option monad results in dependency
+    // of lookups
+
     //tag::init3[]
     val employee = "Bob"
+    // Employee id indexed by employee name
     val idsByName: Map<String, Int> = mapOf("Bob" to 101) // <1>
+    // Department indexed by employee id
     val departments: Map<Int, String> = mapOf(101 to "Sales") // <2>
+    // Salaries, indexed by employee ID
     val salaries: Map<Int, Double> = mapOf(101 to 100_000.00) // <3>
 
     val o: Option<String> =
+        // Look up Bob's id, then use result to do further lookups
         idsByName[employee].toOption().flatMap { id -> // <4>
             F.map2(
                 departments[id].toOption(),
@@ -118,6 +136,11 @@ class Parser<A>(val a: A) : ParserOf<A>
 
 fun listing5() {
     //tag::init4[]
+
+    // Listing 12.5.
+    // Statically structured file parsing with field order encoded
+    // in Parser
+
     data class Row(val date: Date, val temp: Double)
     //end::init4[]
 
@@ -140,6 +163,11 @@ fun listing6() {
     fun <A> Parser<A>.sep(s: String): Parser<List<Row>> = TODO()
 
     //tag::init6[]
+
+    // Listing 12.6.
+    // Dynamically structured file parsing with field order determined
+    // by Monad
+
     val F: Monad<ForParser> = TODO()
 
     val header: Parser<Parser<Row>> = TODO()

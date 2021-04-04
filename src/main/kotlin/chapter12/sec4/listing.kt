@@ -44,6 +44,7 @@ object Empty : Stream<Nothing>()
 val streamApplicative = object : Applicative<ForStream> {
 
     override fun <A> unit(a: A): StreamOf<A> =
+        // An infinite and constant stream of A elements
         Stream.continually(a) // <1>
 
     override fun <A, B, C> map2(
@@ -51,6 +52,7 @@ val streamApplicative = object : Applicative<ForStream> {
         sb: StreamOf<B>,
         f: (A, B) -> C
     ): StreamOf<C> =
+        // Combine elements of two streams with f
         sa.fix().zip(sb.fix()).map { (a, b) -> f(a, b) } // <2>
 }
 //end::init1[]
@@ -108,6 +110,10 @@ typealias ValidationPartialOf<E> = Kind<ForValidation, E>
 fun <E, A> ValidationOf<E, A>.fix() = this as Validation<E, A>
 
 //tag::init4[]
+
+// Listing 12.7.
+// The Validation data type can represent multiple errors unlike Either
+
 sealed class Validation<out E, out A> : ValidationOf<E, A>
 
 data class Failure<E>(
@@ -152,6 +158,10 @@ fun <E> validationApplicative() = object : ValidationApplicative<E> {
 
 val listing3 = {
     //tag::init5[]
+
+    // Listing 12.8.
+    // Validation functions return the Validation data type
+
     fun validName(name: String): Validation<String, String> =
         if (name != "") Success(name)
         else Failure("Name cannot be empty")
@@ -169,6 +179,10 @@ val listing3 = {
     //end::init5[]
 
     //tag::init6[]
+
+    // Listing 12.9. Applicative validation of multiple fields with
+    // accumulated error handling
+
     val F = validationApplicative<String>()
 
     fun validatedWebForm(
