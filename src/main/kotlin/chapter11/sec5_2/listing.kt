@@ -29,8 +29,16 @@ data class State<S, out A>(val run: (S) -> Pair<A, S>) : StateOf<S, A> {
 }
 
 //tag::init2[]
+
+// Listing 11.17.
+// The state monad interface with hardcoded partially applied types
+
+// The Monad type constructor takes partially applied type parameter
+// StatePartialOf for any S
 interface StateMonad<S> : Monad<StatePartialOf<S>> { // <1>
 
+    // Monadic combinators no longer restricted to deal in
+    // single type parameter currency
     override fun <A> unit(a: A): StateOf<S, A> // <2>
 
     override fun <A, B> flatMap(
@@ -41,6 +49,11 @@ interface StateMonad<S> : Monad<StatePartialOf<S>> { // <1>
 //end::init2[]
 
 //tag::init4[]
+
+// Listing 11.18.
+// A partially applied State monad that brings flexibility to the
+// type family members it represents
+
 val intStateMonad: StateMonad<Int> = object : StateMonad<Int> {
     override fun <A> unit(a: A): StateOf<Int, A> =
         State { s -> a to s }
@@ -54,6 +67,10 @@ val intStateMonad: StateMonad<Int> = object : StateMonad<Int> {
 //end::init4[]
 
 //tag::init6[]
+
+// Listing 11.19.
+// Getting and setting state with sequence of flatmap and map operations
+
 val F = intStateMonad
 
 fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
@@ -70,6 +87,9 @@ fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
 
 /*
 //tag::init7[]
+
+// Lisiting 11.20.
+// Getting and setting state with a for-comprehenseion
 ...
 { acc: StateOf<Int, List<Pair<Int, A>>>, a: A ->
     acc.fx {
