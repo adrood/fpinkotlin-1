@@ -5,14 +5,14 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
 
+//tag::init[]
+fun nonNegativeInt(rng: RNG): Pair<Int, RNG> =
+
+    SOLUTION_HERE()
+//end::init[]
+
 //TODO: Enable tests by removing `!` prefix
 class Exercise1 : WordSpec({
-
-    //tag::init[]
-    fun nonNegativeInt(rng: RNG): Pair<Int, RNG> =
-
-        SOLUTION_HERE()
-    //end::init[]
 
     "nonNegativeInt" should {
 
