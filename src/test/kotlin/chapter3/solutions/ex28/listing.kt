@@ -17,7 +17,7 @@ fun <A> sizeF(ta: Tree<A>): Int =
     fold(ta, { 1 }, { b1, b2 -> 1 + b1 + b2 })
 
 fun maximumF(ta: Tree<Int>): Int =
-    fold(ta, { a -> a }, { b1, b2 -> maxOf(b1, b2) })
+    fold(ta, { it }, { b1, b2 -> maxOf(b1, b2) })
 
 fun <A> depthF(ta: Tree<A>): Int =
     fold(ta, { 0 }, { b1, b2 -> 1 + maxOf(b1, b2) })
