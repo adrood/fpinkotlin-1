@@ -30,7 +30,7 @@ object ListFoldable : Foldable<ForList> {
 //end::init1[]
 
 class Exercise13 : WordSpec({
-    "ListKFoldable" should {
+    "ListFoldable" should {
         "foldRight" {
             assertAll<List<Int>> { ls ->
                 ListFoldable.foldRight(
