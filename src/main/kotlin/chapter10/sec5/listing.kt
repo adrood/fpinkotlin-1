@@ -11,6 +11,10 @@ val listing = {
 }
 
 //tag::init1[]
+
+// Something like Foldable is a higher-order type constructor or
+// a higher-kinded type.
+
 // The interface declares type F that represents any container
 interface Foldable<F> { // <1>
 
