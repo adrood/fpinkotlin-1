@@ -12,6 +12,7 @@ interface Monoid<A> {
 //end::init1[]
 
 //tag::init2[]
+// An example instance of this interface is the String monoid.
 val stringMonoid = object : Monoid<String> {
 
     override fun combine(a1: String, a2: String): String = a1 + a2
@@ -21,6 +22,8 @@ val stringMonoid = object : Monoid<String> {
 //end::init2[]
 
 //tag::init3[]
+// List concatenation also forms a monoid.
+// This method is able to generate a monoid for any type A
 fun <A> listMonoid(): Monoid<List<A>> = object : Monoid<List<A>> {
 
     override fun combine(a1: List<A>, a2: List<A>): List<A> = a1 + a2
