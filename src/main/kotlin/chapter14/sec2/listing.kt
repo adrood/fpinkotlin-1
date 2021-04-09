@@ -20,6 +20,10 @@ typealias STPartialOf<S> = arrow.Kind<ForST, S>
 inline fun <S, A> STOf<S, A>.fix(): ST<S, A> = this as ST<S, A>
 
 //tag::init1[]
+
+// Listing 14.2.
+// An ST data type for representing local state mutation
+
 // Limit access of constructor to this module
 abstract class ST<S, A> internal constructor() : STOf<S, A> { // <1>
     companion object {
@@ -162,9 +166,17 @@ val p3 = object : RunnableST<Pair<Int, Int>> {
 //end::init5[]
 
 //tag::init7[]
+
+// Listing 14.3.
+// Mutable arrays can be isolated within the STArray class for
+// the ST monad
+
+// Makes internally visible constructor usable from public
+// inline functions, so making it indirectly public
 abstract class STArray<S, A> @PublishedApi internal constructor() { // <1>
 
     companion object {
+        // Construct an array of the given size filled with value v
         inline operator fun <S, reified A> invoke( // <2>
             sz: Int,
             v: A
@@ -186,10 +198,12 @@ abstract class STArray<S, A> @PublishedApi internal constructor() { // <1>
         //end::init8[]
     }
 
+    // The array object is immutable, but its content is not
     protected abstract val value: Array<A> // <3>
 
     val size: ST<S, Int> = ST { value.size }
 
+    // Write a value at the given index of the array.
     fun write(i: Int, a: A): ST<S, Unit> = object : ST<S, Unit>() { // <4>
         override fun run(s: S): Pair<Unit, S> {
             value[i] = a
@@ -197,8 +211,10 @@ abstract class STArray<S, A> @PublishedApi internal constructor() { // <1>
         }
     }
 
+    // Read a value from the given index of the array
     fun read(i: Int): ST<S, A> = ST { value[i] } // <5>
 
+    // Return an immutable (read-only) list structure
     fun freeze(): ST<S, List<A>> = ST { value.toList() } // <6>
 
     //tag::init9[]
