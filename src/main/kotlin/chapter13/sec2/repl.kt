@@ -72,6 +72,8 @@ val ioMonad = object : Monad<ForIO> {
         flatMap(fa.fix()) { a -> unit(f(a)) }
 
     //tag::init2[]
+    // Repeats the effect of the first argument as long as
+    // the cond function yields true
     override fun <A> doWhile( // <1>
         fa: IOOf<A>,
         cond: (A) -> IOOf<Boolean>
@@ -82,11 +84,14 @@ val ioMonad = object : Monad<ForIO> {
             }
         }
 
+    // Repeats the effect of its argument forever
     override fun <A, B> forever(fa: IOOf<A>): IOOf<B> { // <2>
         val t: IOOf<B> by lazy { forever<A, B>(fa) }
         return fa.fix().flatMap { t.fix() }
     }
 
+    // Folds the stream with with the function f, combining the
+    // effects and returning the result
     override fun <A, B> foldM( // <3>
         sa: Stream<A>,
         z: B,
@@ -100,6 +105,7 @@ val ioMonad = object : Monad<ForIO> {
             is Empty -> unit(z)
         }
 
+    // The same as the foldM function except ignores the result
     override fun <A, B> foldDiscardM( // <4>
         sa: Stream<A>,
         z: B,
@@ -107,12 +113,14 @@ val ioMonad = object : Monad<ForIO> {
     ): Kind<ForIO, Unit> =
         foldM(sa, z, f).fix().map { Unit }
 
+    // Calls the function f for each stream and combines the effects
     override fun <A> foreachM( // <5>
         sa: Stream<A>,
         f: (A) -> IOOf<Unit>
     ): IOOf<Unit> =
         foldDiscardM(sa, Unit) { _, a -> f(a) }
 
+    // Invokes a function depending on the value of a boolean parameter
     override fun <A> whenM( // <6>
         ok: Boolean,
         f: () -> IOOf<A>
@@ -131,11 +139,15 @@ object FactorialREPL {
         """.trimMargin("|")
 
     //tag::init1[]
+    // Imperative factorial using a mutable IO reference
     private fun factorial(n: Int): IO<Int> = // <1>
+        // Allocate a mutable reference of Int
         IO.ref(1).flatMap { acc: IORef<Int> -> // <2>
             ioMonad.foreachM((1..n).toStream()) { i ->
+                // Modify the reference in a loop
                 acc.modify { it * i }.map { Unit } // <3>
             }.fix().flatMap {
+                // Derereference to obtain the Int value inside a reference
                 acc.get() // <4>
             }
         }
@@ -143,6 +155,7 @@ object FactorialREPL {
     val factorialREPL: IO<Unit> =
         ioMonad.sequenceDiscard(
             IO { println(help) }.fix(),
+            // See sidebar for more details about doWhile
             ioMonad.doWhile(IO { readLine().orEmpty() }) { line -> // <5>
                 ioMonad.whenM(line != "q") {
                     factorial(line.toInt()).flatMap { n ->
