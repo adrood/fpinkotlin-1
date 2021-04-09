@@ -8,8 +8,11 @@ fun stdout(msg: String): IO<Unit> = IO { println(msg) }
 
 //tag::init1[]
 val p: IO<Unit> =
+    // Access the monad instance for IO
     IO.monad() // <1>
+        // Loop a text message to standard output forever
         .forever<Unit, Unit>(stdout("Still going...")) // <2>
+        // Fix the IOOf<Unit> to be an IO<Unit>
         .fix() // <3>
 //end::init1[]
 
