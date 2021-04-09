@@ -75,6 +75,10 @@ val dept: String = lookupByName("Tim")
 //end::init6[]
 
 //tag::init7[]
+
+// Listing 4.4.
+// Lifting a function to work with Opions
+
 fun <A, B> lift(f: (A) -> B): (Option<A>) -> Option<B> =
     { oa -> oa.map(f) }
 //end::init7[]
