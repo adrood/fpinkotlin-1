@@ -43,9 +43,11 @@ sealed class Process<I, O> : ProcessOf<I, O> {
     fun repeat(): Process<I, O> {
         fun go(p: Process<I, O>): Process<I, O> =
             when (p) {
+                // Restart the process if it halts on its own
                 is Halt -> go(this) // <1>
                 is Await -> Await { i: Option<I> ->
                     when (i) {
+                        // Don't repeat if terminated from source.
                         is None -> p.recv(None) // <2>
                         else -> go(p.recv(i))
                     }
@@ -103,6 +105,8 @@ sealed class Process<I, O> : ProcessOf<I, O> {
 
 data class Emit<I, O>(
     val head: O,
+    // Default parameter to allow Emit(s) instead of
+    // needing Emit(s, Halt())
     val tail: Process<I, O> = Halt() // <1>
 ) : Process<I, O>()
 
