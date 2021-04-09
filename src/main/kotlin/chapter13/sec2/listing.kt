@@ -64,6 +64,10 @@ object Listing12B {
 
 object Listing12C {
     //tag::init3[]
+
+    // Listing 13.3
+    // An imperative program that converts Fahrenheit to Celsius
+
     fun fahrenheitToCelsius(f: Double): Double = (f - 32) * 5.0 / 9.0
 
     fun converter() {
@@ -88,6 +92,10 @@ object Listing12D {
 
 object Listing12E {
     //tag::init5[]
+
+    // Listing 13.4.
+    // A parameterized IO of A allows for an input of type A
+
     interface IO<A> {
 
         //tag::companion[]
@@ -137,10 +145,13 @@ object Listing12E {
     //end::init7[]
 
     //tag::init8[]
+    // Read a line from the console and echo it back
     val echo: IO<Unit> = stdin().flatMap(::stdout) // <1>
 
+    // Parse an Int by reading a line from the console
     val readInt: IO<Int> = stdin().map { it.toInt() } // <2>
 
+    // Parses a Pair<Int,Int> by reading two lines from the console
     val readInts: IO<Pair<Int, Int>> = readInt assoc readInt // <3>
     //end::init8[]
 }
