@@ -41,7 +41,10 @@ sealed class Process<F, O> : ProcessOf<F, O> {
 
         //tag::init3[]
         data class Await<F, A, O>(
+            // The Await now handles a request of Kind<F,A>
             val req: Kind<F, A>,
+            // The recv function now takes an Either so we can
+            // handle errors
             val recv: (Either<Throwable, A>) -> Process<F, O>
         ) : Process<F, O>()
         //end::init3[]
@@ -51,10 +54,17 @@ sealed class Process<F, O> : ProcessOf<F, O> {
             val tail: Process<F, O> = Halt(End)
         ) : Process<F, O>()
 
+        // Halt due to err, which could be an actual error or
+        // End indicating normal termination
         data class Halt<F, O>(val err: Throwable) : Process<F, O>()
 
+        // An Exception that indicates normal termination.
+        // This allows us to use the Kotlin exception mechanism
+        // for control flow
         object End : Exception()
 
+        // An Exception indicating normal termination, We'll see
+        // how this is used later.
         object Kill : Exception()
 
         fun <F, O> Try(p: () -> Process<F, O>): Process<F, O> =
@@ -216,13 +226,17 @@ sealed class Process<F, O> : ProcessOf<F, O> {
             is Halt -> Try { f(this.err) }
             is Emit -> Emit(this.head, this.tail.onHalt(f))
             is Await<*, *, *> ->
+                // Call to awaitAndThen works around type erasure caused
+                // by matching and allows continuation to recv
                 awaitAndThen<F, O, O>(req, recv) { it.onHalt(f) }
         }
 
     fun append(p: () -> Process<F, O>): Process<F, O> =
         this.onHalt { e ->
             when (e) {
+                // Consult p only on normal termination
                 is End -> Try(p)
+                // Keep the current error if something went wrong
                 else -> Halt(e)
             }
         }
