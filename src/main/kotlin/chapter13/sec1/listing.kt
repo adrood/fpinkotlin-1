@@ -6,6 +6,10 @@ import chapter10.Some
 
 val listing1 = {
     //tag::init1[]
+
+    // Listing 13.1
+    // A simple program that has side effects
+
     data class Player(val name: String, val score: Int)
 
     fun contest(p1: Player, p2: Player): Unit =
@@ -24,6 +28,11 @@ data class Player(val name: String, val score: Int)
 
 val listing2 = {
     //tag::init2[]
+
+    // Listing 13.2.
+    // Refactors the simple code example to separate logic from
+    // console effect
+
     // Contains the logic for computihg a winner if there is one
     fun winner(p1: Player, p2: Player): Option<Player> = // <1>
         when {
