@@ -47,8 +47,19 @@ sealed class IO<A> : IOOf<A> {
     fun <B> map(f: (A) -> B): IO<B> = flatMap { a -> Return(f(a)) }
 }
 
+// A pure computation that immediately returns an A without any further
+// steps. When run sees this constructor, it knows the computation has
+// finished.
 data class Return<A>(val a: A) : IO<A>() // <1>
+
+// A suspension of the computation where r is a function that takes no
+// arguments, but has some effect and yields a value
 data class Suspend<A>(val resume: () -> A) : IO<A>() // <2>
+
+// A composition of two steps. Reifies flatMap as a data constructor
+// rather than as a function. When run sees this, it should first
+// process the subcomputation sub and then continue with k once sub
+// produces a result
 data class FlatMap<A, B>(
     val sub: IO<A>,
     val f: (A) -> IO<B>
@@ -69,12 +80,18 @@ tailrec fun <A> run(io: IO<A>): A =
     when (io) {
         is Return -> io.a
         is Suspend -> io.resume()
+        // We could just return run(f(run(x))) here, but then
+        // the inner call to run wouldn't be in tail position. Instead,
+        // we match on x to see what it is.
         is FlatMap<*, *> -> { // <1>
+            // Deal with runtime type erasure by casting
             val x = io.sub as IO<A> // <2>
             val f = io.f as (A) -> IO<A> // <2>
             when (x) {
                 is Return ->
                     run(f(x.a))
+                // Here x is a Suspend(r), so we force the r thunk and
+                // call f on the result.
                 is Suspend -> // <3>
                     run(f(x.resume()))
                 is FlatMap<*, *> -> {
