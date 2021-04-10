@@ -1,5 +1,6 @@
 package chapter6.sec1
 
+import chapter6.sec2.SimpleRNG
 import kotlin.random.Random
 
 //tag::init[]
