@@ -5,30 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2dc70466-ed57-46d4-ab71-774e4bfeb265" name="Default Changelist" comment="Comments added.">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_2_3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_4.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_7.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Listing_4_7.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter7/sec3/listings_7_3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter7/sec3/listings_7_3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex1/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex2/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex3/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex4/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex4/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex5/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex5/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex6/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex6/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex7/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex7/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex8/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter10/exercises/ex8/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter14/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter14/exercises/ex1/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex1/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex2/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter15/exercises/ex3/listing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter15/solutions/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter15/solutions/ex3/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter13/boilerplate/par/Par.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter13/boilerplate/par/Par.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter3/sec2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter3/sec2/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter6/sec1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter6/sec1/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter9/sec2_1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter9/sec2_1/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter9/sec2_2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter9/sec2_2/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex1/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex2/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex3/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex4/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex4/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex5/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter4/exercises/ex5/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex1/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex10/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex10/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex11/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex11/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex12/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex12/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex16/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex16/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex2/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex3/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex4/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex4/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex5/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex5/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex6/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex6/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex7/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex7/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex8/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex8/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex9/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter5/exercises/ex9/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex1/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex1/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex2/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex2/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex3/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex3/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex5/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex5/listing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex6/listing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/chapter6/exercises/ex6/listing.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +69,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Script" />
         <option value="Kotlin Worksheet" />
       </list>
     </option>
@@ -95,7 +102,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="KND&#10;kotlin" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -104,11 +111,23 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
-  <component name="RunManager" selected="Gradle.Exercise_3_20">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/chapter10" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ListingKt">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -120,12 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Exercise_3_16" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Exercise13" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;chapter3.exercises.Exercise_3_16&quot;" />
+        <option name="scriptParameters" value="--tests &quot;chapter10.solutions.ex13.Exercise13&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -141,12 +160,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Exercise_3_17" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Exercise17" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;chapter3.exercises.Exercise_3_17&quot;" />
+        <option name="scriptParameters" value="--tests &quot;chapter10.solutions.ex17.Exercise17&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -162,12 +181,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Exercise_3_18" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Solution7" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;chapter3.exercises.Exercise_3_18&quot;" />
+        <option name="scriptParameters" value="--tests &quot;chapter6.solutions.ex7.Solution7&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -183,55 +202,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Exercise_3_19" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;chapter3.exercises.Exercise_3_19&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Exercise_3_20" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;chapter3.exercises.Exercise_3_20&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="ListingKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="func-prog-in-kotlin.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="chapter2.sec1.ListingKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Exercise_3_20" />
-        <item itemvalue="Gradle.Exercise_3_19" />
-        <item itemvalue="Gradle.Exercise_3_18" />
-        <item itemvalue="Gradle.Exercise_3_17" />
-        <item itemvalue="Gradle.Exercise_3_16" />
+        <item itemvalue="Application.ListingKt" />
+        <item itemvalue="Application.ListingKt" />
+        <item itemvalue="Gradle.Exercise17" />
+        <item itemvalue="Gradle.Exercise13" />
+        <item itemvalue="HTTP Request.rest-api#1" />
       </list>
     </recent_temporary>
   </component>
@@ -280,139 +273,17 @@
       <workItem from="1617169336801" duration="25124000" />
       <workItem from="1617257567692" duration="11020000" />
       <workItem from="1617344325422" duration="5679000" />
-    </task>
-    <task id="LOCAL-00001" summary="IntelliJ config files to git repo.">
-      <created>1615650508770</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1615650508770</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Comments added.">
-      <created>1615803309984</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1615803309984</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Comments added.">
-      <created>1615843903252</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1615843903252</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Comments added.">
-      <created>1616242817557</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1616242817557</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added tailrec keyword">
-      <created>1616242883703</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1616242883703</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Comments added.">
-      <created>1616242897899</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1616242897899</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Comments added.">
-      <created>1616242910187</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1616242910187</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Comments added.">
-      <created>1616242921370</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1616242921370</updated>
-    </task>
-    <task id="LOCAL-00009" summary="workspace.xml should not be saved to repo.">
-      <created>1616243011961</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1616243011961</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Make foldRight() available to the other exercises.">
-      <created>1616408942823</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1616408942823</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Comments added.">
-      <created>1616426277025</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1616426277025</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Corrected minor text error.">
-      <created>1616479641734</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1616479641734</updated>
-    </task>
-    <task id="LOCAL-00013" summary="The function init() is tail-recursive.">
-      <created>1616482455457</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1616482455457</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Made exercise assignment more specific.">
-      <created>1616482878373</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1616482878373</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Function dropWhile() is tail-recursive">
-      <created>1616502692543</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1616502692543</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Changed function name in order to hint to an implementation using foldLeft.">
-      <created>1616502871488</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1616502871488</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Solution (implementation of foldLeft()) needed in following exercises.">
-      <created>1616504879987</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1616504879987</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Changed order of the functions to match with solutions.">
-      <created>1617041335238</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1617041335238</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Changed variable names, indicating their types">
-      <created>1617088586270</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1617088586270</updated>
+      <workItem from="1617602757093" duration="10068000" />
+      <workItem from="1617688175054" duration="716000" />
+      <workItem from="1617688905079" duration="19968000" />
+      <workItem from="1617738468509" duration="2596000" />
+      <workItem from="1617774953341" duration="5598000" />
+      <workItem from="1617794832980" duration="7479000" />
+      <workItem from="1617862080098" duration="288000" />
+      <workItem from="1617862408816" duration="778000" />
+      <workItem from="1617863205430" duration="8859000" />
+      <workItem from="1617947199114" duration="27783000" />
+      <workItem from="1618033228868" duration="12458000" />
     </task>
     <task id="LOCAL-00020" summary="Changed ordering of functions to match with the solution.">
       <created>1617101146167</created>
@@ -547,18 +418,250 @@
       <option name="project" value="LOCAL" />
       <updated>1617349693840</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Layout improvement.">
+      <created>1617541384697</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617541384697</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Added imports required for solution implementation">
+      <created>1617555850767</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1617555850767</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Moved function append() to just before flatMap()">
+      <created>1617697665263</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1617697665263</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Move function to top-level, making it more accessible.">
+      <created>1617714588928</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1617714588928</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Simplification of lambda expression.">
+      <created>1617801935392</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1617801935392</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Comments added.">
+      <created>1617879642949</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1617879642949</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Worksheet for examining and evaluating code fragments.">
+      <created>1617879689144</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1617879689144</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Comments added.">
+      <created>1617879873386</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1617879873386</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Corrected a typo.">
+      <created>1617880511617</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1617880511617</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Code added.">
+      <created>1617881072443</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1617881072443</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Comments added.">
+      <created>1617947782040</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1617947782040</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Comments added.">
+      <created>1617950217480</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1617950217481</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Comments added.">
+      <created>1617952723341</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1617952723341</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Comments added.">
+      <created>1617954933114</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1617954933114</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Comments added.">
+      <created>1617954956385</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1617954956385</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Comments added.">
+      <created>1617956640912</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1617956640912</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Comments added.">
+      <created>1617959548286</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1617959548286</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Initial version.">
+      <created>1617959677395</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1617959677395</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Added examples.">
+      <created>1617961139124</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1617961139124</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Comments added.">
+      <created>1617961170906</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1617961170906</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Comments added.">
+      <created>1617961918201</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1617961918201</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Removed the object declaration.">
+      <created>1617972142770</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1617972142770</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Initial version.">
+      <created>1617972167138</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1617972167138</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Initial version.">
+      <created>1617976078750</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1617976078750</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Comments added.">
+      <created>1617980149123</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1617980149123</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Initial version.">
+      <created>1617980172058</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1617980172058</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Comments added.">
+      <created>1618057310262</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1618057310262</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Initial version">
+      <created>1618057352339</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1618057352339</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Initial version.">
+      <created>1618057369664</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1618057369664</updated>
+    </task>
+    <task id="LOCAL-00068" summary="IntelliJ configuration.">
+      <created>1618057442311</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1618057442311</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="manning/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -566,8 +669,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="IntelliJ config files to git repo." />
-    <MESSAGE value="Added tailrec keyword" />
     <MESSAGE value="workspace.xml should not be saved to repo." />
     <MESSAGE value="Make foldRight() available to the other exercises." />
     <MESSAGE value="Corrected minor text error." />
@@ -576,10 +677,23 @@
     <MESSAGE value="Function dropWhile() is tail-recursive" />
     <MESSAGE value="Changed function name in order to hint to an implementation using foldLeft." />
     <MESSAGE value="Solution (implementation of foldLeft()) needed in following exercises." />
-    <MESSAGE value="Changed order of the functions to match with solutions." />
     <MESSAGE value="Changed variable names, indicating their types" />
     <MESSAGE value="Changed ordering of functions to match with the solution." />
+    <MESSAGE value="Changed order of the functions to match with solutions." />
+    <MESSAGE value="Layout improvement." />
+    <MESSAGE value="Added imports required for solution implementation" />
+    <MESSAGE value="Moved function append() to just before flatMap()" />
+    <MESSAGE value="Move function to top-level, making it more accessible." />
+    <MESSAGE value="Simplification of lambda expression." />
+    <MESSAGE value="Worksheet for examining and evaluating code fragments." />
+    <MESSAGE value="Corrected a typo." />
+    <MESSAGE value="Code added." />
+    <MESSAGE value="Added examples." />
+    <MESSAGE value="Removed the object declaration." />
     <MESSAGE value="Comments added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments added." />
+    <MESSAGE value="Initial version" />
+    <MESSAGE value="Initial version." />
+    <MESSAGE value="IntelliJ configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="IntelliJ configuration." />
   </component>
 </project>
