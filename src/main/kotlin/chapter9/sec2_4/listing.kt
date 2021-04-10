@@ -14,11 +14,13 @@ interface Parsers<PE> {
 
 abstract class Listing : Parsers<ParseError> {
     //tag::init1[]
+    // Non-strict in its second argument
     fun <A, B> product(
         pa: Parser<A>,
         pb: () -> Parser<B>
     ): Parser<Pair<A, B>> = TODO()
 
+    // Non-strict in its second argument
     fun <A, B, C> map2(
         pa: Parser<A>,
         pb: () -> Parser<B>,
@@ -38,6 +40,7 @@ abstract class Listing : Parsers<ParseError> {
     //end::init2[]
 
     //tag::init3[]
+    // Non-strict version, left-biased
     fun <A> or(pa: Parser<A>, pb: () -> Parser<A>): Parser<A>
     //end::init3[]
         = TODO()
