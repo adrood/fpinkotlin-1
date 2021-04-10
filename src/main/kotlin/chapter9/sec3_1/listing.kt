@@ -6,6 +6,7 @@ import chapter9.sec2_2.Parsers
 
 abstract class Listing : Parsers<ParseError> {
     //tag::init1[]
+    // Needed for parsing context-sensitive grammars
     fun <A, B> flatMap(pa: Parser<A>, f: (A) -> Parser<B>): Parser<B>
     //end::init1[]
         = TODO()
