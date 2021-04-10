@@ -24,10 +24,12 @@ interface Parsers<PE> {
     //end::init1[]
 
     //tag::init4[]
+    // Implementation of char in terms of string
     fun char(c: Char): Parser<Char> = string(c.toString()).map { it[0] }
     //end::init4[]
 
     //tag::init5[]
+    // This parser always succeeds with the value a
     fun <A> succeed(a: A): Parser<A> = string("").map { a }
     //end::init5[]
 
@@ -36,10 +38,12 @@ interface Parsers<PE> {
     //end::init7[]
 
     //tag::init10[]
+    // What if we wnt to recognize one ore more 'a' characters?
     fun <A> many1(p: Parser<A>): Parser<List<A>>
     //end::init10[]
 
     //tag::init11[]
+    // We need some way of running one parser, followed by another
     fun <A, B> product(pa: Parser<A>, pb: Parser<B>): Parser<Pair<A, B>>
     //end::init11[]
 
@@ -79,6 +83,8 @@ abstract class Example : Parsers<ParseError> {
         val a = "a"
         val s = "a"
         //tag::init6[]
+        // We can specify the behavior of the succeed combinator with
+        // a low:
         run(succeed(a), s) == Right(a)
         //end::init6[]
 
@@ -88,12 +94,16 @@ abstract class Example : Parsers<ParseError> {
     }
 
     val listing2 = {
+        // slice converted to an extension method
         fun <A> Parser<A>.slice(): Parser<String> = TODO()
         //tag::init9[]
         char('a').many().slice().map { it.length }
         //end::init9[]
 
         //tag::init12[]
+        // We can now add an infix product extension method to Parser<A>
+        // that allows us to express
+        //     pa product pb
         infix fun <A, B> Parser<A>.product(
             pb: Parser<B>
         ): Parser<Pair<A, B>>
