@@ -1,3 +1,22 @@
+/**
+ * At this point, you are going to take over the design process. You'll be
+ * creating a Parser<JSON> from scratch using the primitives we've
+ * defined. You don't need to worry about the representation of Parser
+ * just yet. As you go, you'll undoubtedly discover additional combinators
+ * and idioms, notice and factor out common patterns, and so on. Use the
+ * skills you've been developing throughout this book, and have fun!
+ *
+ * Tip: For the tokens of your grmmar, it is a good idea to skip any
+ * trailing whitespace to avoid having to deal with whitespace everywhere.
+ * Try introducing a combinator for this called token.
+ * When sequenceing parsers with product, it is common to want to ignore
+ * one of the parsers in the sequence, consider introducing combinators
+ * for this purpose called skipL and skipR.
+ *
+ * Note: This exercise is about defining the algebra consisting of
+ * primitive and combinator declarations only. No implementations should
+ * appear in the final solution
+ */
 package chapter9.exercises.ex9
 
 import utils.SOLUTION_HERE

@@ -1,3 +1,7 @@
+/**
+ * Implement the listOfN combinator introduced earlier
+ * using map2 and succees
+ */
 package chapter9.exercises.ex4
 
 import chapter9.solutions.final.ParseError

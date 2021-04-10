@@ -1,3 +1,8 @@
+/**
+ * Implement product and map2 in terms of flatMap and map.
+ *
+ * Tip: Try to use flatMap and succeed.
+ */
 package chapter9.exercises.ex7
 
 import chapter9.solutions.final.ParseError

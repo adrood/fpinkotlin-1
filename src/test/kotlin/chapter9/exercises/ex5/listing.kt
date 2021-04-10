@@ -1,3 +1,13 @@
+/**
+ * We could also deal with non-strictness using a separate combinotor like
+ * we did in chapter 7. Provide a new combinator called defer and make the
+ * necessary changes to your existing combinators. What do you think of
+ * that approach in this instance?
+ *
+ * This approach could work, but arguably causes more confusion than what
+ * it's worth. For this reason, we will not introduce it and keep our
+ * combinators free from lazily initialized parsers.
+ */
 package chapter9.exercises.ex5
 
 interface Parser<A>

@@ -1,3 +1,11 @@
+/**
+ * Revise your implementation of string to provide a meaningful error
+ * message in the event of an error.
+ *
+ * Tip: You may want string to report the immediate cause of failure
+ * (whichever character didn't match), as well as the overall string
+ * being parsed.
+ */
 package chapter9.exercises.ex12
 
 import arrow.core.Option

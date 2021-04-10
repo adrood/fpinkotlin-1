@@ -1,3 +1,8 @@
+/**
+ * Implement string, regex, succeed and slice for this
+ * representation of Parser. Some private helper fucntion stubs have
+ * been included to lead you in the right direction.
+ */
 package chapter9.exercises.ex11
 
 import arrow.core.Option

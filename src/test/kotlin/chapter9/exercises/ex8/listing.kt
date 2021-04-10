@@ -1,3 +1,7 @@
+/**
+ * map is no longer primitive. Express it in terms of flatMap and/or
+ * other combinators
+ */
 package chapter9.exercises.ex8
 
 import chapter9.solutions.final.ParseError
@@ -10,7 +14,6 @@ abstract class Listing : ParserDsl<ParseError>() {
     init {
         //tag::init1[]
         fun <A, B> map(pa: Parser<A>, f: (A) -> B): Parser<B> =
-
             SOLUTION_HERE()
         //end::init1[]
     }
