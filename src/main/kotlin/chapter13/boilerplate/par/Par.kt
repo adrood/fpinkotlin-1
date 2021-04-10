@@ -24,7 +24,7 @@ class Par<A>(val run: (ExecutorService) -> Future<A>) : ParOf<A> {
 
         fun <A> lazyUnit(a: () -> A): Par<A> = Par { es ->
             val cf = CompletableFuture<A>()
-            cf.completeAsync(Supplier(a), es)
+            // cf.completeAsync(Supplier(a), es)
             cf
         }
     }
