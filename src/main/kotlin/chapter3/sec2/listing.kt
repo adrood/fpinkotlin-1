@@ -65,6 +65,7 @@ fun sum(xs: List<Int>): Int =
         is Cons -> xs.head + sum(xs.tail) // <3>
     }
 
+// Invoke sum function with list
 fun main() = sum(ints) // <4>
 //end::init3[]
 
