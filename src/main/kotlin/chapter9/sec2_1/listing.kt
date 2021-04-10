@@ -27,6 +27,7 @@ abstract class Example : Parsers<ParseError> {
     init {
         //tag::init3[]
         map(many(char('a'))) { it.size }
+        map(many(char('a'))) { it.size } is Parsers.Parser<Int>
         //end::init3[]
 
         val p = string("aaa")
