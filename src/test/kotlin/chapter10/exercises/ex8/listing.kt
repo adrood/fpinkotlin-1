@@ -14,13 +14,16 @@ package chapter10.exercises.ex8
 import chapter10.Monoid
 import chapter10.stringMonoid
 import chapter7.sec4_4.Par
+import chapter7.sec4_4.map2
+import chapter7.sec4_4.splitAt
+import chapter7.sec4_4.unit
 import io.kotlintest.TestCase
 import io.kotlintest.TestResult
 import io.kotlintest.specs.WordSpec
 import org.awaitility.Awaitility.await
-import utils.SOLUTION_HERE
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicReference
+import utils.SOLUTION_HERE
 
 //tag::init1[]
 fun <A> par(m: Monoid<A>): Monoid<Par<A>> =
