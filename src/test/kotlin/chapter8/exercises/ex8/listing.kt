@@ -7,6 +7,8 @@ package chapter8.exercises.ex8
 
 import chapter8.RNG
 import chapter8.State
+import chapter8.double
+import kotlin.math.absoluteValue
 import utils.SOLUTION_HERE
 
 data class Gen<A>(val sample: State<RNG, A>) {

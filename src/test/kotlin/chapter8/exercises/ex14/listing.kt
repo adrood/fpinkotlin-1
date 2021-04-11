@@ -4,8 +4,11 @@
  */
 package chapter8.exercises.ex14
 
+import arrow.core.extensions.list.foldable.exists
 import chapter8.Gen
 import chapter8.Prop
+import chapter8.Prop.Companion.forAll
+import chapter8.SGen
 import chapter8.sec4_1.run
 import utils.SOLUTION_HERE
 
