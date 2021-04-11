@@ -1,6 +1,7 @@
 package chapter3.exercises.ex10
 
 import chapter3.List
+import chapter3.foldLeft
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

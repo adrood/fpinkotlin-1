@@ -3,7 +3,9 @@
  */
 package chapter3.exercises.ex17
 
+import chapter3.Cons
 import chapter3.List
+import chapter3.foldRightL
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

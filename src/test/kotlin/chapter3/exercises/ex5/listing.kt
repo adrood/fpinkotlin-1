@@ -6,6 +6,7 @@
  */
 package chapter3.exercises.ex5
 
+import chapter3.Cons
 import chapter3.List
 import chapter3.Nil
 import io.kotlintest.shouldBe

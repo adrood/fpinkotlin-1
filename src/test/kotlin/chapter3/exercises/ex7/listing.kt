@@ -14,6 +14,7 @@ import chapter3.Cons
 import chapter3.List
 import chapter3.Nil
 
+// tag::init[]
 fun <A, B> foldRight(xs: List<A>, z: B, f: (A, B) -> B): B =
     when (xs) {
         is Nil -> z
