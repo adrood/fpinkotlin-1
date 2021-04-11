@@ -1,7 +1,7 @@
 /**
  * Use the property-based testing framework we developed in Chapter 8
  * to implement properties for the monoid laws of associativity and
- * identity. Use your properties to test some of the onoids we've written
+ * identity. Use your properties to test some of the monoids we've written
  * so far.
  *
  * Tip: You will need to generate three values of type A for testing the
