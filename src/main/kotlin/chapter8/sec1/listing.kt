@@ -7,6 +7,10 @@ import io.kotlintest.properties.forAll
 
 fun main() {
     //tag::init1[]
+
+    // Listing 8.1.
+    // Demonstration of property-based testing using KotlinTest
+
     // A generator of lists containing integers between 0 and 100
     val intList = Gen.list(Gen.choose(0, 100)) // <1>
 
