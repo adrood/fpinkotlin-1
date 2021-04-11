@@ -1,3 +1,12 @@
+/**
+ * Implement foldMap based on the balanced fold technique. Your
+ * implementation should use the strategy of splitting the sequence in
+ * two, recursively processing each half, and then adding the answers
+ * together using the provided monoid.
+ *
+ * Tip: The sequences of lengths 0 and 1 are special cases that should
+ * be dealt with separately.
+ */
 package chapter10.exercises.ex7
 
 import chapter10.Monoid

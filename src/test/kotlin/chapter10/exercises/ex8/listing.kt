@@ -1,3 +1,14 @@
+/**
+ * Hard/Optional
+ *
+ * Also implement a parallel version of foldMap called parFoldMap using
+ * the library we developed in Chapter 7
+ *
+ * Tip: Consider the case of a partial answer. We need to know if what we
+ * have seen so far is ordered when we have seen some of the elements.
+ * For an ordered sequence, every new element seen should not fall
+ * within the range of elements seen already.
+ */
 package chapter10.exercises.ex8
 
 import chapter10.Monoid

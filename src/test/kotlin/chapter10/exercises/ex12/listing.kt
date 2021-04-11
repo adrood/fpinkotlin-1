@@ -1,3 +1,11 @@
+/**
+ * Implement foldLeft, foldRight and foldMap on the Foldable<F> interface
+ * in terms of each other.
+ *
+ * Note: Using all these functions in terms of each other could result
+ * in undesired effects like circular references. We will remedy this in
+ * Exercise 10.13.
+ */
 package chapter10.exercises.ex12
 
 import arrow.Kind
