@@ -1,3 +1,7 @@
+/**
+ * Write a property called maxProp to verify the behavior of List.sorted,
+ * which you can use to sort (among other things) a List<Int>.
+ */
 package chapter8.exercises.ex14
 
 import chapter8.Gen

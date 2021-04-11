@@ -1,3 +1,9 @@
+/**
+ * Define nonEmptyListOf for generating nonempty lists, and then update
+ * your specification of max to use this generator.
+ *
+ * Tip: You could use listOfN one more time.
+ */
 package chapter8.exercises.ex13
 
 import chapter8.Gen

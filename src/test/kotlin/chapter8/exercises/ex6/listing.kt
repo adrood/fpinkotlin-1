@@ -1,3 +1,11 @@
+/**
+ * Implement flatMap, and then use it to implement this more dynamic
+ * version of ListOfN. Place flatMap and ListOfN in the Gen data class
+ * as shown
+ *
+ * Tip: Try using the previous implementation of ListOfN from Exercise 8.5
+ * in addition to flatMap in your solution.
+ */
 package chapter8.exercises.ex6
 
 import chapter8.RNG

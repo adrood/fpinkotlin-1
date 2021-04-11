@@ -1,3 +1,7 @@
+/**
+ * Write a richer generator for Par<Int> which builds more deeply nested
+ * parallel computations than the simple variant we've provided so far.
+ */
 package chapter8.exercises.ex15
 
 import chapter7.sec4.Par

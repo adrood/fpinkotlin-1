@@ -1,3 +1,11 @@
+/**
+ * Implement Gen.choose using this representation of Gen. It should
+ * generate integers in the range start to stopExclusive. Feel free to
+ * use functions you've already written.
+ *
+ * Tip: Consider using the nonNegativeInt method from Chapter 6 to
+ * implement this generator.
+ */
 package chapter8.exercises.ex4
 
 import chapter8.RNG
