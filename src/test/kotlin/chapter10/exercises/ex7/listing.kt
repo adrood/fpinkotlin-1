@@ -11,6 +11,7 @@ package chapter10.exercises.ex7
 
 import chapter10.Monoid
 import chapter10.stringMonoid
+import chapter7.sec4_4.splitAt
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
