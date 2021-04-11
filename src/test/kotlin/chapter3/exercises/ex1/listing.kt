@@ -1,3 +1,7 @@
+/**
+ * Tip: Try matching on the list's element type. Consider carefully how you
+ * would deal with an empty list.
+ */
 package chapter3.exercises.ex1
 
 import chapter3.List

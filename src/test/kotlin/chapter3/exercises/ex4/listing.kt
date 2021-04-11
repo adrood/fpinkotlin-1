@@ -1,3 +1,7 @@
+/**
+ * Tip: Use pattern-matching and recursion. What should the function do
+ * if the list is empty? What if it's not empty?
+ */
 package chapter3.exercises.ex4
 
 import chapter3.List

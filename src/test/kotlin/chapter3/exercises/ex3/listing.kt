@@ -1,3 +1,10 @@
+/**
+ * Tip: Use matching and recursion to solve this problem. Consider all
+ * the following scenario's in your solution:
+ * - What should the function do if the n argument is 0?
+ * - What should it do if the list is empty?
+ * - What if the list is not empty and n is nonzero?
+ */
 package chapter3.exercises.ex3
 
 import chapter3.List

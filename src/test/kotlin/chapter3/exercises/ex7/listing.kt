@@ -1,3 +1,13 @@
+/**
+ * See what happens when you pass Nil and Cons themselves to foldRight,
+ * like in fun main() below?
+ *
+ * What do you think this says about the relationship between foldRight and
+ * the data constructors of Lis?
+ *
+ * Tip: Now follow on with each subsequent call to foldRight.
+ * The first step should be represented as: (see trace)
+ */
 package chapter3.exercises.ex7
 
 import chapter3.Cons
@@ -23,10 +33,10 @@ val trace = {
 
 fun main() {
     // tag::init[]
-    foldRight(
+    println(foldRight(
         Cons(1, Cons(2, Cons(3, Nil))),
         Nil as List<Int>,
         { x, y -> Cons(x, y) }
-    )
+    ))
     // end::init[]
 }

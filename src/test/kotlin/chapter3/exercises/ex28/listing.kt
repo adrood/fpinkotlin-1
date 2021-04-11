@@ -1,3 +1,14 @@
+/**
+ * Tip:
+ * See if you can define the fold function, then reimplement the functions
+ * you've already written for Tree.
+ *
+ * Tip:
+ * When you implement the mapF function, you might run into a type
+ * mismatch error in a lambda telling that the compiler found a Branch
+ * where it requires a Leaf. To fix this, you will need to include
+ * explicit typing in the lambda arguments.
+ */
 package chapter3.exercises.ex28
 
 import chapter3.Branch

@@ -1,3 +1,6 @@
+/**
+ * Tip: The foldRight function that we previously defined will work here.
+ */
 package chapter3.exercises.ex14
 
 import chapter3.List

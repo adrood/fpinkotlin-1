@@ -1,3 +1,6 @@
+/**
+ * Tip: One more time, foldRight is your friend!
+ */
 package chapter3.exercises.ex18
 
 import chapter3.List

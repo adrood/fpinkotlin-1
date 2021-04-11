@@ -1,3 +1,6 @@
+/**
+ * Tip: Again, use foldRight without resorting to recursion.
+ */
 package chapter3.exercises.ex16
 
 import chapter3.List

@@ -1,3 +1,16 @@
+/**
+ * Tip:
+ * It's good to specify some properties about these functions up front.
+ * For example, do you expect these assertions to be true?
+ *
+ * xs.append(ys).startsWith(xs) shouldBe true
+ * xs.startsWith(Nil) shouldBe true
+ * xs.append(ys.append(zs)).hasSubsequence(ys) shouldBe true
+ * xs.hasSubsequence(Nil) shouldBe true
+ *
+ * You will find that if the answer to any one of these is "yes", then
+ * that implies something about the answer to the rest of them.
+ */
 package chapter3.exercises.ex23
 
 import chapter3.List
@@ -6,12 +19,19 @@ import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
 
 // tag::startsWith[]
+/**
+ * As an extra hint, the exercise file suggests starting by implementing
+ * the following function:
+ */
 tailrec fun <A> startsWith(l1: List<A>, l2: List<A>): Boolean =
 
     SOLUTION_HERE()
 // end::startsWith[]
 
 // tag::init[]
+/**
+ * Implementing hasSubsequence will be much easier using startsWith
+ */
 tailrec fun <A> hasSubsequence(xs: List<A>, sub: List<A>): Boolean =
 
     SOLUTION_HERE()

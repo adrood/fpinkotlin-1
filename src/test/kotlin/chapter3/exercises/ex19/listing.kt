@@ -1,3 +1,7 @@
+/**
+ * Tip: Use a combination of existing functions that we have already
+ * defined.
+ */
 package chapter3.exercises.ex19
 
 import chapter3.List
