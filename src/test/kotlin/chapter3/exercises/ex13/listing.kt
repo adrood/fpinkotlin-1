@@ -1,3 +1,6 @@
+/**
+ * Implement append in terms of foldRight and appendL in terms of foldLeft.
+ */
 package chapter3.exercises.ex13
 
 import chapter3.Cons
