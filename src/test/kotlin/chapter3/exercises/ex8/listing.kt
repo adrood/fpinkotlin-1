@@ -1,3 +1,6 @@
+/**
+ * Compute the length of a list using foldRight.
+ */
 package chapter3.exercises.ex8
 
 import chapter3.List
