@@ -1,3 +1,11 @@
+/**
+ * Our implementation of foldRight is not tail-recursive and will result
+ * in a StackOverflowError for large lists (we say it's not stack-safe).
+ * Convince yourself that this is the case (see Exercise 7), and then
+ * write onother general list-recursion fucntion, foldLeft, that is
+ * tail-recursive, using the techniques we discussed in the previous
+ * chapter.
+ */
 package chapter3.exercises.ex9
 
 import chapter3.Cons
