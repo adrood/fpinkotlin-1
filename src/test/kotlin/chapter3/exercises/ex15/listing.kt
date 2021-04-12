@@ -1,4 +1,7 @@
 /**
+ * Write a function that transforms a list of integers by adding 1 to
+ * each element. This should be a pure function that returns a new List.
+ *
  * Tip: Use foldRight without resorting to recursion.
  */
 package chapter3.exercises.ex15
