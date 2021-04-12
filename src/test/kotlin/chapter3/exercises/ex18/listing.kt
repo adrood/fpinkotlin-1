@@ -1,4 +1,7 @@
 /**
+ * Write a function filter that removes elements from a list unless they
+ * satisfy a given predicate.
+ *
  * Tip: One more time, foldRight is your friend!
  */
 package chapter3.exercises.ex18
