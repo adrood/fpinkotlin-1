@@ -1,4 +1,9 @@
 /**
+ * As an example, implement hasSubsequence for checking whether a List
+ * contains another List as a subsequence.
+ * We'll return to this implementation in Chapter 5 and hopefully
+ * improve on it.
+ *
  * Tip:
  * It's good to specify some properties about these functions up front.
  * For example, do you expect these assertions to be true?
