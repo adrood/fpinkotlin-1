@@ -1,3 +1,7 @@
+/**
+ * Write a function size that counts the number of nodes (leaves and
+ * branches) in a tree.
+ */
 package chapter3.exercises.ex24
 
 import chapter3.Branch
