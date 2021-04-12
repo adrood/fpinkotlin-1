@@ -1,3 +1,7 @@
+/**
+ * Write sum, product, and a function to compute the length of a list
+ * using foldLeft.
+ */
 package chapter3.exercises.ex10
 
 import chapter3.List
