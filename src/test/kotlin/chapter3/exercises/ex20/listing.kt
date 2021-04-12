@@ -1,3 +1,6 @@
+/**
+ * Use flatMap to implement filter.
+ */
 package chapter3.exercises.ex20
 
 import chapter3.List
