@@ -3,7 +3,10 @@
  * like in fun main() below?
  *
  * What do you think this says about the relationship between foldRight and
- * the data constructors of Lis?
+ * the data constructors of List?
+ *
+ * Replacing z and f with Nil and Cons respectively when invoking
+ * foldRight results in xs being copied.
  *
  * Tip: Now follow on with each subsequent call to foldRight.
  * The first step should be represented as: (see trace)
