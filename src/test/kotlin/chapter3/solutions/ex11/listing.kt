@@ -1,4 +1,7 @@
-package chapter3.solutions.sol11
+/**
+ * Write a function that returns the reverse of a list (given List(1,2,3)
+ * it returns List(3,2,1). See if you can write it using a fold.
+ */package chapter3.solutions.sol11
 
 import chapter3.Cons
 import chapter3.List

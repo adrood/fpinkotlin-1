@@ -1,3 +1,7 @@
+/**
+ * Write a function that accepts two lists and constructs a new list by
+ * adding corresponding elements.
+ */
 package chapter3.solutions.sol21
 
 import chapter3.Cons

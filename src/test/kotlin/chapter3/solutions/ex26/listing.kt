@@ -1,3 +1,7 @@
+/**
+ * Write a function depth that returns the maximum path length from the
+ * root of a tree to any leaf.
+ */
 package chapter3.solutions.sol26
 
 import chapter3.Branch

@@ -1,3 +1,19 @@
+/**
+ * Generalize size, maximum, depth, and map for Tree, writing a new
+ * function fold that abstracts over their similarities. Reimplement them
+ * in terms of this more general function. Can you draw an analogy between
+ * this fold function and the left and right folds for List?
+ *
+ * Tip:
+ * See if you can define the fold function, then reimplement the functions
+ * you've already written for Tree.
+ *
+ * Tip:
+ * When you implement the mapF function, you might run into a type
+ * mismatch error in a lambda telling that the compiler found a Branch
+ * where it requires a Leaf. To fix this, you will need to include
+ * explicit typing in the lambda arguments.
+ */
 package chapter3.solutions.sol28
 
 import chapter3.Branch

@@ -1,3 +1,10 @@
+/**
+ * Write a function that turns each value in a List<Double> into a String.
+ * You can use the expression d.toString() to convert some d: Double to a
+ * String.
+ *
+ * Tip: Again, use foldRight without resorting to recursion.
+ */
 package chapter3.solutions.sol16
 
 import chapter3.Cons

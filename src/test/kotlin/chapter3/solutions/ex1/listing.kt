@@ -1,3 +1,7 @@
+/**
+ * Tip: Try matching on the list type. Consider carefully how you
+ * would deal with an empty list.
+ */
 package chapter3.solutions.ex1
 
 import chapter3.Cons

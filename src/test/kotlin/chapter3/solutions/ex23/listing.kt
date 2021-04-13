@@ -1,3 +1,21 @@
+/**
+ * As an example, implement hasSubsequence for checking whether a List
+ * contains another List as a subsequence.
+ * We'll return to this implementation in Chapter 5 and hopefully
+ * improve on it.
+ *
+ * Tip:
+ * It's good to specify some properties about these functions up front.
+ * For example, do you expect these assertions to be true?
+ *
+ * xs.append(ys).startsWith(xs) shouldBe true
+ * xs.startsWith(Nil) shouldBe true
+ * xs.append(ys.append(zs)).hasSubsequence(ys) shouldBe true
+ * xs.hasSubsequence(Nil) shouldBe true
+ *
+ * You will find that if the answer to any one of these is "yes", then
+ * that implies something about the answer to the rest of them.
+ */
 package chapter3.solutions.sol23
 
 import chapter3.Cons

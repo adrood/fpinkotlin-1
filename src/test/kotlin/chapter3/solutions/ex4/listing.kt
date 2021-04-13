@@ -1,3 +1,7 @@
+/**
+ * Tip: Use pattern-matching and recursion. What should the function do
+ * if the list is empty? What if it's not empty?
+ */
 package chapter3.solutions.sol4
 
 import chapter3.Cons
@@ -7,10 +11,10 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 
 // tag::init[]
-tailrec fun <A> dropWhile(l: List<A>, f: (A) -> Boolean): List<A> =
+tailrec fun <A> dropWhile(l: List<A>, p: (A) -> Boolean): List<A> =
     when (l) {
         is Cons ->
-            if (f(l.head)) dropWhile(l.tail, f) else l
+            if (p(l.head)) dropWhile(l.tail, p) else l
         is Nil -> l
     }
 // end::init[]

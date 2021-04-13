@@ -1,3 +1,11 @@
+/**
+ * Write a function that concatenates a list of lists into a single list.
+ * Its runtime should be linear in the total length of all lists. Try to
+ * use functions we have already defined.
+ *
+ * Tip: The foldRight function that we previously defined will work here.
+ * In concat2, the append function may be used.
+ */
 package chapter3.solutions.sol14
 
 import chapter3.Cons

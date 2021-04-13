@@ -1,3 +1,6 @@
+/**
+ * Use flatMap to implement filter.
+ */
 package chapter3.solutions.sol20
 
 import chapter3.List

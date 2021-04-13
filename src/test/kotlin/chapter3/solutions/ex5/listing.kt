@@ -1,3 +1,9 @@
+/**
+ * Tip:Consider using simple recursion here, even though it is naive and
+ * will result in stack overflows on larger lists. We wil revisit this
+ * later once we have developed better tools for dealing with such
+ * situations.
+ */
 package chapter3.solutions.sol5
 
 import chapter3.Cons

@@ -1,3 +1,8 @@
+/**
+ * Generalize the function you wrote in Example 21 so that it is not
+ * specific to integers or addition. Name your generalized
+ * function zipWith.
+ */
 package chapter3.solutions.sol22
 
 import chapter3.Cons

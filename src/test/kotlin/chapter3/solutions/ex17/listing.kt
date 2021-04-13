@@ -1,3 +1,11 @@
+/**
+ * Write a function map that generalizes modifying each element in a list
+ * while maintaining the structure of the list. Use the foldRightL variant
+ * that uses foldLeft in order to prevent large lists from blowing the
+ * stack.
+ *
+ * Tip: Once more, use foldRight without resorting to recursion.
+ */
 package chapter3.solutions.sol17
 
 import chapter3.Cons
