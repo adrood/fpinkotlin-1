@@ -30,8 +30,8 @@ fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> =
 fun <A> Option<A>.orElse(ob: () -> Option<A>): Option<A> =
     this.map { Some(it) }.getOrElse { ob() }
 
-fun <A> Option<A>.filter(f: (A) -> Boolean): Option<A> =
-    this.flatMap { a -> if (f(a)) Some(a) else None }
+fun <A> Option<A>.filter(p: (A) -> Boolean): Option<A> =
+    this.flatMap { a -> if (p(a)) Some(a) else None }
 //end::init[]
 
 
@@ -52,11 +52,11 @@ fun <A> Option<A>.orElse_2(ob: () -> Option<A>): Option<A> =
         is Some -> this
     }
 
-fun <A> Option<A>.filter_2(f: (A) -> Boolean): Option<A> =
+fun <A> Option<A>.filter_2(p: (A) -> Boolean): Option<A> =
     when (this) {
         is None -> None
         is Some ->
-            if (f(this.get)) this
+            if (p(this.get)) this
             else None
     }
 //end::alternate[]
