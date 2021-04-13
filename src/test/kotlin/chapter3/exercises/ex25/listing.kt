@@ -1,3 +1,7 @@
+/**
+ * Write a function maximum that returns the maximum element in
+ * a Tree<Int>
+ */
 package chapter3.exercises.ex25
 
 import chapter3.Branch
