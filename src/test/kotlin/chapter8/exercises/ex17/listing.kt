@@ -7,8 +7,8 @@ package chapter8.solutions.ex17
 
 import utils.SOLUTION_HERE
 
-fun main() {
+// fun main() {
     //tag::list[]
-    SOLUTION_HERE()
+    // SOLUTION_HERE()
     //end::list[]
-}
+// }
