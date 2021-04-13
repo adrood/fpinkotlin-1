@@ -1,4 +1,13 @@
-package chapter4.solutions.ex5
+/**
+ * Implement the traverse function. It is straightforward to do using map
+ * and sequence, but try for a more efficient implementation that only
+ * looks at the list once. When complete, implement sequence by using
+ * traverse.
+ *
+ * Tip: The traverse function can be written with explicit recursion, or
+ * use foldRight to do the recursion for you. Implementing sequence using
+ * traverse may be more trivial than you think.
+ */package chapter4.solutions.ex5
 
 import chapter3.Cons
 import chapter3.List

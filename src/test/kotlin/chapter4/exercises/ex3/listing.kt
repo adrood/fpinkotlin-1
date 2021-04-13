@@ -1,3 +1,10 @@
+/**
+ * Write a generic function, map2 that combines two Option values using a
+ * binary function. If either Option value is None, then the return value
+ * is too.
+ *
+ * Tip: Use the flatMap and possibly the map method.
+ */
 package chapter4.exercises.ex3
 
 import chapter4.None

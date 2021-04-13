@@ -1,9 +1,22 @@
+/**
+ * Implement the traverse function. It is straightforward to do using map
+ * and sequence, but try for a more efficient implementation that only
+ * looks at the list once. When complete, implement sequence by using
+ * traverse.
+ *
+ * Tip: The traverse function can be written with explicit recursion, or
+ * use foldRight to do the recursion for you. Implementing sequence using
+ * traverse may be more trivial than you think.
+ */
 package chapter4.exercises.ex5
 
+import chapter3.Cons
 import chapter3.List
+import chapter3.Nil
 import chapter4.None
 import chapter4.Option
 import chapter4.Some
+import chapter4.map2
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

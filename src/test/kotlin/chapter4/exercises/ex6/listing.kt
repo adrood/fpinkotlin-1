@@ -1,8 +1,16 @@
+/**
+ * Implement versions of map, flatMap, orElse, and map2 on Either that
+ * operate on the Right value.
+ *
+ * Tip: The map2 function that we wrote earlier for Option will follow the
+ * same pattern for Either.
+ */
 package chapter4.exercises.ex6
 
 import chapter4.Either
 import chapter4.Left
 import chapter4.Right
+import chapter4.flatMap
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

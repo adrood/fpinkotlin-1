@@ -1,9 +1,16 @@
+/**
+ * Implement sequence and traverse for Either. These should return the
+ * first error that's encountered, if there is one.
+ */
 package chapter4.exercises.ex7
 
+import chapter3.Cons
 import chapter3.List
+import chapter3.Nil
 import chapter4.Either
 import chapter4.Left
 import chapter4.Right
+import chapter4.map2
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

@@ -1,3 +1,7 @@
+/**
+ * Implement sequence and traverse for Either. These should return the
+ * first error that's encountered, if there is one.
+ */
 package chapter4.solutions.ex7
 
 import chapter3.Cons

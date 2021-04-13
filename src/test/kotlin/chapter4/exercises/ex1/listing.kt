@@ -1,3 +1,8 @@
+/**
+ * Implement all of the following functions on Option. As you implement
+ * each function, try to think about what it means and in what situations
+ * you'd use it.
+ */
 package chapter4.exercises.ex1
 
 import chapter4.None
@@ -28,6 +33,10 @@ fun <A> Option<A>.filter(f: (A) -> Boolean): Option<A> =
 
     SOLUTION_HERE() // <5>
 //end::init[]
+
+/**
+ * Alternative approaches
+ */
 
 //tag::alternate[]
 fun <A, B> Option<A>.flatMap_2(

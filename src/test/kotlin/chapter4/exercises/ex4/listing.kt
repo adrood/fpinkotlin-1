@@ -1,9 +1,24 @@
+/**
+ * Write a function, sequence, that combines a list of Options into one
+ * Option containing a list of all the Some values in the original list.
+ * If the original list contains None even once, the result of the function
+ * should be None; otherwise should be Some with a list of all the values.
+ *
+ * Tip: Break the list out using matching where there will be a recursive
+ * call to sequence in the Cons case. Alternatively, use the foldRight
+ * method to take care of the recursion for you.
+ * Note: The solution only shows the case of using the foldRight method.
+ */
 package chapter4.exercises.ex4
 
+import chapter3.Cons
 import chapter3.List
+import chapter3.Nil
+import chapter4.foldRight
 import chapter4.None
 import chapter4.Option
 import chapter4.Some
+import chapter4.map2
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

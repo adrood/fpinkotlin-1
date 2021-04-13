@@ -1,3 +1,12 @@
+/**
+ * Implement the variance function in terms of flatMap. If the mean of a
+ * sequence is m, the variance is the mean of x minus m to the power of 2
+ * for each element of x in the sequence. In code, this will be
+ *
+ *     (x - m).pow(2)
+ *
+ * The mean method developed in Listing 4.2. may be used to implement this.
+ */
 package chapter4.solutions.ex2
 
 import chapter3.List
