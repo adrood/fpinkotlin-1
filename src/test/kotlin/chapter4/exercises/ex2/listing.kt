@@ -11,6 +11,7 @@ package chapter4.exercises.ex2
 
 import chapter3.List
 import chapter4.isEmpty
+import chapter4.map
 import chapter4.size
 import chapter4.sum
 import chapter4.None
