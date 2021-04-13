@@ -1,4 +1,9 @@
 /**
+ * Generalize size, maximum, depth, and map for Tree, writing a new
+ * function fold that abstracts over their similarities. Reimplement them
+ * in terms of this more general function. Can you draw an analogy between
+ * this fold function and the left and right folds for List?
+ *
  * Tip:
  * See if you can define the fold function, then reimplement the functions
  * you've already written for Tree.
