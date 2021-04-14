@@ -1,6 +1,9 @@
 package chapter5.exercises.ex15
 
 import chapter3.List
+import chapter4.None
+import chapter4.Some
+import chapter5.Cons
 import chapter5.Stream
 import chapter5.toList
 import io.kotlintest.shouldBe

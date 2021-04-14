@@ -2,6 +2,7 @@ package chapter5.exercises.ex10
 
 import chapter3.List
 import chapter5.Stream
+import chapter5.Stream.Companion.cons
 import chapter5.toList
 import chapter5.solutions.ex13.take
 import io.kotlintest.shouldBe

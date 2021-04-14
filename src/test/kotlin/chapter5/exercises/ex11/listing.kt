@@ -3,7 +3,10 @@ package chapter5.exercises.ex11
 import chapter3.List
 import chapter4.Option
 import chapter4.Some
+import chapter4.getOrElse
 import chapter5.Stream
+import chapter5.Stream.Companion.cons
+import chapter5.Stream.Companion.empty
 import chapter5.toList
 import chapter5.solutions.ex13.take
 import io.kotlintest.shouldBe

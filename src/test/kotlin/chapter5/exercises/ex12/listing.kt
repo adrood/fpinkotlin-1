@@ -1,6 +1,7 @@
 package chapter5.exercises.ex12
 
 import chapter3.List
+import chapter4.Some
 import chapter5.Stream
 import chapter5.toList
 import chapter5.solutions.ex13.take

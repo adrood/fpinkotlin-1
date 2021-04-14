@@ -1,6 +1,9 @@
 package chapter5.exercises.ex14
 
 import chapter5.Stream
+import chapter5.solutions.ex13.takeWhile
+import chapter5.solutions.ex13.zipAll
+import chapter5.solutions.ex4.forAll
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
