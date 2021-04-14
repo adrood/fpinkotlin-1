@@ -1,3 +1,10 @@
+/**
+ * Write a function hat generates an infinite stream of integers, starting
+ * from n, then n + 1, n + 2, and so on.
+ *
+ * Tip: The example functon ones is recursive, how could you define from
+ * recursively?
+ */
 package chapter5.solutions.ex9
 
 import chapter3.List

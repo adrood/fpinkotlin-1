@@ -1,3 +1,9 @@
+/**
+ * Implement headOption using foldRight
+ *
+ * Tip???: Let None: Option<A> be the first argument to foldRight. Follow
+ * the types from there.
+ */
 package chapter5.exercises.ex6
 
 import chapter4.None

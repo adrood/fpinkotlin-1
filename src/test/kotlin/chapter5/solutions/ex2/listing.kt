@@ -1,3 +1,12 @@
+/**
+ * Write the function take(n) for returning the first n elements of a
+ * stream, and drop(n) for skipping the first n elements of a stream.
+ *
+ * Tip: Many stream functions start by matching on the stream and
+ * considering what to do in each of the two cases. These particular
+ * functions need to first consider whether they need to look at the
+ * stream at all.
+ */
 package chapter5.solutions.ex2
 
 import chapter3.List

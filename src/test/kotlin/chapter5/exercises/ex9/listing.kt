@@ -1,7 +1,15 @@
+/**
+ * Write a function hat generates an infinite stream of integers, starting
+ * from n, then n + 1, n + 2, and so on.
+ *
+ * Tip: The example functon ones is recursive, how could you define from
+ * recursively?
+ */
 package chapter5.exercises.ex9
 
 import chapter3.List
 import chapter5.Stream
+import chapter5.Stream.Companion.cons
 import chapter5.toList
 import chapter5.solutions.ex13.take
 import io.kotlintest.shouldBe
