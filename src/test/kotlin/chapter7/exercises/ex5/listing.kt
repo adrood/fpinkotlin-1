@@ -1,8 +1,9 @@
 package chapter7.exercises.ex5
 
-// import chapter7.sec1.splitAt
-// import chapter7.solutions.ex3.TimedMap2Future
-// import java.util.concurrent.Callable
+import chapter7.sec1.splitAt
+import chapter7.solutions.ex3.TimedMap2Future
+import java.util.concurrent.Callable
+import java.util.concurrent.CompletableFuture.completedFuture
 import utils.SOLUTION_HERE
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Future

@@ -2,6 +2,7 @@ package chapter7.exercises.ex4
 
 import utils.SOLUTION_HERE
 import java.util.concurrent.Callable
+import java.util.concurrent.CompletableFuture.completedFuture
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Future
 

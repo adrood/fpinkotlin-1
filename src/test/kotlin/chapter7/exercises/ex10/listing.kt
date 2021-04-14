@@ -1,6 +1,6 @@
 package chapter7.exercises.ex10
 
-// import chapter7.sec3.Pars
+import chapter7.sec3.Pars
 import utils.SOLUTION_HERE
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Future

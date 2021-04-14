@@ -1,5 +1,6 @@
 package chapter7.exercises.ex12
 
+import kotlinx.collections.immutable.PersistentMap
 import utils.SOLUTION_HERE
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Future
