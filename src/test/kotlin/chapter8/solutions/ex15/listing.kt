@@ -1,3 +1,7 @@
+/**
+ * Write a richer generator for Par<Int> which builds more deeply nested
+ * parallel computations than the simple variant we've provided so far.
+ */
 package chapter8.solutions.ex15
 
 import arrow.core.extensions.list.foldable.foldLeft

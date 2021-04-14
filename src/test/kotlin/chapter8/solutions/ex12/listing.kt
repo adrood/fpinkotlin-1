@@ -1,3 +1,10 @@
+/**
+ * Implement a listOf combinator on Gen that doesn't accept an explicit
+ * size and should return an SGen instead of a Gen. The implementation
+ * should generate lists of the size provided by the SGen.
+ *
+ * Tip: Consider using the listOfN function you wrote before.
+ */
 package chapter8.solutions.ex12
 
 import chapter8.RNG

@@ -1,3 +1,8 @@
+/**
+ * Express the property about fork from Chapter 7 that fork(x) == x.
+ *
+ * Tip: Use the Gen<Par<Int>> generator from the previous exercise.
+ */
 package chapter8.solutions.ex16
 
 import arrow.core.extensions.list.foldable.forAll

@@ -1,3 +1,7 @@
+/**
+ * Implement union for combining two generators of the same type into one
+ * by pulling values from each generator with equal likelihood.
+ */
 package chapter8.solutions.ex7
 
 import chapter8.RNG

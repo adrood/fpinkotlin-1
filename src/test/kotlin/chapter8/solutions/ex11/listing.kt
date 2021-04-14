@@ -1,3 +1,9 @@
+/**
+ * Not surprisingly, SGen at a minimum supports many of the same operations
+ * as Gen, and the implementations are rather mechanical. Define some
+ * convenience functions on SGen that simply delegate to the corresponding
+ * functions on Gen. Also provide a convenient way of invoking an SGen.
+ */
 package chapter8.solutions.ex11
 
 import chapter8.RNG

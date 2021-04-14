@@ -1,3 +1,7 @@
+/**
+ * Implement a helper function called unsized for converting Gen to SGen.
+ * You can add this as a method on Gen.
+ */
 package chapter8.solutions.ex10
 
 import chapter8.RNG
