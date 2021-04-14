@@ -1,8 +1,8 @@
 package chapter6.exercises.ex4
 
-// import chapter3.Cons
+import chapter3.Cons
 import chapter3.List
-// import chapter3.Nil
+import chapter3.Nil
 import chapter6.RNG
 import chapter6.rng1
 import io.kotlintest.shouldBe

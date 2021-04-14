@@ -2,8 +2,8 @@ package chapter6.exercises.ex5
 
 import chapter6.RNG
 import chapter6.Rand
-// import chapter6.map
-// import chapter6.solutions.ex1.nonNegativeInt
+import chapter6.map
+import chapter6.solutions.ex1.nonNegativeInt
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
