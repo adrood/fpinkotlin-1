@@ -3,6 +3,8 @@ package chapter12.exercises.ex19
 import arrow.Kind
 import chapter11.Monad
 import chapter12.Applicative
+import chapter12.Composite
+import chapter12.CompositeOf
 import chapter12.CompositePartialOf
 import chapter12.Traversable
 import utils.SOLUTION_HERE

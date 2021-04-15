@@ -1,12 +1,12 @@
 package chapter12.exercises.ex6
 
-import chapter12.exercises.ex3.Applicative
 import chapter12.sec4.Failure
 import chapter12.sec4.Success
 import chapter12.sec4.Validation
 import chapter12.sec4.ValidationOf
 import chapter12.sec4.ValidationPartialOf
 import chapter12.sec4.fix
+import chapter12.Applicative
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

@@ -1,6 +1,7 @@
 package chapter12.exercises.ex11
 
 import arrow.Kind
+import arrow.core.extensions.set.foldable.foldLeft
 import arrow.syntax.function.curried
 import chapter12.Functor
 import utils.SOLUTION_HERE

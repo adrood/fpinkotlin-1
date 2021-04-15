@@ -1,7 +1,10 @@
 package chapter12.exercises.ex8
 
 import chapter12.Applicative
+import chapter12.Product
+import chapter12.ProductOf
 import chapter12.ProductPartialOf
+import chapter12.fix
 import utils.SOLUTION_HERE
 
 //tag::init1[]

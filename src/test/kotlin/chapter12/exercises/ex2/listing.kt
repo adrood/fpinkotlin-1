@@ -1,6 +1,7 @@
 package chapter12.exercises.ex2
 
 import arrow.Kind
+import arrow.syntax.function.curried
 import chapter12.Functor
 import utils.SOLUTION_HERE
 

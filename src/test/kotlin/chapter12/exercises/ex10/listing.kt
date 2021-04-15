@@ -1,6 +1,8 @@
 package chapter12.exercises.ex10
 
 import chapter11.Monad
+import chapter12.Composite
+import chapter12.CompositeOf
 import chapter12.CompositePartialOf
 import utils.SOLUTION_HERE
 

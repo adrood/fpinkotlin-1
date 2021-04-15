@@ -2,6 +2,11 @@ package chapter12.exercises.ex13
 
 import arrow.Kind
 import arrow.core.ForId
+import arrow.core.Id
+import arrow.core.IdOf
+import arrow.core.extensions.id.apply.map2
+import arrow.core.fix
+import arrow.syntax.function.tupled
 import chapter12.Applicative
 import chapter12.Functor
 import utils.SOLUTION_HERE
