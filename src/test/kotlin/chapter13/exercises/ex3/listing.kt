@@ -2,7 +2,10 @@ package chapter13.exercises.ex3
 
 import arrow.Kind
 import chapter13.Monad
+import chapter13.boilerplate.free.FlatMap
 import chapter13.boilerplate.free.Free
+import chapter13.boilerplate.free.Return
+import chapter13.boilerplate.free.Suspend
 import utils.SOLUTION_HERE
 
 //tag::init1[]

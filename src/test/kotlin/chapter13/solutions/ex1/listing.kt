@@ -1,3 +1,9 @@
+/**
+ * Tip: The Free data type is marked as @higherkind, and so has a generated
+ * FreePartialOf<F>. This can be used to handle the partially applied
+ * type when defining the FreeMonad instance. Refer back to the
+ * StateMonad in Chapter 11 for an example of how this can be achieved.
+ */
 package chapter13.solutions.ex1
 
 import chapter11.Monad

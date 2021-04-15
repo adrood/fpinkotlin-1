@@ -1,3 +1,8 @@
+/**
+ * Tip: To define translate, use runFree with Free[Function0, _] as
+ * the target monad. The use the specialized runTrampoline function
+ * written earlier
+ */
 package chapter13.solutions.ex4
 
 import arrow.Kind

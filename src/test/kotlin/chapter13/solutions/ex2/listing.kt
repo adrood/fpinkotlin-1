@@ -1,3 +1,7 @@
+/**
+ * Tip: Apply the knowledge gained from section 13.3.1 for dealing with
+ * tail-call elimination through reification.
+ */
 package chapter13.solutions.ex2
 
 import chapter13.boilerplate.free.FlatMap
