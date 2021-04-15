@@ -4,13 +4,12 @@ import arrow.Kind
 import chapter12.Either
 import chapter13.Monad
 import chapter15.sec3.Process
+import chapter15.sec3.Process.Companion.Await
+import chapter15.sec3.Process.Companion.Emit
+import chapter15.sec3.Process.Companion.End
+import chapter15.sec3.Process.Companion.Halt
+import chapter15.sec3.tryP
 import utils.SOLUTION_HERE
-
-// import chapter15.sec3.Process.Companion.Await
-// import chapter15.sec3.Process.Companion.Emit
-// import chapter15.sec3.Process.Companion.End
-// import chapter15.sec3.Process.Companion.Halt
-// import chapter15.sec3.tryP
 
 //tag::init[]
 fun <F, O> Process<F, O>.runLog(

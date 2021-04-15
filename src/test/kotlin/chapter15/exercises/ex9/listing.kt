@@ -1,7 +1,7 @@
 package chapter15.exercises.ex9
 
-// import chapter15.sec2.lift
-// import chapter15.sec2.processFile
+import chapter15.sec2.lift
+import chapter15.sec2.processFile
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE

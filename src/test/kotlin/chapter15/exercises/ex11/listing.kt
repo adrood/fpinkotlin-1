@@ -2,14 +2,14 @@ package chapter15.exercises.ex11
 
 import arrow.Kind
 import chapter12.Either
-// import chapter12.Left
-// import chapter12.Right
+import chapter12.Left
+import chapter12.Right
 import chapter15.sec3.Process
 import chapter15.sec3.Process.Companion.Await
 import chapter15.sec3.Process.Companion.Emit
-// import chapter15.sec3.Process.Companion.End
+import chapter15.sec3.Process.Companion.End
 import chapter15.sec3.Process.Companion.Halt
-// import chapter15.sec3.await
+import chapter15.sec3.await
 import chapter15.sec3.awaitAndThen
 import utils.SOLUTION_HERE
 

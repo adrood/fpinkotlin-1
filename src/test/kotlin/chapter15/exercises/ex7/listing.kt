@@ -3,8 +3,8 @@ package chapter15.exercises.ex7
 import chapter15.sec2.Process
 import chapter15.sec2.lift
 import chapter15.sec2.toList
-// import chapter15.solutions.ex2.count
-// import chapter15.solutions.ex6.zip
+import chapter15.solutions.ex2.count
+import chapter15.solutions.ex6.zip
 import chapter3.List
 import chapter5.Stream
 import io.kotlintest.shouldBe
