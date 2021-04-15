@@ -1,3 +1,11 @@
+/**
+ * Write the purely functional versions of partition and gs.
+ *
+ * Tip: Think of this in terms of the quicksort function of Listing 14.1,
+ * written as procedural code with a for comprehension. The boilerplate
+ * for writing the for comprehension using Arrow fx has already been
+ * provided.
+ */
 package chapter14.solutions.ex2
 
 import chapter14.sec2.ST
