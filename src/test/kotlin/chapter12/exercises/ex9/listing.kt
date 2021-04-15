@@ -1,3 +1,6 @@
+/**
+ * Tip: Use the provided Composite shim to produce the correct output.
+ */
 package chapter12.exercises.ex9
 
 import arrow.Kind

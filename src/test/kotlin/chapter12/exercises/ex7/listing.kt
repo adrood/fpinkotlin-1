@@ -1,3 +1,9 @@
+/**
+ * Tip: Implement map2 in terms of flatMap, then that in terms of compose.
+ * Start with either identity law in turn, then substitute equals for
+ * equals and apply the monad laws until you get an equation that is
+ * obviously true.
+ */
 package chapter12.exercises.ex7
 
 import arrow.Kind

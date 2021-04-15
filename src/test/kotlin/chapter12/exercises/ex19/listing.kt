@@ -1,3 +1,8 @@
+/**
+ * Tip: You might need to acquire an Applicative<G> from an external scope
+ * for use when calling Traversable<F>. This has already been provided
+ * for you.
+ */
 package chapter12.exercises.ex19
 
 import arrow.Kind

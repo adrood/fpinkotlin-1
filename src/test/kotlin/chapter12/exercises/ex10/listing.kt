@@ -1,3 +1,7 @@
+/**
+ * Tip: this operation hinges on the implementation of the flatMap
+ * primitive of the Monad interface.
+ */
 package chapter12.exercises.ex10
 
 import chapter11.Monad

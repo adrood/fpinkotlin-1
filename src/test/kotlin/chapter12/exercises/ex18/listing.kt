@@ -1,3 +1,7 @@
+/**
+ * Tip: Follow the types. There is only one implementation that
+ * typechecks.
+ */
 package chapter12.exercises.ex18
 
 import arrow.Kind

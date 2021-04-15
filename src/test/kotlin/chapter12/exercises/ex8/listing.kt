@@ -1,3 +1,7 @@
+/**
+ * Tip: See how you can use the provided Product kind as a shim for the
+ * Pair that we are expecting
+ */
 package chapter12.exercises.ex8
 
 import chapter12.Applicative

@@ -1,3 +1,7 @@
+/**
+ * Tip: The flatMap combinator may be implemented by using a when
+ * expression.
+ */
 package chapter12.exercises.ex5
 
 import chapter12.EitherMonad

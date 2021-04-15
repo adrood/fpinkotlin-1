@@ -1,3 +1,8 @@
+/**
+ * Tip: What we really need here is a pass-through Applicative.
+ * Implement an idApplicative instance that does exactly that when
+ * used in conjunctionwith the Id data type.
+ */
 package chapter12.exercises.ex13
 
 import arrow.Kind

@@ -1,3 +1,7 @@
+/**
+ * Tip: To implement map2 in terms of apply, try using f.curried() and
+ * then follow the types.
+ */
 package chapter12.exercises.ex2
 
 import arrow.Kind

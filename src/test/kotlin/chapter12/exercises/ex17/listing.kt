@@ -1,3 +1,6 @@
+/**
+ * Tip: Use the Product kind as shim to implement fuse.
+ */
 package chapter12.exercises.ex17
 
 import arrow.Kind

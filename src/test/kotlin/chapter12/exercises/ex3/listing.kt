@@ -1,3 +1,7 @@
+/**
+ * Tip: Look at your implementation of map2 in terms of apply and try to follow
+ * the same pattern.
+ */
 package chapter12.exercises.ex3
 
 import arrow.Kind

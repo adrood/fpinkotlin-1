@@ -1,3 +1,7 @@
+/**
+ * Tip: Implement map2 using a when expression. If both sides are failures,
+ * ensure that their order is preserved.
+ */
 package chapter12.exercises.ex6
 
 import chapter12.sec4.Failure

@@ -1,3 +1,7 @@
+/**
+ * Tip: We need to use a stack. Fortunately a List is the same thing as
+ * a stack, and we already know how to turn any traversable into a list!
+ */
 package chapter12.exercises.ex15
 
 import arrow.Kind
