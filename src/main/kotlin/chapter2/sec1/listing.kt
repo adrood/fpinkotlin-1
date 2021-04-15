@@ -2,6 +2,8 @@ package chapter2.sec1
 
 val listing1 = {
     //tag::init1[]
+    // Listing 2.1.
+    // A factorial function
     fun factorial(i: Int): Int {
         // An inner or local function definition
         fun go(n: Int, acc: Int): Int = // <1>
@@ -28,6 +30,8 @@ val listing2 = {
 }
 
 //tag::init3[]
+// Listing 2.2.
+// A simple program including the factorial function
 object Example {
 
     private fun abs(n: Int): Int =
