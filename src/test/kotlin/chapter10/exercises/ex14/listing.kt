@@ -12,6 +12,9 @@ package chapter10.exercises.ex14
 import chapter10.Branch
 import chapter10.ForTree
 import chapter10.Leaf
+import chapter10.Monoid
+import chapter10.TreeOf
+import chapter10.fix
 import chapter10.intAdditionMonoid
 import chapter10.intMultiplicationMonoid
 import chapter10.solutions.ex12.Foldable

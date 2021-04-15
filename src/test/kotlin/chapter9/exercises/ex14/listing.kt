@@ -3,11 +3,12 @@
  * consumption. There are a lot of choices to make, but a key insight is
  * that we typically want to combine or group tags attached to the same
  * location when presenting the error as a String for display
-
  */
 package chapter9.exercises.ex14
 
 import arrow.core.Option
+import arrow.core.getOrElse
+import arrow.core.lastOrNone
 import chapter9.solutions.final.Location
 import utils.SOLUTION_HERE
 

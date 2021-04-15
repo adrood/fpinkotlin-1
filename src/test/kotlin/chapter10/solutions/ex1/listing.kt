@@ -1,3 +1,7 @@
+/**
+ * Give Monoid instances for integer addition and multiplication, as
+ * well as for Boolean operators
+ */
 package chapter10.solutions.ex1
 
 import chapter10.Monoid

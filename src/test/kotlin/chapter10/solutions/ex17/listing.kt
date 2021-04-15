@@ -1,3 +1,8 @@
+/**
+ * Implement the productMonoid by composing two monoids. Your
+ * implementation of op should be associative as long as A.op and B.op
+ * are both associative.
+ */
 package chapter10.solutions.ex17
 
 import chapter10.Monoid

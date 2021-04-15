@@ -4,8 +4,11 @@
 package chapter10.exercises.ex15
 
 import chapter10.ForOption
+import chapter10.Monoid
 import chapter10.None
+import chapter10.OptionOf
 import chapter10.Some
+import chapter10.fix
 import chapter10.solutions.ex12.Foldable
 import chapter10.stringMonoid
 import io.kotlintest.shouldBe

@@ -1,3 +1,6 @@
+/**
+ * Write an instance of Foldable<ForOption>
+ */
 package chapter10.solutions.ex15
 
 import chapter10.ForOption

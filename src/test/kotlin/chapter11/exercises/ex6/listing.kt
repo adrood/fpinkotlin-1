@@ -1,7 +1,9 @@
 package chapter11.exercises.ex6
 
 import arrow.Kind
+import chapter10.Cons
 import chapter10.List
+import chapter10.Nil
 import chapter11.Functor
 import utils.SOLUTION_HERE
 

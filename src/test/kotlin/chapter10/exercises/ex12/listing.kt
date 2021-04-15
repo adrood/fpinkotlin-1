@@ -10,6 +10,8 @@ package chapter10.exercises.ex12
 
 import arrow.Kind
 import chapter10.Monoid
+import chapter10.dual
+import chapter10.endoMonoid
 import utils.SOLUTION_HERE
 
 //tag::init1[]

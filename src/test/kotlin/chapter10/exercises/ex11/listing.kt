@@ -5,6 +5,11 @@
  */
 package chapter10.exercises.ex11
 
+import chapter10.foldMap
+import chapter10.solutions.ex10.Part
+import chapter10.solutions.ex10.Stub
+import chapter10.solutions.ex10.WC
+import chapter10.solutions.ex10.wcMonoid
 import io.kotlintest.properties.Gen
 import io.kotlintest.properties.assertAll
 import io.kotlintest.shouldBe

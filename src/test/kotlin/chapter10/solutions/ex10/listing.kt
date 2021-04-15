@@ -1,3 +1,7 @@
+/**
+ * Write a monoid instance for WC and ensure that it meets both monoid
+ * law.
+ */
 package chapter10.solutions.ex10
 
 import chapter10.Monoid

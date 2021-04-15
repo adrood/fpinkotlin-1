@@ -1,3 +1,7 @@
+/**
+ * Write a monoid instance for functions whose results themselves are
+ * monoids.
+ */
 package chapter10.solutions.ex18
 
 import chapter10.Monoid

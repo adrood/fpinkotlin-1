@@ -19,6 +19,9 @@
  */
 package chapter10.exercises.ex6
 
+import chapter10.dual
+import chapter10.endoMonoid
+import chapter10.foldMap
 import utils.SOLUTION_HERE
 
 //tag::init1[]

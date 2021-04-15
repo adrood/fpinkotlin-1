@@ -1,3 +1,14 @@
+/**
+ * Implement Foldable<ForList> using the Foldable<F> interface from
+ * the previous exercise.
+ *
+ * Note: A foldable version of the List implementation we developed
+ * in Chapter 3 has been provided in the Chapter 10 exercises boilerplate
+ * code.
+ *
+ * Tip: The foldable List already has foldLeft and foldRight
+ * implementations that may be reused.
+ */
 package chapter10.solutions.ex13
 
 import chapter10.ForList

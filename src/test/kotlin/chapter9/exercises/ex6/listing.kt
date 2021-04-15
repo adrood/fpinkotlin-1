@@ -5,7 +5,6 @@
  * primitive called regex to parse digits, which promotes a regular
  * expression string to a Parser<String>
  */
-
 package chapter9.exercises.ex6
 
 import chapter9.solutions.final.ParseError

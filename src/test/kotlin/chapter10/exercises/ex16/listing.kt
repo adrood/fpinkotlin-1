@@ -5,6 +5,7 @@
 package chapter10.exercises.ex16
 
 import arrow.Kind
+import chapter10.Cons
 import chapter10.List
 import chapter10.Monoid
 import chapter10.dual

@@ -16,6 +16,9 @@ package chapter10.exercises.ex19
 import chapter10.ForList
 import chapter10.List
 import chapter10.asConsList
+import chapter10.fix
+import chapter10.intAdditionMonoid
+import chapter10.mapMergeMonoid
 import chapter10.solutions.ex16.Foldable
 import io.kotlintest.properties.Gen
 import io.kotlintest.properties.assertAll

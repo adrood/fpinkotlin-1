@@ -1,3 +1,8 @@
+/**
+ * Use the WC monoid to implement a function that counts words in a
+ * String by recursively splitting into substrings and counting the words
+ * in those substrings.
+ */
 package chapter10.solutions.ex11
 
 import chapter10.foldMap

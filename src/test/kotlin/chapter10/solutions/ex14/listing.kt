@@ -1,3 +1,12 @@
+/**
+ * Recall that we implemented a binary Tree in Chapter 3. Next, implement
+ * Foldable<ForTree>. You only need to override foldMap of Foldable to
+ * make this work, letting the provided foldLeft and foldRight methods
+ * use your new implementation.
+ *
+ * Note: A foldable version of Tree has been provided in the Chapter 10
+ * exercises boilerplate code.
+ */
 package chapter10.solutions.ex14
 
 import chapter10.Branch

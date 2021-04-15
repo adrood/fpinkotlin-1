@@ -1,3 +1,7 @@
+/**
+ * Before continuing, see if you can define many in terms of or,
+ * map2, and succeed
+ */
 package chapter9.solutions.ex3
 
 import chapter9.solutions.final.ParseError

@@ -1,3 +1,7 @@
+/**
+ * map is no longer primitive. Express it in terms of flatMap and/or
+ * other combinators
+ */
 package chapter9.solutions.ex8
 
 import chapter9.solutions.final.ParseError

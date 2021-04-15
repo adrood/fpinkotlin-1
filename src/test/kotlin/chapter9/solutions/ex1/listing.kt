@@ -1,3 +1,11 @@
+/**
+ * Section 9.2.2. Slicing and nonempty repetition
+ *
+ * Using product, implement the now-familiar combinator map2.
+ * In turn, use this to implement many1 in terms of many.
+ *
+ * Tip: Consider mapping over the result of product
+ */
 package chapter9.solutions.ex1
 
 import chapter9.ParseError

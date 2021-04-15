@@ -3,10 +3,10 @@
  * Implement run, as well as any of the remaining primitives
  * not yet implmented using our current representation of Parser.
  * Try running your JSON parser on various inputs
-
  */
 package chapter9.exercises.ex13
 
+import chapter9.solutions.final.Location
 import chapter9.solutions.final.Parser
 import chapter9.solutions.final.Parsers
 import chapter9.solutions.final.Result

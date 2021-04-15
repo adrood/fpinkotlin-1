@@ -15,7 +15,9 @@
  */
 package chapter10.exercises.ex2
 
+import arrow.core.None
 import arrow.core.Option
+import arrow.core.orElse
 import chapter10.Monoid
 import utils.SOLUTION_HERE
 

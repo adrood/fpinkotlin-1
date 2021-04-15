@@ -12,7 +12,9 @@
 package chapter10.exercises.ex13
 
 import chapter10.ForList
+import chapter10.ListOf
 import chapter10.asConsList
+import chapter10.fix
 import chapter10.solutions.ex12.Foldable
 import chapter10.stringMonoid
 import io.kotlintest.properties.assertAll

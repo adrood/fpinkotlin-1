@@ -1,3 +1,7 @@
+/**
+ * Any Foldable structure can be turned into a List. Write this convenience
+ * method for Foldable<F> using an existing method on the interface.
+ */
 package chapter10.solutions.ex16
 
 import arrow.Kind

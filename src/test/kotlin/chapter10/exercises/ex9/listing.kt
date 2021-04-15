@@ -12,8 +12,15 @@
  */
 package chapter10.exercises.ex9
 
+import arrow.core.None
+import arrow.core.Option
+import arrow.core.Some
+import arrow.core.getOrElse
+import chapter10.foldMap
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
+import kotlin.math.max
+import kotlin.math.min
 import utils.SOLUTION_HERE
 
 //tag::init1[]

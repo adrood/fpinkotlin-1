@@ -1,3 +1,12 @@
+/**
+ * A function having the same argument and return type is sometimes
+ * called an endofunction. Write a monoid for endofunctions.
+ *
+ * Tip: We are limited in the number of ways we can combine values with
+ * op since it should compose functions of type (A) -> A for any choice
+ * of A. There is more than one possible implementation for op, but only
+ * one for zero.
+ */
 package chapter10.solutions.ex3
 
 import arrow.core.compose
