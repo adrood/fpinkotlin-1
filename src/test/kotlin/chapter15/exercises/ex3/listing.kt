@@ -1,3 +1,7 @@
+/**
+ * Tip: Introduce a local helper function that accepts the current sum
+ * and count.
+ */
 package chapter15.exercises.ex3
 
 import chapter10.None

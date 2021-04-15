@@ -1,3 +1,7 @@
+/**
+ * Make use of the drain instance method on Process to prevent emission
+ * of values.
+ */
 package chapter15.exercises.ex11
 
 import arrow.Kind

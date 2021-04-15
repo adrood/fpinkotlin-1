@@ -1,3 +1,6 @@
+/**
+ * Tip: You can flatMap it!
+ */
 package chapter15.exercises.ex12
 
 import chapter15.sec3_3.Process

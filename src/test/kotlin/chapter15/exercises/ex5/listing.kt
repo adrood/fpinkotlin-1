@@ -1,3 +1,7 @@
+/**
+ * Tip: Let the types guide your implementation. Try eating your own
+ * dog food!
+ */
 package chapter15.exercises.ex5
 
 import chapter10.None

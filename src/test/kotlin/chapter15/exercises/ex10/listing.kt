@@ -1,3 +1,6 @@
+/**
+ * Tip: Delegate all monadic behavior to the provided MonadCatch instance.
+ */
 package chapter15.exercises.ex10
 
 import arrow.Kind

@@ -1,3 +1,6 @@
+/**
+ * Tip: Use the processFile function to solve this problem.
+ */
 package chapter15.exercises.ex9
 
 import chapter15.sec2.lift

@@ -1,3 +1,6 @@
+/**
+ * Tip: Use the zip function that was implemented in Exercise 15.6.
+ */
 package chapter15.exercises.ex7
 
 import chapter15.sec2.Process
