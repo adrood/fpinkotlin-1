@@ -21,19 +21,19 @@ sealed class List<out A> {
         }
 
 //tag::impls[]
-// The Nil implementation of List
     fun reverse(): List<A> =
         foldLeft(this, empty(), { t: List<A>, h: A -> Cons(h, t) })
 }
 
+// The Nil implementation of List
 object Nil : List<Nothing>() {
     override fun toString(): String = "Nil"
 } // <2>
 
+// The Cons implementation of List
 data class Cons<out A>(
     val head: A,
     val tail: List<A>
-    // The Cons implementation of List
 ) : List<A>() // <3>
 //end::impls[]
 //end::example[]

@@ -5,6 +5,9 @@ import arrow.core.extensions.fx
 import chapter4.sec3.insuranceRateQuote
 
 //tag::init1[]
+
+// Listing 4.5.
+// The Either data type
 sealed class Either<out E, out A>
 
 data class Left<out E>(val value: E) : Either<E, Nothing>()
@@ -35,6 +38,9 @@ fun safeDiv(x: Int, y: Int): Either<Exception, Int> =
 //end::init3[]
 
 //tag::init4[]
+
+// Listing 4.6.
+// A catches function converting exceptions to Either
 fun <A> catches(a: () -> A): Either<Exception, A> =
     try {
         Right(a())
@@ -44,18 +50,30 @@ fun <A> catches(a: () -> A): Either<Exception, A> =
 //end::init4[]
 
 //tag::init5[]
+
+// Listing 4.7.
+// Using Either in for-comprehensions
+
+// Add parseToInt extension method to String
 suspend fun String.parseToInt(): arrow.core.Either<Throwable, Int> = // <1>
+    // Use the Either.catch method to produce an Either<Throwable, Int>
     arrow.core.Either.catch { this.toInt() } // <2>
 
+// Method marked suspended, meaning its child process could block
 suspend fun parseInsuranceRateQuote( // <3>
     age: String,
     numberOfSpeedingTickets: String
 ): arrow.core.Either<Throwable, Double> {
+    // Use extension method to produce an Either
     val ae = age.parseToInt() // <4>
     val te = numberOfSpeedingTickets.parseToInt()
+    // Open for-comprehension with Either.fx
     return arrow.core.Either.fx { // <5>
+        // flatMap right-biased Either by destructuring
         val a = ae.bind() // <6>
         val t = te.bind()
+        // Return final evaluation of insuranceRateQuote as Either.Right
+        // on success
         insuranceRateQuote(a, t) // <7>
     }
 }
@@ -69,6 +87,10 @@ fun <E, A, B, C> map2(
 ): Either<E, C> = TODO()
 
 //tag::init6[]
+
+// Listing 4.8.
+// Using Either to validate data
+
 data class Name(val value: String)
 data class Age(val value: Int)
 data class Person(val name: Name, val age: Age)
