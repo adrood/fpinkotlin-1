@@ -53,15 +53,6 @@ class Exercise6 : WordSpec({
         }
     }
 
-    "either orElse" should {
-        "!return the either if it is right" {
-            right.orElse { left } shouldBe right
-        }
-        "!pass the default value if either is left" {
-            left.orElse { right } shouldBe right
-        }
-    }
-
     "either flatMap" should {
         "!apply a function yielding an either to a right either" {
             right.flatMap { a ->
@@ -72,6 +63,15 @@ class Exercise6 : WordSpec({
             left.flatMap { a ->
                 Right(a.toString())
             } shouldBe left
+        }
+    }
+
+    "either orElse" should {
+        "!return the either if it is right" {
+            right.orElse { left } shouldBe right
+        }
+        "!pass the default value if either is left" {
+            left.orElse { right } shouldBe right
         }
     }
 
