@@ -1,3 +1,4 @@
+import chapter2.sec2.findFirst
 import chapter3.sec1.Cons
 import chapter3.sec1.Nil
 import chapter3.sec1.List as List1
@@ -15,3 +16,9 @@ p.first
 val (first, second) = p
 first
 second
+
+
+
+    findFirst(arrayOf(7, 9, 13), { i: Int -> i == 9});
+
+{ x: Int, y: Int -> x == y }
