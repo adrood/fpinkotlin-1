@@ -1,8 +1,11 @@
-package sec2
+package chapter3.sec2
 
 import kotlin.random.Random
 
 //tag::init1[]
+// Listing 3.2.
+// Companion object inside sealed definition of List data type
+
 // Definition of List data structure
 sealed class List<out A> { // <1>
 
@@ -54,6 +57,9 @@ fun <A> of(vararg aa: A): List<A> {
 
 //tag::init3[]
 // Listing 3.4.
+// The when construct uses smartcast to cast an abstract type to a
+// concrete implementation
+
 // A statement declaring an abstract list
 val ints = List.of(1, 2, 3, 4) // <1>
 
@@ -106,6 +112,8 @@ val listing36 = {
 
 val listing37 = {
     //tag::init6[]
+
+    // Listing 3.7. Simple when matching in List companion object
     fun sum(xs: List<Int>): Int =
         when (xs) {
             is Nil -> 0

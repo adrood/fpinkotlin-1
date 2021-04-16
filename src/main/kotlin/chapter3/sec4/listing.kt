@@ -9,6 +9,10 @@ object Nil : List<Nothing>() {
 data class Cons<out A>(val head: A, val tail: List<A>) : List<A>()
 
 //tag::init1[]
+
+// Listing 3.9.
+// Normalizing product by removing short-circuit makes it similar to sum
+// (see sec2).
 fun sum(xs: List<Int>): Int = when (xs) {
     is Nil -> 0
     is Cons -> xs.head + sum(xs.tail)
@@ -21,6 +25,9 @@ fun product(xs: List<Double>): Double = when (xs) {
 //end::init1[]
 
 //tag::init2[]
+
+// Listing 3.10.
+// Use foldRight as generalization of product and sum
 fun <A, B> foldRight(xs: List<A>, z: B, f: (A, B) -> B): B =
     when (xs) {
         is Nil -> z
