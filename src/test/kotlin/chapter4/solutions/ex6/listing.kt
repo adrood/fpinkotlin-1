@@ -21,6 +21,12 @@ fun <E, A, B> Either<E, A>.map(f: (A) -> B): Either<E, B> =
         is Right -> Right(f(this.value))
     }
 
+fun <E, A, B> Either<E, A>.flatMap(f: (A) -> Either<E, B>): Either<E, B> =
+    when (this) {
+        is Left -> this
+        is Right -> f(this.value)
+    }
+
 fun <E, A> Either<E, A>.orElse(f: () -> Either<E, A>): Either<E, A> =
     when (this) {
         is Left -> f()
@@ -50,15 +56,6 @@ class Solution6 : WordSpec({
         }
     }
 
-    "Either.orElse" should {
-        "return the either if it is right" {
-            right.orElse { left } shouldBe right
-        }
-        "pass the default value if either is left" {
-            left.orElse { right } shouldBe right
-        }
-    }
-
     "Either.flatMap" should {
         "apply a function yielding an either to a right either" {
             right.flatMap { a ->
@@ -69,6 +66,15 @@ class Solution6 : WordSpec({
             left.flatMap { a ->
                 Right(a.toString())
             } shouldBe left
+        }
+    }
+
+    "Either.orElse" should {
+        "return the either if it is right" {
+            right.orElse { left } shouldBe right
+        }
+        "pass the default value if either is left" {
+            left.orElse { right } shouldBe right
         }
     }
 
