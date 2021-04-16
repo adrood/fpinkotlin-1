@@ -33,7 +33,6 @@ val a = 10
 //tag::init4[]
 fun <A> lazyIf(
     cond: Boolean,
-
     // The function parameter type for a lazy value type A is '() -> A'
     onTrue: () -> A, //<1>
     onFalse: () -> A
