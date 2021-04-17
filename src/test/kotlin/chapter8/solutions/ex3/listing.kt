@@ -1,5 +1,5 @@
 /**
- * Assuming the following representation, use check to implement and as
+ * Assuming the following representation, use check to implement 'and' as
  * a method of Prop
  *
  * An anonymous instance of Prop is returned that is based on this and the
