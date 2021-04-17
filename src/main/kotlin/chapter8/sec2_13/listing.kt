@@ -5,7 +5,7 @@ import chapter8.Result
 import chapter8.TestCases
 
 //tag::init[]
-// Listing 8.4. Supply an instanc of RNG for Prop to allow
-// test case generation
+// Listing 8.4. Supply an instance of RNG for Prop to allow
+// test case generation (Compare with sec2_11
 data class Prop(val check: (TestCases, RNG) -> Result)
 //end::init[]

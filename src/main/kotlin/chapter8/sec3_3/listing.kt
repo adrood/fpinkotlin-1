@@ -73,6 +73,9 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
     companion object {
 
         // The entry point that is used in tests
+        // Our forAll entry point takes an SGen and a predicate which
+        // is passed through to our new forAll function,
+        // and in turn generates a combined Prop.
         fun <A> forAll(g: SGen<A>, f: (A) -> Boolean): Prop =
             forAll({ i -> g(i) }, f) // <1>
 
@@ -83,7 +86,7 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
                 val casePerSize: Int = (n + (max - 1)) / max // <2>
 
                 val props: Sequence<Prop> =
-                    // Generates an incrementing sequence<Int>
+                // Generates an incrementing sequence<Int>
                     // starting at 0
                     generateSequence(0) { it + 1 } // <3>
                         .take(min(n, max) + 1)
@@ -107,15 +110,15 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
         fun <A> forAll(ga: Gen<A>, f: (A) -> Boolean): Prop =
             Prop { _, n, rng ->
                 randomSequence(ga, rng).mapIndexed { i, a ->
-                        try {
-                            if (f(a)) Passed else Falsified(
-                                a.toString(),
-                                i
-                            )
-                        } catch (e: Exception) {
-                            Falsified(buildMessage(a, e), i)
-                        }
-                    }.take(n)
+                    try {
+                        if (f(a)) Passed else Falsified(
+                            a.toString(),
+                            i
+                        )
+                    } catch (e: Exception) {
+                        Falsified(buildMessage(a, e), i)
+                    }
+                }.take(n)
                     .find { it.isFalsified() }
                     .toOption()
                     .getOrElse { Passed }
@@ -145,6 +148,8 @@ data class Prop(val check: (MaxSize, TestCases, RNG) -> Result) {
         // Retrofit and to handle new max parameter
         Prop { max, n, rng -> // <7>
             when (val prop = check(max, n, rng)) {
+                // check now has a new MaxSize parameter which sets
+                // an upper bound to the size of test cases to run.
                 is Passed -> p.check(max, n, rng)
                 is Falsified -> prop
             }

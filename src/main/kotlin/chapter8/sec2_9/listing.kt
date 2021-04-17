@@ -1,6 +1,7 @@
 package chapter8.sec2_9
 
 //tag::init[]
+// Section 8.2.3
 // Listing 8.2.
 // Define Gen by wrapping a state transition over a random number
 // generator

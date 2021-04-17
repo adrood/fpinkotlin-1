@@ -24,7 +24,7 @@ data class Prop(val check: (TestCases, RNG) -> Result) {
                 randomSequence(ga, rng).mapIndexed { i, a -> // <1>
                     try {
                         if (f(a)) Passed
-                        // On test faliure, record failed case
+                        // On test failure, record failed case
                         // and index, exposing how many tests
                         // succeeded before failure
                         else Falsified(a.toString(), i) // <2>

@@ -4,7 +4,7 @@ import chapter8.FailedCase
 import chapter8.SuccessCount
 
 //tag::init[]
-// Sealed type of Result
+// Section 8.2.5
 // Listing 8.3.
 // Model the possible results of a test run as an ADT
 // Sealed type of Result
