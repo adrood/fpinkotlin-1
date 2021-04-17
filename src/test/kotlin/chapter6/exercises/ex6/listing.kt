@@ -1,3 +1,9 @@
+/**
+ * Tip: Start by accepting an RNG. Note that you have a choice in which RNG
+ * to pass to which function, and in what order. Think about what you
+ * expect the behavior to be, and whether your implementation meets that
+ * expectation.
+ */
 package chapter6.exercises.ex6
 
 import chapter6.RNG

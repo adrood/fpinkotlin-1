@@ -1,3 +1,8 @@
+/**
+ * Tip: Use nonNegativeInt to generate a random integer between 0
+ * and Int.MAX_VALUE, inclusive. The map to the range of doubles
+ * from 0 to 1.
+ */
 package chapter6.exercises.ex2
 
 import chapter6.RNG

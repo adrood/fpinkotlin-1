@@ -1,3 +1,6 @@
+/**
+ * Tip: This is an application of map over nonNegativeInt or nextInt.
+ */
 package chapter6.exercises.ex5
 
 import chapter6.RNG

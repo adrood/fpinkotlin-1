@@ -1,3 +1,7 @@
+/**
+ * Tip: The implementation using flatMap will be almost identical to the
+ * failed one where we tried to use map.
+ */
 package chapter6.exercises.ex8
 
 import chapter6.Rand

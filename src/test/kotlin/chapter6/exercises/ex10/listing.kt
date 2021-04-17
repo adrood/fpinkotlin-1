@@ -1,3 +1,17 @@
+/**
+ * Tip: Use the specialized functions for Rand as inspiration.
+ * Recall that if you have a
+ *
+ *     f: (S) -> Pair(A, S),
+ *
+ * you can create a State<S, A> just by writing State(f). The function f
+ * can also be declared inline with a lambda:
+ *
+ *     State {s: S ->
+ *     ...
+ *         Pair(a, s2)
+ *     }
+ */
 package chapter6.exercises.ex10
 
 import chapter3.Cons

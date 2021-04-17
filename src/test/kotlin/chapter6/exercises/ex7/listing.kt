@@ -1,3 +1,13 @@
+/**
+ * Tip: You need to recursively iterate over the list. Remember that you
+ * can use foldLeft or foldRight instead of writing a recursive
+ * definition. You can also reuse the map2 function you just wrote. As
+ * a test case for your implementation, we expect
+ *
+ *     sequence(List.of(unit(1), unit(2), unit(3)))(r).first
+ *
+ * to return List(1, 2, 3)
+ */
 package chapter6.exercises.ex7
 
 import chapter3.Cons
