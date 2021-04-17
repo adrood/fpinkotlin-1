@@ -22,6 +22,7 @@ fun run(
     // Provide a simple random number generator ready for action
     rng: RNG = SimpleRNG(System.currentTimeMillis()) // <3>
 ): Unit =
+    // Calling check directly on a Prop
     when (val result = p.check(maxSize, testCases, rng)) {
         // Print error message to standard out in case of failure
         is Falsified -> // <4>
