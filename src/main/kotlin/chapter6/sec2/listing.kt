@@ -1,5 +1,7 @@
 package chapter6.sec2
 
+// Listing 6.3.
+// Interface to a random number generator
 interface RNG {
     fun nextInt(): Pair<Int, RNG>
 }
