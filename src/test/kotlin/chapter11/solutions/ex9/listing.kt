@@ -1,3 +1,11 @@
+/**
+ * Using the following values, prove that the left and right identity laws
+ * expressed in terms of compose are equivalent to those stated in terms
+ * of flatMap
+ *
+ * Tip: Substitute each occurrence of compose by flatMap, then apply
+ * value v of type A to both sides of each equation.
+ */
 package chapter11.solutions.ex9
 
 import arrow.Kind
@@ -15,6 +23,7 @@ interface Listing<F, A> : Monad<F> {
 
         val left1 =
             //tag::initl1[]
+            // The right identity law can be reduced as follows:
             compose(f, { a: A -> unit(a) })(v) == f(v)
         //end::initl1[]
         val left2 =
@@ -32,6 +41,7 @@ interface Listing<F, A> : Monad<F> {
 
         val right1 =
             //tag::initr1[]
+            // The left identity law can be reduced as follows
             compose({ a: A -> unit(a) }, f)(v) == f(v)
         //end::initr1[]
         val right2 =
@@ -48,6 +58,7 @@ interface Listing<F, A> : Monad<F> {
         //end::initr4[]
 
         //tag::init[]
+        // The final proofs can therefore be expressed as:
         flatMap(x) { a -> unit(a) } == x
         flatMap(unit(v), f) == f(v)
         //end::init[]

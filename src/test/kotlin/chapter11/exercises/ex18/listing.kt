@@ -1,3 +1,10 @@
+/**
+ * Express the laws that you would expect to mutually hold for getState,
+ * setState, unit, and flatMap?
+ *
+ * Tip: What would you expect getState to return right after you call
+ * setState? And what obout the other way round?
+ */
 package chapter11.exercises.ex18
 
 import chapter11.sec5_2.State

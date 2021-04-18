@@ -1,3 +1,8 @@
+/**
+ * Now that we have State monad, try out to see how it behaves. Declare
+ * some values of replicateM, map2 and sequence with type declarations
+ * using the intMonad above. Describe how each behaves under the covers?
+ */
 package chapter11.exercises.ex17
 
 import chapter10.List

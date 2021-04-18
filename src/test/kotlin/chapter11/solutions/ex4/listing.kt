@@ -1,3 +1,12 @@
+/**
+ * Implement replicateM to generate a Kind<F, List<A>>, with the list
+ * being of length n.
+ *
+ * Tip: There is more than one way of writing this function. For example,
+ * try filling a List<Kind<F, A>> of length n combined with another
+ * combinator on the Monad interface. Alternatively, use simple recursion
+ * to build the enclosed list.
+ */
 package chapter11.solutions.ex4
 
 import arrow.Kind

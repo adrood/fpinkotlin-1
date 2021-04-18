@@ -1,3 +1,7 @@
+/**
+ * Either flatMap or compose may now be implemented in terms of join.
+ * For the sake of this exercise, implement both.
+ */
 package chapter11.exercises.ex12
 
 import arrow.Kind

@@ -1,3 +1,13 @@
+/**
+ * The sequence and traverse combinators should be pretty familiar to you
+ * by now, and your implementations of them from previous chapters are
+ * probably all very similar. Implement them once and for all on Monad<F>.
+ *
+ * Tip: These implementations should be very similar to those from
+ * previous chapters, only with more general types. Consider fold
+ * operations combined with the use 'unit' and 'map2' on Monad for your
+ * solutions
+ */
 package chapter11.solutions.ex3
 
 import arrow.Kind

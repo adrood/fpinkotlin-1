@@ -1,3 +1,16 @@
+/**
+ * Write monad instances for Par, Option and List. Additionally, provide
+ * monad instances for arrow.core.ListK and arrow.core.SequenceK
+ *
+ * Note: The ListK and SequenceK types provided by Arrow are wrapper
+ * classes that turn ther platform equivalents, List and Sequence,
+ * into fully equipped type constructors.
+ *
+ * Tip: The unit and flatMap combinators have already been implemented
+ * in various ways for these types. Simply call them from your Monad
+ * implementation.
+ */
+
 package chapter11.solutions.ex1
 
 import arrow.Kind

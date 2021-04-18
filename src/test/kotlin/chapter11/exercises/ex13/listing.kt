@@ -1,3 +1,12 @@
+/**
+ * Restate the monad law of associativity in terms of flatMap using join,
+ * map and unit.
+ *
+ * Tip: Use identity functions where possible to arrive at a reworked
+ * solution.
+ * Consider expressing your solution using the following type declarations
+ * when reworking the laws.
+ */
 package chapter11.exercises.ex13
 
 import arrow.Kind

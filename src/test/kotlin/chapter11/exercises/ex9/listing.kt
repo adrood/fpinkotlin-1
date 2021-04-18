@@ -1,3 +1,11 @@
+/**
+ * Using the following values, prove that the left and right identity laws
+ * expressed in terms of compose are equivalent to those stated in terms
+ * of flatMap
+ *
+ * Tip: Substitute each occurrence of compose by flatMap, then apply
+ * value v of type A to both sides of each equation.
+ */
 package chapter11.exercises.ex9
 
 import arrow.Kind

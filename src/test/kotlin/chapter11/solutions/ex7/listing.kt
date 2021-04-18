@@ -1,3 +1,8 @@
+/**
+ * Implement the following Kleisli composition function in Monad.
+ *
+ * Tip: Follow the types to the only possible implementation.
+ */
 package chapter11.solutions.ex7
 
 import arrow.Kind

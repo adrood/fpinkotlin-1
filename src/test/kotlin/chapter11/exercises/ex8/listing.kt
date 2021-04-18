@@ -1,3 +1,10 @@
+/**
+ * Implement flatMap in terms of an abstract definition of compose. By
+ * this, it seems as though we've found another minimal set of monad
+ * combinators: compose and unit.
+ *
+ * Tip: Consider what effect it would have if we assumed A to be Unit.
+ */
 package chapter11.exercises.ex8
 
 import arrow.Kind

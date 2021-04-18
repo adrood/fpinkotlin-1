@@ -1,3 +1,17 @@
+/**
+ * To cement your understanding of monads, give a monad instance for the
+ * Reader data type and explain what it means. Also, take some time to
+ * answer the following questions:
+ * - What are its primitive operations?
+ * - What is the action of flatMap?
+ * - What meaning does it give to monadic functions like sequence,
+ *   join, and replicateM?
+ * - What meaning does it give to the monadic laws?
+ *
+ * Tip: This monad is very similar to the State monad, except that it is
+ * "read-only". You can "ask" from it, but not "set" the R value that
+ * flatMap carries along.
+ */
 package chapter11.solutions.ex19
 
 import arrow.Kind
@@ -27,6 +41,12 @@ data class Reader<R, A>(val run: (R) -> A) : ReaderOf<R, A> {
     fun <B> map(f: (A) -> B): Reader<R, B> =
         this.flatMap { a: A -> unit<R, B>(f(a)) }
 
+    /**
+     * The action of flatMap here is to pass the r argument along to both
+     * the outer Reader and also to the result of f, the inner Reader.
+     * Similar to how State passes along a state, except that in Reader
+     * the "state" is read-only.
+     */
     fun <B> flatMap(f: (A) -> Reader<R, B>): Reader<R, B> =
         Reader { r: R -> f(run(r)).run(r) }
 

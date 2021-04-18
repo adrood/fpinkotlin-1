@@ -1,3 +1,7 @@
+/**
+ * Monadic combinators can be expressed in another minimal set, namely
+ * map, unit and join. Implement the join combinator in terms of flatMap.
+ */
 package chapter11.solutions.ex11
 
 import arrow.Kind

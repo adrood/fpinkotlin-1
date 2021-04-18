@@ -1,3 +1,10 @@
+/**
+ * Implement map, flatMap and unit as methods on this class, and give an
+ * implementation for Monad<Id>.
+ *
+ * Tip: implement 'map', 'flatMap' and 'unit' as methods on this class,
+ * and give an implementation for Monad<Id>.
+ */
 package chapter11.solutions.ex16
 
 import arrow.Kind

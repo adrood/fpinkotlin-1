@@ -1,3 +1,22 @@
+/**
+ * Here's an example of a function we haven't seen before. Implement the
+ * function filterM. It's a bit like filter, except that instead of
+ * a function from
+ *
+ *     (A) -> Boolean,
+ *
+ * we have an
+ *
+ *     (A) -> Kind(F, Boolean>
+ *
+ * Replacing various ordinary functions like filter with the monadic
+ * equivalent often yields interesting results. Implement this function,
+ * and then think about what it means for various data types such as
+ * Par, Option and Gen.
+ *
+ * Tip: Start by pattern matching on the argument. If the list is empty,
+ * our only choice is to return unit(Nil).
+ */
 package chapter11.exercises.ex6
 
 import arrow.Kind
