@@ -1,4 +1,6 @@
 /**
+ * Write a monad instance for Either.
+ *
  * Tip: The flatMap combinator may be implemented by using a when
  * expression.
  */

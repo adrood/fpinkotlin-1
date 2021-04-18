@@ -1,4 +1,8 @@
 /**
+ * Let's begin by implementing 'map' in terms of 'traverse' as a method
+ * on 'Traversable<F>'. Note that weh implementing 'map', you can call
+ * 'traverse' with your choice of Applicative<G>.
+ *
  * Tip: What we really need here is a pass-through Applicative.
  * Implement an idApplicative instance that does exactly that when
  * used in conjunctionwith the Id data type.

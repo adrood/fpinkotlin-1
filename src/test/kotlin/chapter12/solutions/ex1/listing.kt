@@ -1,3 +1,8 @@
+/**
+ * Transplant the implementations of the following combinators from Monad
+ * into Applicative, using only map2 and unit, or methods implemented in
+ * terms of them.
+ */
 package chapter12.solutions.ex1
 
 import arrow.Kind

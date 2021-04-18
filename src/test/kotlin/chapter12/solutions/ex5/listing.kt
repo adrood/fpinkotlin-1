@@ -1,3 +1,9 @@
+/**
+ * Write a monad instance for Either.
+ *
+ * Tip: The flatMap combinator may be implemented by using a when
+ * expression.
+ */
 package chapter12.solutions.ex5
 
 import chapter12.EitherMonad

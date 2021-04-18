@@ -1,3 +1,17 @@
+/**
+ * There's an interesting consequence of being able to turn any
+ * traversable functor into a reversed list - we can write, once and for
+ * all - a function to reverse any traversable functor! Write this
+ * function, and think about what it means for 'List', 'Tree', and other
+ * traversable functors. Also, it should obey the following law, for all
+ * 'x' and 'y' of the appropriate types.
+ *
+ *     toList(reverse(x)) + toList(reverse(y)) =
+ *         reverse(toList(y) + toList(x))
+ *
+ * Tip: We need to use a stack. Fortunately a List is the same thing as
+ * a stack, and we already know how to turn any traversable into a list!
+ */
 package chapter12.solutions.ex15
 
 import arrow.Kind

@@ -1,3 +1,12 @@
+/**
+ * Write an Applicative instance for Validation that accumulates errors
+ * in Failure. Note that in the case of Failure there is always at least
+ * one error stored in 'head'. The rest of the erros accumulate in the
+ * 'tail'.
+ *
+ * Tip: Implement 'map2' using a 'when' expression. If both sides are
+ * failures, ensure that their order is preserved.
+ */
 package chapter12.solutions.ex6
 
 import chapter12.sec4.Failure

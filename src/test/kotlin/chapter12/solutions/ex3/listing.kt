@@ -1,3 +1,14 @@
+/**
+ * The 'apply' method is useful for implementing 'map3', 'map4', and so
+ * on, and the pattern is straightforward. Implement 'map3' and 'map4'
+ * using only the 'unit' and 'apply' functions. Note that given
+ * f: (A, B) -> C, f.curried() has type (A) -> (B) -> C. These handy
+ * curried extension methods are provided by Arrow on functions up to
+ * arity 22 in the arrow-syntax module.
+ *
+ * Tip: Look at your implementation of 'map2' in terms of 'apply' and try
+ * to follow the same pattern.
+ */
 package chapter12.solutions.ex3
 
 import arrow.Kind

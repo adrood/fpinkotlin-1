@@ -1,3 +1,11 @@
+/**
+ * Use 'mapAccum' to give a default implementation of 'foldLeft' for the
+ * 'Traversable' interface.
+ *
+ * Tip: This implementation is very similar to 'toList' except instead of
+ * accumulating into a 'list', we are accumulating into a 'B' using the
+ * 'f' function.
+ */
 package chapter12.solutions.ex16
 
 import arrow.Kind

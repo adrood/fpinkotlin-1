@@ -1,8 +1,13 @@
 /**
- * Tip: Implement map2 in terms of flatMap, then that in terms of compose.
- * Start with either identity law in turn, then substitute equals for
- * equals and apply the monad laws until you get an equation that is
- * obviously true.
+ * Prove that all monads are applicative functors by showing that if the
+ * monad laws hold, the 'Monad' implementations of 'map2' and 'map'
+ * satisfy the applicative laws. Prove this by using the left identity
+ * and right identity applicative laws.
+ *
+ * Tip: Implement 'map2' in terms of 'flatMap', then that in terms
+ * of 'compose'. Start with either identity law in turn, then substitute
+ * equals for equals and apply the monad laws until you get an equation
+ * that is obviously true.
  */
 package chapter12.exercises.ex7
 

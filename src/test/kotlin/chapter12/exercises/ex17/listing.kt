@@ -1,4 +1,8 @@
 /**
+ * Use applicative functor products to write the fusion of two traversals.
+ * This function will, given two functions 'f' and 'g', traverse 'ta' a
+ * single time, collecting the results of both functions at once.
+ *
  * Tip: Use the Product kind as shim to implement fuse.
  */
 package chapter12.exercises.ex17

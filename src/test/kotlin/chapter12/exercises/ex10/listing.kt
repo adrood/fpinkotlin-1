@@ -1,4 +1,7 @@
 /**
+ * Try to write 'compose' which composes two Monads. It's not possible,
+ * but it is instructive to attempt and understand why this is the case.
+ *
  * Tip: this operation hinges on the implementation of the flatMap
  * primitive of the Monad interface.
  */

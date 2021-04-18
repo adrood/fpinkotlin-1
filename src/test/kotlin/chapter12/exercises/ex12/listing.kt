@@ -1,4 +1,6 @@
 /**
+ * Write 'Traversable' instance for 'Option', 'List' and 'Tree'.
+ *
  * Tip: The treeTraversable con depend on the listTraversable for its
  * functionality. Lifting to, and operating on, Kind<G, A> can be done
  * using an Applicative<G> instance in scope.

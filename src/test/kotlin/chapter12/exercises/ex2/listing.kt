@@ -1,6 +1,13 @@
 /**
- * Tip: To implement map2 in terms of apply, try using f.curried() and
- * then follow the types.
+ * The nanme applicative comes from the fact that we can formulate the
+ * Applicative interface using an alternate set of primitives, 'unit' and
+ * the function 'apply', rather that 'unit' and 'map2'. Show that this
+ * formulation is equivalent in expressiveness by defining 'map2' and 'map'
+ * in terms of 'unit' and 'apply'. Also establish that 'apply' can be
+ * implemented in terms of 'map2' and 'unit'.
+ *
+ * Tip: To implement 'map2' in terms of 'apply', try using 'f.curried()'
+ * and then follow the types.
  */
 package chapter12.exercises.ex2
 

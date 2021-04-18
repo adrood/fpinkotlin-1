@@ -1,3 +1,10 @@
+/**
+ * Applicative functors also compose another way! If 'Kind<F, ?>' and
+ * 'Kind<G, ?>' are applicative functors, then so is Kind<F, Kind<G, A>>.
+ * Implement the following function.
+ *
+ * Tip: Use the provided Composite shim to produce the correct output.
+ */
 package chapter12.solutions.ex9
 
 import arrow.Kind

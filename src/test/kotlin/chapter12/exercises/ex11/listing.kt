@@ -1,4 +1,7 @@
 /**
+ * On the 'Applicative' interface, implement 'sequence' over a 'Map'
+ * rather than over a 'List'.
+ *
  * Tip: Try to use the foldable extensions provided by Arrow on map entries.
  */
 package chapter12.exercises.ex11

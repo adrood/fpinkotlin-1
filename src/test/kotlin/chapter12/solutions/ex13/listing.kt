@@ -1,3 +1,12 @@
+/**
+ * Let's begin by implementing 'map' in terms of 'traverse' as a method
+ * on 'Traversable<F>'. Note that weh implementing 'map', you can call
+ * 'traverse' with your choice of Applicative<G>.
+ *
+ * Tip: What we really need here is a pass-through Applicative.
+ * Implement an idApplicative instance that does exactly that when
+ * used in conjunctionwith the Id data type.
+ */
 package chapter12.solutions.ex13
 
 import arrow.Kind
@@ -11,6 +20,7 @@ import chapter12.Applicative
 import chapter12.Functor
 
 //tag::init1[]
+// First, we define an Applicative<ForId> as follows: ...
 fun idApplicative(): Applicative<ForId> =
     object : Applicative<ForId> {
         override fun <A> unit(a: A): IdOf<A> = Id(a)
@@ -31,6 +41,7 @@ fun idApplicative(): Applicative<ForId> =
 //end::init1[]
 
 //tag::init2[]
+// ... which we then use to implement the 'map' function:
 interface Traversable<F> : Functor<F> {
 
     fun <G, A, B> traverse(

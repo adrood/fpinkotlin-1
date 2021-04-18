@@ -1,4 +1,6 @@
 /**
+ * Implement the composition of two Traversable instances.
+ *
  * Tip: Follow the types. There is only one implementation that
  * typechecks.
  */

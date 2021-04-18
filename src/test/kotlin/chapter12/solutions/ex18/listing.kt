@@ -1,3 +1,9 @@
+/**
+ * Implement the composition of two Traversable instances.
+ *
+ * Tip: Follow the types. There is only one implementation that
+ * typechecks.
+ */
 package chapter12.solutions.ex18
 
 import arrow.Kind
