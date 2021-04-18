@@ -10,7 +10,6 @@
  * in various ways for these types. Simply call them from your Monad
  * implementation.
  */
-
 package chapter11.solutions.ex1
 
 import arrow.Kind
