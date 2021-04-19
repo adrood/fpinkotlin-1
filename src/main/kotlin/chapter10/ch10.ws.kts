@@ -7,12 +7,15 @@ val m2 = mapOf("o1" to mapOf("i3" to 3))
 
 m.combine(m1, m2)
 
-
+// Section 10.2
 val words = listOf<String>("Hic", "Est", "Index")
 
 words.foldRight(stringMonoid.nil, stringMonoid::combine)
 
 words.foldLeft(stringMonoid.nil, stringMonoid::combine)
+
+words.foldLeft("") { a, b -> a + b } == (("" + "Hic") + "Est") + "Index"
+words.foldRight("") { a, b -> a + b } == "Hic" + ("Est" + "Index" + "")
 
 /*
 interface Foldable<F<A>> {
