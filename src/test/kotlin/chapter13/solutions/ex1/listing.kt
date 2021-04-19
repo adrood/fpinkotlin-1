@@ -17,6 +17,7 @@ import chapter13.boilerplate.free.fix
 //tag::init1[]
 fun <F, A, B> Free<F, A>.flatMap(f: (A) -> Free<F, B>): Free<F, B> =
     FlatMap(this, f)
+
 fun <F, A, B> Free<F, A>.map(f: (A) -> B): Free<F, B> =
     flatMap { a -> Return<F, B>(f(a)) }
 //end::init1[]
