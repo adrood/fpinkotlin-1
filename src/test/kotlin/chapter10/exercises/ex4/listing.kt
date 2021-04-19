@@ -16,6 +16,7 @@ import chapter8.Passed
 import chapter8.SimpleRNG
 import chapter8.Gen
 import chapter8.Prop
+import chapter8.Prop.Companion.forAll
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
