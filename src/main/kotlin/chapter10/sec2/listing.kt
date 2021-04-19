@@ -28,6 +28,11 @@ val listing2 = {
 }
 
 //tag::init5[]
+/**
+ * We can now write a function that folds a list with a monoid.
+  */
 fun <A> concatenate(la: List<A>, m: Monoid<A>): A =
     la.foldLeft(m.nil, m::combine)
 //end::init5[]
+
+// Exercises 10.5 and 10.6
