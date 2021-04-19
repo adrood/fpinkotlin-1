@@ -47,3 +47,5 @@ val m3 = m.combine(m1, m2)
 //    kotlin.String,
 //    kotlin.Int>> =
 //      {o1={i1=1, i2=2, i3=3}}
+
+// Exercises 10.17, 10.18, 10.19
