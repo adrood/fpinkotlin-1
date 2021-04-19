@@ -16,6 +16,7 @@ import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
 import arrow.core.getOrElse
+import chapter10.Monoid
 import chapter10.foldMap
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
