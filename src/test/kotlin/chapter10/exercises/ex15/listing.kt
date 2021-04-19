@@ -16,6 +16,9 @@ import io.kotlintest.specs.WordSpec
 
 //tag::init1[]
 object OptionFoldable : Foldable<ForOption>
+
+// Put your implementation here!
+
 //end::init1[]
 
 //TODO: Enable tests by removing `!` prefix
