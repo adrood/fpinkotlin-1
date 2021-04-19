@@ -14,6 +14,7 @@ import io.kotlintest.properties.Gen
 import io.kotlintest.properties.assertAll
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
+import kotlin.math.min
 import utils.SOLUTION_HERE
 
 //tag::init1[]
