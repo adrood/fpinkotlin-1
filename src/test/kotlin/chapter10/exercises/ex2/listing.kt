@@ -19,6 +19,13 @@ import arrow.core.None
 import arrow.core.Option
 import arrow.core.orElse
 import chapter10.Monoid
+import chapter10.exercises.ex1.booleanAnd
+import chapter10.exercises.ex1.booleanOr
+import chapter10.exercises.ex1.intAddition
+import chapter10.exercises.ex1.intMultiplication
+import io.kotlintest.properties.assertAll
+import io.kotlintest.shouldBe
+import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
 
 //tag::init1[]
