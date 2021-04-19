@@ -52,8 +52,9 @@ object Listing12B {
 
         fun assoc(io: IO): IO = object : IO {
             override fun run() {
+                // The this@IO.run() invokes run on the current IO object.
                 this@IO.run() // <1>
-                // The io.run() invokes run on the IO thas was passed
+                // The io.run() invokes run on the IO that was passed
                 // in as io
                 io.run() // <2>
             }

@@ -43,3 +43,5 @@ interface Applicative<F> : Functor<F> {
         )
 }
 //end::init1[]
+
+// Exercises 12.1, 12.2 and 12.3

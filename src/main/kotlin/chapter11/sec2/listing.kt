@@ -21,15 +21,19 @@ fun <A, B> flatMap(fa: Option<A>, f: (A) -> Option<B>): Option<B> = TODO()
 fun <A, B> map(fa: Option<A>, f: (A) -> B): Option<B> = TODO()
 
 //tag::init6[]
-
-// Listing 11.3.
-// Implementations of map2 for Gen, Parser and Option
-
+/**
+ * 'map' implemented in terms of 'flatMap' and 'unit'.
+ * We can pick 'flatMap' and 'unit' as our minimal set of primitives
+ */
 fun <A, B> map(fa: Gen<A>, f: (A) -> B): Gen<B> =
     flatMap(fa) { a -> unit(f(a)) }
 //end::init6[]
 
 //tag::init1[]
+
+// Listing 11.3.
+// Implementations of map2 for Gen, Parser and Option
+
 fun <A, B, C> map2(
     fa: Gen<A>,
     fb: Gen<B>,
@@ -63,6 +67,10 @@ fun <A, B, C> map2(
 //end::init3[]
 
 //tag::init4[]
+
+// Listing 11.4
+// Defining a Mon interface as home for map2
+
 // The Mon interface is parameterized with higher-kinded type of F
 interface Mon<F> { // <1>
     //tag::init5[]
@@ -96,6 +104,8 @@ interface Mon<F> { // <1>
 // implement Functor
 
 interface Monad<F> : Functor<F> { // <1>
+
+    // We pick 'flatMap' and 'unit' as our minimal set of primitives.
 
     fun <A> unit(a: A): Kind<F, A>
 
@@ -144,3 +154,5 @@ object Monads {
     }
 }
 //end::init8[]
+
+// Exercises 11.1 and 11.2
