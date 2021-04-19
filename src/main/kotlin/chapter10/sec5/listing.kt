@@ -29,3 +29,5 @@ interface Foldable<F> { // <1>
         foldLeft(fa, m.nil, m::combine)
 }
 //end::init1[]
+
+// Exercises 10.12 to 10.16
