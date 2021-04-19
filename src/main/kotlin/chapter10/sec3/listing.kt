@@ -27,3 +27,5 @@ val listing = {
     "loremipsumdolorsit"
     //end::init2[]
 }
+
+// Exercises 7, 8, 9
