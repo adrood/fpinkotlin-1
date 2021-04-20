@@ -4,6 +4,7 @@ import arrow.Kind
 import chapter11.sec2.Monad
 
 //tag::init1[]
+// The simplest interesting specimen of a monad
 data class Id<A>(val a: A)
 //end::init1[]
 
