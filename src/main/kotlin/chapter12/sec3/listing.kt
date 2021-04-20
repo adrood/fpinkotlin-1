@@ -119,7 +119,7 @@ fun listing4() {
     val salaries: Map<Int, Double> = mapOf(101 to 100_000.00) // <3>
 
     val o: Option<String> =
-        // Look up Bob's id, then use result to do further lookups
+        // Look up Bob's id, then use the result to do further lookups
         idsByName[employee].toOption().flatMap { id -> // <4>
             F.map2(
                 departments[id].toOption(),
@@ -175,3 +175,5 @@ fun listing6() {
         F.flatMap(header) { row: Parser<Row> -> row.sep("\n") }.fix()
     //end::init6[]
 }
+
+// No exercises in this section
