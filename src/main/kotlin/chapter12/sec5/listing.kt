@@ -167,3 +167,5 @@ val listing5 = {
         )
     //end::init11[]
 }
+
+// Exercises 12.7 - 12.10
