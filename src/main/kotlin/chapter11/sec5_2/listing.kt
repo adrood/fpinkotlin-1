@@ -73,6 +73,10 @@ val intStateMonad: StateMonad<Int> = object : StateMonad<Int> {
 
 val F = intStateMonad
 
+/**
+ * This function numbers all the elements in a list using a State action.
+ * It keeps a state that's an Int, which is incremented at each step.
+ */
 fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
     la.foldLeft(F.unit(emptyList<Pair<Int, A>>())) { acc, a ->
         acc.fix().flatMap { xs ->
@@ -106,3 +110,5 @@ fun <A> zipWithIndex(la: List<A>): List<Pair<Int, A>> =
 fun main() {
     println(zipWithIndex(listOf(1, 2, 3, 4, 5)))
 }
+
+// Exercises 11.16 - 11.18

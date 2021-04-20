@@ -70,9 +70,13 @@ val listing1 = {
     //end::init5[]
 }
 
+// Let's prove that the associative law holds for 'Option'.
+
 val f: (Int) -> Option<Int> = { i -> Some(i) }
 val g: (Int) -> Option<Int> = { i -> Some(i) }
 val h: (Int) -> Option<Int> = { i -> Some(i) }
+
+// substitute 'None' for 'x'
 
 val listing2 = {
     //tag::init6[]
@@ -80,6 +84,8 @@ val listing2 = {
         None.flatMap { a -> f(a).flatMap(g) }
     //end::init6[]
 }
+
+// None.flatMap(f) = None for all f
 
 val listing3 = {
     //tag::init7[]
