@@ -20,7 +20,7 @@ interface Listing<F, A> : Applicative<F> {
         //tag::init1[]
 
         // Listing 12.10.
-        // The Applicative is a functor so functor law apply
+        // The Applicative is a functor so the functor laws apply
 
         map(v, id) == v
 
