@@ -233,3 +233,5 @@ interface Listing2<F, A> : Monad<F> {
         //end::init23[]
     }
 }
+
+// Exercises 11.6 - 11.14
