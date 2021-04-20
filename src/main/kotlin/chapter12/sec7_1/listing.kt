@@ -112,3 +112,5 @@ interface Traversable<F> : Functor<F>, Foldable<F> { // <1>
         }.fix().value // <3>
 }
 //end::init8[]
+
+// Exercises 12.13, 12.14
