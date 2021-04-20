@@ -199,3 +199,5 @@ val listing3 = {
     }
     //end::init6[]
 }
+
+// Exercises 12.4, 12.5, 12.6
