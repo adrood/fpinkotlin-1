@@ -98,3 +98,5 @@ interface Functor2<F> {
     //end::codistribute2[]
         = TODO()
 }
+
+// No exercises in this section
