@@ -28,3 +28,5 @@ interface Monad<F> : Functor<F> {
         map2(ma, mb) { a, b -> a to b }
     //end::init[]
 }
+
+// Exercises 11.3, 11.4, 11.5
