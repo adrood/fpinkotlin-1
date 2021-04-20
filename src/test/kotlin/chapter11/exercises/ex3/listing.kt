@@ -5,7 +5,7 @@
  *
  * Tip: These implementations should be very similar to those from
  * previous chapters, only with more general types. Consider fold
- * operations combined with the use 'unit' and 'map2' on Monad for your
+ * operations combined with the use of 'unit' and 'map2' on Monad for your
  * solutions
  */
 package chapter11.exercises.ex3
