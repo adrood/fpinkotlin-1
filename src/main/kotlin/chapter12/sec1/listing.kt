@@ -34,3 +34,5 @@ interface Monad<F> : Functor<F> {
         flatMap(fa) { a -> map(fb) { b -> f(a, b) } }
     //end::init2[]
 }
+
+// No exercises in this section.
