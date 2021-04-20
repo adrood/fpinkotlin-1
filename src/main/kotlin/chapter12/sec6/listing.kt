@@ -38,3 +38,5 @@ interface Traversable<F> : Functor<F> { // <1>
         traverse(fga, AG) { it }
 }
 //end::init3[]
+
+// Exercises 12.11, 12.12
