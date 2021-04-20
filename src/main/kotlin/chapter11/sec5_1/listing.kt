@@ -59,3 +59,5 @@ val intState = object : Monad<ForIntState> { // <1>
         fa.fix().flatMap { a: A -> f(a).fix() }
 }
 //end::init4[]
+
+// Exercise 11.15
