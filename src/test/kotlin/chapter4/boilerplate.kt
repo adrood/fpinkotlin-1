@@ -9,7 +9,6 @@ fun <A, B> List<A>.map(f: (A) -> B): List<B> =
         List.empty(),
         { a, b -> Cons(f(a), b) })
 
-// TODO: Check whether this could blow the stack?!
 fun <A, B> List<A>.foldRight(z: B, f: (A, B) -> B): B =
     when (this) {
         is Nil -> z
