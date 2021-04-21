@@ -77,7 +77,7 @@ val dept: String = lookupByName("Tim")
 //tag::init7[]
 
 // Listing 4.4.
-// Lifting a function to work with Opions
+// Lifting a function to work with Options
 
 fun <A, B> lift(f: (A) -> B): (Option<A>) -> Option<B> =
     { oa -> oa.map(f) }
@@ -150,3 +150,5 @@ fun <A, B> List<A>.map(f: (A) -> B): List<B> = TODO()
 fun parseInts(xs: List<String>): Option<List<Int>> =
     sequence(xs.map { str -> catches { str.toInt() } })
 //end::init11[]
+
+// Exercises 4.1 - 4.5
