@@ -14,6 +14,9 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 
 //tag::init[]
+/**
+ * Implementation of map2 using flatMap and map
+ */
 fun <A, B, C> map2(
     oa: Option<A>,
     ob: Option<B>,
