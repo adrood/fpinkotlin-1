@@ -106,3 +106,5 @@ fun mkAge(age: Int): Either<String, Age> =
 fun mkPerson(name: String, age: Int): Either<String, Person> =
     map2(mkName(name), mkAge(age)) { n, a -> Person(n, a) }
 //end::init6[]
+
+// Exercises 4.6 - 4.8
