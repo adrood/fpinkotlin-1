@@ -26,3 +26,5 @@ fun failingFn2(i: Int): Int =
         43 // <2>
     }
 //end::init2[]
+
+// No Exercises in this section
