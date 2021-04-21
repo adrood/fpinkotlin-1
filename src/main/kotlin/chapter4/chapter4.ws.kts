@@ -8,6 +8,10 @@ import chapter4.sec1.failingFn2
 
 failingFn2(12)
 
+// Section 3
+
 "112".toInt()
 
-// "hello".toInt()
+// Throws an exception, see the Scratch Output window.
+//"hello".toInt()
+
