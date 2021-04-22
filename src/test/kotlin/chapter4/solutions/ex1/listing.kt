@@ -12,6 +12,11 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 
 //tag::init[]
+
+/**
+ * Two primitive combinators using matching
+ */
+
 fun <A, B> Option<A>.map(f: (A) -> B): Option<B> =
     when (this) {
         is None -> None
@@ -24,6 +29,9 @@ fun <A> Option<A>.getOrElse(default: () -> A): A =
         is Some -> this.get
     }
 
+/**
+ * Three combinators derived from the primitive combinators
+ */
 fun <A, B> Option<A>.flatMap(f: (A) -> Option<B>): Option<B> =
     this.map(f).getOrElse { None }
 
@@ -36,7 +44,7 @@ fun <A> Option<A>.filter(p: (A) -> Boolean): Option<A> =
 
 
 /**
- * Alternative approaches
+ * Alternative approaches (using matching for the derived combinators
  */
 
 //tag::alternate[]
