@@ -5,6 +5,10 @@ import chapter4.Option
 import chapter4.Some
 
 //tag::init1[]
+/**
+ * Listing 5.2.
+ * Definition for the Stream data type with its sealed implementations.
+ */
 sealed class Stream<out A>
 
 data class Cons<out A>(
@@ -24,6 +28,8 @@ fun <A> Stream<A>.headOption(): Option<A> =
     }
 //end::init2[]
 
+// 5.2.1 Memoizing of streams and avoid recomputation
+
 val tl: Stream<String> = TODO()
 fun expensive(c: String): String = TODO()
 val y: String = TODO()
@@ -35,6 +41,7 @@ val h2 = x.headOption()
 //end::init3[]
 
 //tag::init4[]
+// smart constructor
 fun <A> cons(hd: () -> A, tl: () -> Stream<A>): Stream<A> {
     val head: A by lazy(hd)
     val tail: Stream<A> by lazy(tl)
@@ -43,10 +50,14 @@ fun <A> cons(hd: () -> A, tl: () -> Stream<A>): Stream<A> {
 //end::init4[]
 
 //tag::init5[]
+// smart constructor
 fun <A> empty(): Stream<A> = Empty
 
+// smart constructors used
 fun <A> of(vararg xs: A): Stream<A> =
     if (xs.isEmpty()) empty()
     else cons({ xs[0] },
         { of(*xs.sliceArray(1 until xs.size)) })
 //end::init5[]
+
+// Exercises 5.1 - 5.3
