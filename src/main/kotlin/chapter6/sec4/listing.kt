@@ -97,3 +97,5 @@ fun rollDie(): Rand<Int> =
 fun rollDieFix(): Rand<Int> =
     map(nonNegativeIntLessThan(6)) { it + 1 }
 //end::init12[]
+
+// Exercises 6.5 - 6.9
