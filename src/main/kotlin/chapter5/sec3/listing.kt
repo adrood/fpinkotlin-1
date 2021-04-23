@@ -43,16 +43,20 @@ sealed class Stream<out A> {
     //end::init1[]
 
     //tag::init2[]
+    /**
+     * Listing 5.3.
+     * The foldRight function on Stream is used to generalize recursion.
+     */
     fun <B> foldRight(
-        z: () -> B,
         // The type '() -> B' means that the function f takes the
         // second parameter by name and may choose not to evaluate it
+        z: () -> B,
         f: (A, () -> B) -> B // <1>
     ): B =
         when (this) {
+            // If f doesn't evaluate its second argument, the
+            // recursion never occurs
             is Cons -> f(this.head()) {
-                // If f doesn't evaluate its second argument, the
-                // recursion never occurs
                 tail().foldRight(z, f) // <2>
             }
             is Empty -> z()
@@ -84,17 +88,20 @@ val trace = {
         .map { it * 3 }.toList()
 
     // Apply map to the first element
+
     Stream.cons({ 11 }, { Stream.of(2, 3, 4).map { it + 10 } })
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList() // <1>
 
     // Apply filter to the first element;
     // predicate returns false
+
     Stream.of(2, 3, 4).map { it + 10 }
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList() // <2>
 
     // Apply map to the second element
+
     Stream.cons({ 12 }, { Stream.of(3, 4).map { it + 10 } })
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList() // <3>
@@ -103,11 +110,13 @@ val trace = {
     // predicate returns true;
     // apply second map;
     // produces first element of result
+
     ConsL(36, Stream.of(3, 4).map { it + 10 }
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList()) // <4>
 
     // Apply map to the third element
+
     ConsL(36, Stream.cons({ 13 }, { Stream.of(4).map { it + 10 } })
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList() // <5>
@@ -115,27 +124,32 @@ val trace = {
 
     // Apply filter to the third element;
     // predicate returns false
+
     ConsL(36, Stream.of(4).map { it + 10 }
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList()) // <6>
 
     // Apply map to the last element
+
     ConsL(36, Stream.cons({ 14 }, { Stream.empty<Int>().map { it + 10 } })
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList() // <7>
     )
 
-    // Apply flter to the last element;
+    // Apply filter to the last element;
     // predicate returns true;
     // apply second map;
     // produces second element of result
+
     ConsL(36, ConsL(42, Stream.empty<Int>().map { it + 10 }
         .filter { it % 2 == 0 }
         .map { it * 3 }.toList())) // <8>
 
-    // End of STream Empty has been reached.
+    // End of Stream Empty has been reached.
     // Now map and filter have no more work to do;
-    // Empty stream becomes Nil
+    // Empty stream becomes NilL
+
     ConsL(36, ConsL(42, NilL)) // <9>
     //end::init5[]
 }
+// Exercises 5.4 -5.7
