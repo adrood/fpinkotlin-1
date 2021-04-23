@@ -6,6 +6,10 @@ import kotlin.system.exitProcess
 fun <A, B> List<A>.map(f: (A) -> B): List<B> = TODO()
 fun <A> List<A>.filter(f: (A) -> Boolean): List<A> = TODO()
 
+/**
+ * Listing 5.1.
+ * Evaluation trace of operations on a strict list implementation.
+ */
 val listing = {
     //tag::init1[]
     List.of(1, 2, 3, 4)
