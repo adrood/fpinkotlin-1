@@ -22,6 +22,9 @@ fun List<Double>.sum(): Double = TODO()
 fun <A> List<A>.isEmpty(): Boolean = TODO()
 
 //tag::init2[]
+/**
+ * The 'mean' example, this time returning a String in case of failure.
+ */
 fun mean(xs: List<Double>): Either<String, Double> =
     if (xs.isEmpty())
         Left("mean of empty list!")
@@ -29,6 +32,9 @@ fun mean(xs: List<Double>): Either<String, Double> =
 //end::init2[]
 
 //tag::init3[]
+/**
+ * Simply return the exception in case of failure.
+ */
 fun safeDiv(x: Int, y: Int): Either<Exception, Int> =
     try {
         Right(x / y)
@@ -40,7 +46,10 @@ fun safeDiv(x: Int, y: Int): Either<Exception, Int> =
 //tag::init4[]
 
 // Listing 4.6.
-// A catches function converting exceptions to Either
+/**
+ * A catches function converting exceptions to Either.
+ * Compare with 'safeDiv'  in init3[]
+ */
 fun <A> catches(a: () -> A): Either<Exception, A> =
     try {
         Right(a())
