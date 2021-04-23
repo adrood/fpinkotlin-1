@@ -1,6 +1,9 @@
 package chapter5.sec4
 
 //tag::init1[]
+/**
+ * Here's an example of an infinite Stream of 1s
+ */
 fun ones(): Stream<Int> = Stream.cons({ 1 }, { ones() })
 //end::init1[]
 
@@ -20,3 +23,5 @@ fun <A> Stream<A>.tails(): Stream<Stream<A>> = TODO()
 fun <A> Stream<A>.exists(p: (A) -> Boolean): Boolean = TODO()
 
 fun <A> Stream<A>.startsWith(that: Stream<A>): Boolean = TODO()
+
+// Exercises 5.8 - 5.16
