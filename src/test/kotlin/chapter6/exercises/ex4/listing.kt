@@ -1,3 +1,6 @@
+/**
+ * Write a function to generate a list of random integers.
+ */
 package chapter6.exercises.ex4
 
 import chapter3.Cons

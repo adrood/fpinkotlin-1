@@ -1,3 +1,8 @@
+/**
+ * Write functions to generate a Pair<Int, Double>, a Pair<Double, Int>,
+ * and a Triple<Double, Double, Double>. You should be able to reuse the
+ * functions you've already written.
+ */
 package chapter6.solutions.ex3
 
 import chapter6.RNG

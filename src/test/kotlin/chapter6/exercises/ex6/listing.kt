@@ -1,4 +1,8 @@
 /**
+ * Write the implementation of map2 based on the following signature. This
+ * function takes two actions, ra and rb, and a function f for combining
+ * their results, and returns a new action that combines them.
+ *
  * Tip: Start by accepting an RNG. Note that you have a choice in which RNG
  * to pass to which function, and in what order. Think about what you
  * expect the behavior to be, and whether your implementation meets that

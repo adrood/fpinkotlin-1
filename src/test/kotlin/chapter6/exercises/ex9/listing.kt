@@ -1,9 +1,13 @@
 /**
+ * Reimplement map and map2 in terms of flatMap. The fact that this is
+ * possible is what we're referring to when we say that flatMap is more
+ * powerful than map and mpa2.
+ *
  * Tip:
  *
  * mapF: Your solution will be similar to nonNegativeLessThan.
  *
- * map2F: Yout solution to map2 for the Option data type should give you
+ * map2F: Your solution to map2 for the Option data type should give you
  * some ideas.
  */
 package chapter6.exercises.ex9

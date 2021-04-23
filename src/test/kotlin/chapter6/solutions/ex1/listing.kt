@@ -1,3 +1,9 @@
+/**
+ * Write a function that uses RNG.nextInt to generate a random integer
+ * between 0 and Int.MAX_VALUE (inclusive). Make sure to handle the corner
+ * case when nextInt returns Int.MIN_VALUE, which doesn't have a
+ * nonnegative counterpart.
+ */
 package chapter6.solutions.ex1
 
 import chapter6.RNG

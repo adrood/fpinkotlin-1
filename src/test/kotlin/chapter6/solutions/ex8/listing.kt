@@ -1,3 +1,9 @@
+/**
+ * Implement flatMap, and then use it to implement nonNegativeLessThan.
+ *
+ * Tip: The implementation using flatMap will be almost identical to the
+ * failed one where we tried to use map.
+ */
 package chapter6.solutions.ex8
 
 import chapter6.Rand

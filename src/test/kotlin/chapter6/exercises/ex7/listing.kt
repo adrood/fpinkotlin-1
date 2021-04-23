@@ -1,4 +1,11 @@
 /**
+ * If you can combine two RNG transitions, you should be able to combine
+ * a whole list of them. Implement sequence for combining a List of
+ * transitions into a single transition. Use it to reimplement the ints
+ * function you wrote before. For the sake of simplicity in this exercise,
+ * it is acceptable to write ints with recursion to build a list with x
+ * repeated n times.
+ *
  * Tip: You need to recursively iterate over the list. Remember that you
  * can use foldLeft or foldRight instead of writing a recursive
  * definition. You can also reuse the map2 function you just wrote. As

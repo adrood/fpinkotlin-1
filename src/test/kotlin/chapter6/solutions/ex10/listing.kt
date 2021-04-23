@@ -1,3 +1,21 @@
+/**
+ * Generalize the functions unit, map, map2, flatMap, and sequence. Add
+ * them as methods on the State data class where possible. Otherwise you
+ * should put them in the State companion object.
+ *
+ * Tip: Use the specialized functions for Rand as inspiration.
+ * Recall that if you have a
+ *
+ *     f: (S) -> Pair(A, S),
+ *
+ * you can create a State<S, A> just by writing State(f). The function f
+ * can also be declared inline with a lambda:
+ *
+ *     State {s: S ->
+ *     ...
+ *         Pair(a, s2)
+ *     }
+ */
 package chapter6.solutions.ex10
 
 import chapter3.Cons

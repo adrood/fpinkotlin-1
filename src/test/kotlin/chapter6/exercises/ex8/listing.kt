@@ -1,4 +1,6 @@
 /**
+ * Implement flatMap, and then use it to implement nonNegativeLessThan.
+ *
  * Tip: The implementation using flatMap will be almost identical to the
  * failed one where we tried to use map.
  */

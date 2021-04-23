@@ -1,3 +1,8 @@
+/**
+ * Use map to reimplement doubleR in a more elegant way. See Exercise 6.2.
+ *
+ * Tip: This is an application of map over nonNegativeInt or nextInt.
+ */
 package chapter6.solutions.ex5
 
 import chapter6.RNG
