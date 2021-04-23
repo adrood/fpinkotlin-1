@@ -41,3 +41,5 @@ fun randomPair2(rng: RNG): Pair<Pair<Int, Int>, RNG> {
     return (i1 to i2) to rng3 // <2>
 }
 //end::init4[]
+
+// Exercises 6.1 -6.4
