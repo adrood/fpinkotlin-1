@@ -100,3 +100,5 @@ fun <S> get(): State<S, S> =
 fun <S> set(s: S): State<S, Unit> =
     State { Tuple2(s, Unit) }
 //end::init6[]
+
+// Exercise 6.11
