@@ -24,3 +24,5 @@ data class State<S, out A>(val run: (S) -> Pair<A, S>)
 // Listing 6.15.
 // The Rand type alias updated to use State
 typealias Rand<A> = State<RNG, A>
+
+// Exercise 6.10.
