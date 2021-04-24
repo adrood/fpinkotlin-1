@@ -8,8 +8,10 @@ val listing1 = {
     data class Coffee(val price: Float = 2.50F)
 
     //tag::init1[]
+
     // Listing 1.1.
     // A Kotlin program with side effects.
+
     class Cafe {
 
         fun buyCoffee(cc: CreditCard): Coffee {
@@ -28,7 +30,7 @@ val listing1 = {
 }
 
 val listing2 = {
-    data class Coffee(val price: Float = 2.95F)
+    data class Coffee(val price: Float = 2.50F)
 
     class CreditCard
 
@@ -37,8 +39,10 @@ val listing2 = {
     }
 
     //tag::init2[]
+
     // Listing 1.2.
     // Adding a payments object
+
     class Cafe {
         fun buyCoffee(cc: CreditCard, p: Payments): Coffee {
             val cup = Coffee()
@@ -50,19 +54,21 @@ val listing2 = {
 }
 
 val listing3 = {
+    data class Coffee(val price: Float = 2.50F)
 
     class CreditCard
-
-    data class Coffee(val price: Float = 2.50F)
 
     data class Charge(val cc: CreditCard, val amount: Float)
 
     //tag::init3[]
+
     // Listing 1.3.
     // A more functional approach to buying coffee.
+
     class Cafe {
         fun buyCoffee(cc: CreditCard): Pair<Coffee, Charge> {
             val cup = Coffee()
+            // The Charge is returned as a value along with the Coffee
             return Pair(cup, Charge(cc, cup.price))
         }
     }
@@ -73,8 +79,10 @@ val listing4 = {
     class CreditCard
 
     //tag::init4[]
+
     // Listing 1.4.
     // Charge as a data type
+
     // A data class declaration with constructor and immutable fields.
     data class Charge(val cc: CreditCard, val amount: Float) { // <1>
 
@@ -103,8 +111,10 @@ val listing5 = {
     }
 
     //tag::init5[]
+
     // Listing 1.5.
     // Buying multiple cups with buyCoffees
+
     class Cafe {
 
         fun buyCoffee(cc: CreditCard): Pair<Coffee, Charge> = TODO()
@@ -141,8 +151,10 @@ val listing6 = {
     }
 
     //tag::init6[]
+
     // Listing 1.6.
     // Coalescing the charges
+
     fun List<Charge>.coalesce(): List<Charge> =
         this.groupBy { it.cc }.values
             .map { it.reduce { a, b -> a.combine(b) } }
