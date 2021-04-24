@@ -26,3 +26,5 @@ val listing4 = {
         { b -> f(a, b) }
     //end::init4[]
 }
+
+// Exercises 2.3 - 2.5
