@@ -1,6 +1,12 @@
 package chapter2.sec2
 
 //tag::init1[]
+
+/**
+ * Listing 2.3.
+ * Monomorphic function to find a String in an array
+ */
+
 fun findFirst(ss: Array<String>, key: String): Int {
     tailrec fun loop(n: Int): Int =
         when {
@@ -19,8 +25,10 @@ fun findFirst(ss: Array<String>, key: String): Int {
 
 // tag::init2[]
 
-// Listing 2.4.
-// Polymorphic function to find an element in an array.
+/**
+ * Listing 2.4.
+ * Polymorphic function to find an element in an array.
+ */
 
 // Operate on an array of A, take a predicate function operating
 // on individual elements of A.
@@ -41,3 +49,5 @@ fun <A> findFirst(xs: Array<A>, p: (A) -> Boolean): Int { // <1>
     return loop(0) // <4>
 }
 //end::init2[]
+
+// Exercise 2.2
