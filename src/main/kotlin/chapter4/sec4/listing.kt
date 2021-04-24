@@ -8,6 +8,7 @@ import chapter4.sec3.insuranceRateQuote
 
 // Listing 4.5.
 // The Either data type
+
 sealed class Either<out E, out A>
 
 data class Left<out E>(val value: E) : Either<E, Nothing>()
@@ -46,6 +47,8 @@ fun safeDiv(x: Int, y: Int): Either<Exception, Int> =
 //tag::init4[]
 
 // Listing 4.6.
+// A catches function converting exceptions to Either
+
 /**
  * A catches function converting exceptions to Either.
  * Compare with 'safeDiv'  in init3[]
