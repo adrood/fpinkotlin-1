@@ -41,7 +41,7 @@ interface Listing<F, A> : Monad<F> {
         //end::init2[]
 
         //tag::init3[]
-        // We also know from Exercise 11.12 that join is a flatMap
+        // We also know from Exercise 11.11 that join is a flatMap
         // combined with an identity function:
         flatMap(join(y)) { it } ==
             flatMap(y) { join(it) }
@@ -51,7 +51,7 @@ interface Listing<F, A> : Monad<F> {
         //end::init3[]
 
         //tag::init4[]
-        // We have also learned in Exercise 11.3 that flatMap can be
+        // We have also learned in Exercise 11.12 that flatMap can be
         // expressed as a map and join, this eliminating the final flatMap.
         join(join(y)) ==
             join(map(y) { join(it) })
