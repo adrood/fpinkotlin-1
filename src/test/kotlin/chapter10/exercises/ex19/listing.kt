@@ -15,6 +15,7 @@ package chapter10.exercises.ex19
 
 import chapter10.ForList
 import chapter10.List
+import chapter10.ListOf
 import chapter10.asConsList
 import chapter10.fix
 import chapter10.intAdditionMonoid
