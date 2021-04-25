@@ -31,8 +31,17 @@ interface Listing<F, A> : Monad<F> {
         //end::init1[]
 
         //tag::init2[]
-        // We can substitute f and g with identity functions and x with
+        // We can substitute f and g with identity functions ({ it }) and x with
         // a higher kind y, to express this differently:
+        // acr: substitutions on the RHS:
+        // g -> { it }
+        // f -> { it } (and therefore, f(a) -> a)
+        // x -> y
+        // The RHS is now OK
+        // Then apply the same substitutions to the LHS
+        // Finally, on the LHS:
+        // Replace the second { it } with { b-> b}
+        // Replace the first { it } with z
         flatMap(flatMap(y, z)) { b -> b } ==
             flatMap(y) { a -> flatMap(z(a)) { b -> b } }
 
@@ -52,7 +61,7 @@ interface Listing<F, A> : Monad<F> {
 
         //tag::init4[]
         // We have also learned in Exercise 11.12 that flatMap can be
-        // expressed as a map and join, this eliminating the final flatMap.
+        // expressed as a map and join, thus eliminating the final flatMap.
         join(join(y)) ==
             join(map(y) { join(it) })
         //end::init4[]
