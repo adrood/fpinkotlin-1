@@ -8,6 +8,7 @@
 package chapter11.exercises.ex18
 
 import chapter11.sec5_2.State
+import utils.SOLUTION_HERE
 
 fun <S, A> unit(a: A): State<S, A> =
     State { s: S -> a to s }
@@ -20,6 +21,6 @@ fun <S> setState(s: S): State<S, Unit> =
 
 fun main() {
     //tag::init[]
-    TODO("Express laws in terms of flatMap, unit, getState and setState")
+    SOLUTION_HERE("Express laws in terms of flatMap, unit, getState and setState")
     //end::init[]
 }
