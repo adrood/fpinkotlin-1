@@ -3,7 +3,7 @@
  * monad instances for arrow.core.ListK and arrow.core.SequenceK
  *
  * Note: The ListK and SequenceK types provided by Arrow are wrapper
- * classes that turn ther platform equivalents, List and Sequence,
+ * classes that turn their platform equivalents, List and Sequence,
  * into fully equipped type constructors.
  *
  * Tip: The unit and flatMap combinators have already been implemented
