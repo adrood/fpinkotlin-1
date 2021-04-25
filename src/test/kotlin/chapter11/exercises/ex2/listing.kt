@@ -9,8 +9,8 @@
  * apply it with the S type argument, much like you would do with a
  * partially applied function. Thus, it is not just one monad, but an
  * entire family of monads, one for each type S. Consider devising a way
- * to capture the type S in a type-level scope, and prividing a partially
- * State type in that scope. This should be possible using Arrow's
+ * to capture the type S in a type-level scope, and providing a partially
+ * applied State type in that scope. This should be possible using Arrow's
  * Kind2 interface.
  */
 package chapter11.exercises.ex2
@@ -22,4 +22,23 @@ import chapter11.solutions.ex2.StateOf
 
 //tag::init[]
 data class State<S, out A>(val run: (S) -> Pair<A, S>) : StateOf<S, A>
+
+sealed class ForState private constructor() {
+    companion object
+}
+
+typealias StateOf<S, A> = Kind2<ForState, S, A>
+
+fun <S, A> StateOf<S, A>.fix() = this as State<S, A>
+
+typealias StatePartialOf<S> = Kind<ForState, S>
+
+interface StateMonad<S> : Monad<StatePartialOf<S>> {
+    override fun <A> unit(a: A): Kind<StatePartialOf<S>, A>
+
+    override fun <A, B> flatMap(
+        fa: Kind<StatePartialOf<S>, A>,
+        f: (A) -> Kind<StatePartialOf<S>, B>
+    ): Kind<StatePartialOf<S>, B>
+}
 //end::init[]
