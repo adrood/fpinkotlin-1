@@ -9,8 +9,8 @@
  * apply it with the S type argument, much like you would do with a
  * partially applied function. Thus, it is not just one monad, but an
  * entire family of monads, one for each type S. Consider devising a way
- * to capture the type S in a type-level scope, and prividing a partially
- * State type in that scope. This should be possible using Arrow's
+ * to capture the type S in a type-level scope, and providing a partially
+ * applied State type in that scope. This should be possible using Arrow's
  * Kind2 interface.
  */
 package chapter11.solutions.ex2
