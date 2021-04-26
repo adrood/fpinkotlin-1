@@ -27,6 +27,7 @@ sealed class Stream<out A> {
         fun <A> continually(a: A): Stream<A> =
             cons({ a }, { continually(a) })
 
+        // smart constructor
         fun <A, S> unfold(z: S, f: (S) -> Option<Pair<A, S>>): Stream<A> =
             f(z).map { pair ->
                 cons({ pair.first },
