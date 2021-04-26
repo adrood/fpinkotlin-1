@@ -12,7 +12,7 @@
  *
  * Tip: We can draw heavily on the State API that we developed in Chapter 6
  * for this exercise. We had a method that could provide random boolean
- * values that might come in handy for out boolean() generator. Could we
+ * values that might come in handy for our boolean() generator. Could we
  * also reuse State.sequence() somehow?
  */
 package chapter8.exercises.ex5
