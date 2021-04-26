@@ -21,5 +21,16 @@ data class Gen<A>(val sample: State<RNG, A>) {
 
             SOLUTION_HERE()
         //end::init[]
+
+    //tag::init2[]
+    fun chooseUnbiased(
+        start: Int,
+        stopExclusive: Int
+    ): Gen<Int> =
+
+        SOLUTION_HERE()
+    //end::init2[]
     }
 }
+
+
