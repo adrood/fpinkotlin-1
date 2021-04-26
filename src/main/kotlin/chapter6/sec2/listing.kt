@@ -7,8 +7,13 @@ interface RNG {
 }
 
 //tag::init1[]
+
 // Listing 6.4.
 // A purely functional random number generator, implementing RNG
+
+/**
+ * A purely functional random number generator, implementing RNG
+ */
 data class SimpleRNG(val seed: Long) : RNG {
     override fun nextInt(): Pair<Int, RNG> {
         // We use the current seed to generate a new seed.
