@@ -5,8 +5,13 @@ interface RNG {
 }
 
 //tag::init1[]
+
 // Listing 6.7.
 // Type alias representing a state transition
+
+/**
+ * Type alias representing a state transition
+ */
 typealias Rand<A> = (RNG) -> Pair<A, RNG>
 //end::init1[]
 
@@ -17,15 +22,24 @@ val intR: Rand<Int> = { rng -> rng.nextInt() }
 //tag::init3[]
 // Listing 6.8.
 // The unit combinator passes state while setting a constant
+
+/**
+ * The unit combinator passes state while setting a constant
+ */
 fun <A> unit(a: A): Rand<A> = { rng -> a to rng }
 //end::init3[]
 
 //tag::init4[]
 // Listing 6.9.
 // The map combinator modifies output without modifying the state
+
+/**
+ * The map combinator modifies output without modifying the state
+ */
 fun <A, B> map(s: Rand<A>, f: (A) -> B): Rand<B> =
     { rng ->
         val (a, rng2) = s(rng)
+        //TODO I would expect the expression: f(a) to rng
         f(a) to rng2
     }
 //end::init4[]
