@@ -1,4 +1,6 @@
 /**
+ * Implement pipe as an infix function on Process.
+ *
  * Tip: Let the types guide your implementation. Try eating your own
  * dog food!
  */

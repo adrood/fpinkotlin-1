@@ -1,4 +1,9 @@
 /**
+ * The definition of 'to' uses a new combinator called 'join'. Any process
+ * which wishes to concatenate a nested Process can use this handy
+ * function. Implement 'join' using existing primitives. This combinator
+ * should be quite familiar to you from previous chapters.
+ *
  * Tip: You can flatMap it!
  */
 package chapter15.exercises.ex12

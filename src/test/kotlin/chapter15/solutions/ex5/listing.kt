@@ -1,3 +1,9 @@
+/**
+ * Implement pipe as an infix function on Process.
+ *
+ * Tip: Let the types guide your implementation. Try eating your own
+ * dog food!
+ */
 package chapter15.solutions.ex5
 
 import chapter10.None

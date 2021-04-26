@@ -1,3 +1,10 @@
+/**
+ * Implement mean, a function that emits a running average of the values
+ * encountered in a stream so far.
+ *
+ * Tip: Introduce a local helper function that accepts the current sum
+ * and count.
+ */
 package chapter15.solutions.ex3
 
 import chapter10.None

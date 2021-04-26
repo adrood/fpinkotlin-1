@@ -1,3 +1,6 @@
+/**
+ * Write sum and count in terms of loop.
+ */
 package chapter15.exercises.ex4
 
 import chapter10.None

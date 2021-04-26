@@ -1,3 +1,13 @@
+/**
+ * Come up with a generic combinator that lets you express mean in terms
+ * of sum and count. Define this combinator and implement mean in terms
+ * of it.
+ *
+ * Tip: The zip combinator can feed input into two processes. The
+ * implementation can be tricky as we need to ensure that the input
+ * reaches both p1 and p2. Also consider using a helper function to feed
+ * options to a process.
+ */
 package chapter15.solutions.ex6
 
 import chapter10.Option

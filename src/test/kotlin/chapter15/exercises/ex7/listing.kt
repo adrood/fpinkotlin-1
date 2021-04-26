@@ -1,4 +1,13 @@
 /**
+ * Implement zipWithIndex. It emits a running count of zero-based values
+ * emitted along with each stream value. For example,
+ *
+ *     Process("a", "b").zipWithIndex()
+ *
+ * yields
+ *
+ *     Process(0 to "a", 1 to "b")
+ *
  * Tip: Use the zip function that was implemented in Exercise 15.6.
  */
 package chapter15.exercises.ex7

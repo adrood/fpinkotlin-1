@@ -1,3 +1,13 @@
+/**
+ * Implement count. It should emit the number of elements seen so far. For
+ * instance,
+ *
+ *     count(Stream("a", "b", "c", "d"))
+ *
+ * should yield
+ *
+ *     Stream(1, 2, 3, 4)
+ */
 package chapter15.exercises.ex2
 
 import chapter10.None

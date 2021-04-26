@@ -1,3 +1,25 @@
+/**
+ * Implement a processor for 'exists' that takes a predicate. There are
+ * multiple ways to implement this. Given a
+ *
+ *     Stream.of(1, 3, 5, 6, 7)
+ *
+ * then
+ *
+ *     exists { it % 2 == 0 }
+ *
+ * could:
+ *
+ * - produce Stream(true): halting and only yielding the final result
+ * - produce Stream(false, false, false, true): halting and yielding all
+ *   intermediate results
+ * - or produce Stream(false, false, false, true, true): not halting, and
+ *   yielding all the intermediate results.
+ *
+ * Note that there is no penalty to implementing the "trimming" of this
+ * final form with a separate combinator, because 'pipe' fuses the
+ * processors.
+ */
 package chapter15.solutions.ex8
 
 import chapter10.None

@@ -1,4 +1,9 @@
 /**
+ * Write a program that reads degrees Fahrenheit as Double values from a
+ * file. One value per line is passed through a 'Process' to convert it to
+ * degrees Celsius and writes the result to another file. You can use the
+ * toCelsius function to help with the calculation.
+ *
  * Tip: Use the processFile function to solve this problem.
  */
 package chapter15.exercises.ex9

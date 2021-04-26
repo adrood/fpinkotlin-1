@@ -1,3 +1,10 @@
+/**
+ * Implement take, which halts the Process after it encounters the given
+ * number of elements, and drop, which ignores the given number of
+ * arguments and then emits the rest. Also, implement takeWhile and
+ * dropWhile, that take and drop elements as long as the given predicate
+ * remains true.
+ */
 package chapter15.solutions.ex1
 
 import chapter10.None

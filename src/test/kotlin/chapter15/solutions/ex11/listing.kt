@@ -1,3 +1,13 @@
+/**
+ * Implement the generic combinator 'eval' to promote some Kind<F, A> to
+ * a Process that emits only the result of that Kind<F, A>. Also, implement
+ * 'evalDrain', which promotes a Kind<F, A> to a Process while emitting
+ * no values. Note that implementing these functions doesn't require
+ * knowing anything about F.
+ *
+ * Make use of the drain instance method on Process to prevent emission
+ * of values.
+ */
 package chapter15.solutions.ex11
 
 import arrow.Kind
