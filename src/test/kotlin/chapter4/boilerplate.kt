@@ -79,4 +79,8 @@ fun <E, A, B, C> map2(
     be: Either<E, B>,
     f: (A, B) -> C
 ): Either<E, C> =
-    ae.flatMap { a -> be.map { b -> f(a, b) } }
+    ae.flatMap { a ->
+        be.map { b ->
+            f(a, b)
+        }
+    }
