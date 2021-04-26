@@ -1,11 +1,12 @@
 /**
- * Write the function take(n) for returning the first n elements of a
- * stream, and drop(n) for skipping the first n elements of a stream.
+ * Write a function to generate a Double between 0 and 1, not including 1.
+ * In addition to the function you already developed, you can use
+ * Int.MAX_VALUE to obtain the maximum positive integer value, and you
+ * can use x.toDouble() to convert an x: Int to a Double.
  *
- * Tip: Many stream functions start by matching on the stream and
- * considering what to do in each of the two cases. These particular
- * functions need to first consider whether they need to look at the
- * stream at all.
+ * Tip: Use nonNegativeInt to generate a random integer between 0
+ * and Int.MAX_VALUE, inclusive. Then map to the range of doubles
+ * from 0 to 1.
  */
 package chapter6.solutions.ex2
 
