@@ -17,6 +17,7 @@ import chapter3.reverse
 import chapter5.Cons
 import chapter5.Empty
 import chapter5.Stream
+import chapter5.solutions.ex1.toListUnsafe
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
 import utils.SOLUTION_HERE
@@ -26,6 +27,11 @@ import chapter3.Nil as NilL
 //TODO: Enable tests by removing `!` prefix
 class Exercise1 : WordSpec({
     //tag::init[]
+    //Unsafe! Naive solution could cause a stack overflow.
+    fun <A> Stream<A>.toListUnsafe(): List<A> =
+
+        SOLUTION_HERE()
+
     fun <A> Stream<A>.toList(): List<A> =
 
         SOLUTION_HERE()
@@ -34,6 +40,7 @@ class Exercise1 : WordSpec({
     "Stream.toList" should {
         "!force the stream into an evaluated list" {
             val s = Stream.of(1, 2, 3, 4, 5)
+            s.toListUnsafe() shouldBe List.of(1, 2, 3, 4, 5)
             s.toList() shouldBe List.of(1, 2, 3, 4, 5)
         }
     }
