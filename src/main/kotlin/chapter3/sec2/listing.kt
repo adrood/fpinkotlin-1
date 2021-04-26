@@ -32,6 +32,7 @@ sealed class List<out A> { // <1>
             when (doubles) {
                 is Nil -> 1.0
                 is Cons ->
+                    // Short-circuiting
                     if (doubles.head == 0.0) 0.0
                     else doubles.head * product(doubles.tail)
             }
@@ -74,6 +75,7 @@ fun sum(xs: List<Int>): Int =
     }
 
 // Invoke sum function with list
+// This method has a confusing name: it cannot be run!
 fun main() = sum(ints) // <4>
 //end::init3[]
 
