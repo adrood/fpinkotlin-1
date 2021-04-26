@@ -75,8 +75,10 @@ fun sum(xs: List<Int>): Int =
     }
 
 // Invoke sum function with list
-// This method has a confusing name: it cannot be run!
-fun main() = sum(ints) // <4>
+fun main() {
+    sum(ints)
+} // <4>
+
 //end::init3[]
 
 val listing35 = {
