@@ -29,7 +29,10 @@ fun <A> List<A>.splitAt(idx: Int): Pair<List<A>, List<A>> = // <1>
 
 val sum2 = {
     //tag::init3[]
-    // Using our new data type to assimilate parallellism
+
+    // Listing 7.1.
+    // Summing a list using a divide-and-conquer approach
+
     fun sum(ints: List<Int>): Int =
         if (ints.size <= 1)
         // Deal with cases of 1 or 0 ints, using Arrow
@@ -47,6 +50,10 @@ val sum2 = {
 }
 
 //tag::init4[]
+
+// Listing 7.2.
+// Defining a new data type for parallellism
+
 // A new data type to contain a result
 class Par<A>(val get: A) // <1>
 
@@ -69,8 +76,10 @@ fun map2(
 fun <A> fork(a: () -> Par<A>): Par<A> = TODO()
 
 //end::fork[]
+
 // Listing 7.6. A strict unit and fork can be combined to form a lazy
 // variant of unit.
+
 val listing = {
     //tag::lazyunit[]
     fun <A> unit(a: A): Par<A> = Par(a)
@@ -86,6 +95,7 @@ fun <A> run(a: Par<A>): A = TODO()
 
 val sum3 = {
     //tag::init5[]
+    // Using our new data type to assimilate parallellism
     fun sum(ints: List<Int>): Int =
         if (ints.size <= 1)
             ints.firstOption().getOrElse { 0 }
@@ -165,6 +175,7 @@ val sum4 = {
 
     // Listing 7.5 Strict construction of the description results in
     // a full tree of operations
+
     val trace2 = {
         //tag::init9[]
         map2(
