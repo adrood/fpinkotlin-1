@@ -124,8 +124,9 @@ fun parseInsuranceQuote(
         insuranceRateQuote(a, t)
     }
     //end::secondsolution[]
+
     //tag::firstsolution[]
-    // This does not type=check due to incompatibilites
+    // This does not type=check due to incompatibilities
     // return insuranceRateQuote(optAge, optTickets) //<1>
     //end::firstsolution[]
 }
