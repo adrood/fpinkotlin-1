@@ -1,3 +1,6 @@
+/**
+ * use foldRight to implement takeWhile.
+ */
 package chapter5.exercises.ex5
 
 import chapter3.List
