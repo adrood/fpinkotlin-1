@@ -39,8 +39,10 @@ fun <A, B> map(
 //end::init1[]
 
 //tag::init2[]
+
 // Listing 6.17.
 // State propagation using a series of flatmap and map
+
 val ns: State<RNG, List<Int>> =
     // int will generate  a single random integer
     flatMap(int) { x -> // <1>
@@ -56,8 +58,10 @@ val ns: State<RNG, List<Int>> =
 //end::init2[]
 
 //tag::init3[]
+
 // Listing 6.18.
 // State propagation using a for-comprehension
+
 val ns2: State<RNG, List<Int>> =
     // Open the for-comprehension by passing a code block
     // into State.fx(Id.monad())
@@ -75,8 +79,10 @@ val ns2: State<RNG, List<Int>> =
 //end::init3[]
 
 //tag::init4[]
+
 // Listing 6.19.
 // Combinator to modify the current State
+
 fun <S> modify(f: (S) -> S): State<S, Unit> =
     // Set up the for-comprehension for State
     State.fx(Id.monad()) { // <1>
@@ -88,15 +94,19 @@ fun <S> modify(f: (S) -> S): State<S, Unit> =
 //end::init4[]
 
 //tag::init5[]
+
 // Listing 6.20.
 // The get combinator retrieves, then passes on its state
+
 fun <S> get(): State<S, S> =
     State { s -> Tuple2(s, s) }
 //end::init5[]
 
 //tag::init6[]
+
 // Listing 6.21.
 // The set combinator updates the state, then returns Unit
+
 fun <S> set(s: S): State<S, Unit> =
     State { Tuple2(s, Unit) }
 //end::init6[]
