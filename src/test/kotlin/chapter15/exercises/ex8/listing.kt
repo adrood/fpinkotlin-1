@@ -42,7 +42,9 @@ fun <I> exists(f: (I) -> Boolean): Process<I, Boolean> =
     SOLUTION_HERE()
 //end::init1[]
 
-fun <I> existsAndHalt(f: (I) -> Boolean): Process<I, Boolean> = TODO()
+fun <I> existsAndHalt(f: (I) -> Boolean): Process<I, Boolean> =
+
+    SOLUTION_HERE()
 
 //TODO: Enable tests by removing `!` prefix
 class Exercise8 : WordSpec({
